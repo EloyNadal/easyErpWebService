@@ -1,0 +1,898 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"crea",
+				"create"
+			],
+			[
+				"compra",
+				"compra_id"
+			],
+			[
+				"comp",
+				"$compra〔variable〕"
+			],
+			[
+				"st",
+				"$stock〔variable〕"
+			],
+			[
+				"pro",
+				"producto_id"
+			],
+			[
+				"ca",
+				"cantidad"
+			],
+			[
+				"lin",
+				"$linea〔variable〕"
+			],
+			[
+				"com",
+				"compra_id"
+			],
+			[
+				"requ",
+				"required"
+			],
+			[
+				"req",
+				"$request〔variable〕"
+			],
+			[
+				"a",
+				"activo"
+			],
+			[
+				"ta",
+				"tasa_id"
+			],
+			[
+				"uni",
+				"unidad_mesura"
+			],
+			[
+				"atr",
+				"atributo"
+			],
+			[
+				"p",
+				"$producto_id〔variable〕"
+			],
+			[
+				"produc",
+				"producto_id"
+			],
+			[
+				"stock",
+				"$stocks〔variable〕"
+			],
+			[
+				"stocl",
+				"$stocks〔variable〕"
+			],
+			[
+				"d",
+				"direccion"
+			],
+			[
+				"ra",
+				"ratio_descuento"
+			],
+			[
+				"G",
+				"GrupoCliente"
+			],
+			[
+				"cl",
+				"clientes"
+			],
+			[
+				"g",
+				"grupo_cliente"
+			],
+			[
+				"Co",
+				"Compra"
+			],
+			[
+				"precio",
+				"precio_total"
+			],
+			[
+				"tienda",
+				"tienda_id"
+			],
+			[
+				"pre",
+				"$precio_total〔variable〕"
+			],
+			[
+				"li",
+				"$linea〔variable〕"
+			],
+			[
+				"for",
+				"foreach\tforeach …"
+			],
+			[
+				"P",
+				"Producto"
+			],
+			[
+				"prec",
+				"$precio〔variable〕"
+			],
+			[
+				"ret",
+				"return〔keyword〕"
+			],
+			[
+				"pr",
+				"$proveedor_id〔variable〕"
+			],
+			[
+				"gru",
+				"grupo_cliente_id"
+			],
+			[
+				"cate",
+				"$categoria〔variable〕"
+			],
+			[
+				"categoria",
+				"categoria_id"
+			],
+			[
+				"read",
+				"readAll"
+			],
+			[
+				"usua",
+				"usuarios"
+			],
+			[
+				"va",
+				"validacion"
+			],
+			[
+				"us",
+				"$usuario〔variable〕"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"ape",
+				"$apellidos〔variable〕"
+			],
+			[
+				"Pro",
+				"Proveedor"
+			],
+			[
+				"Com",
+				"CompraProducto"
+			],
+			[
+				"atribu",
+				"atributo"
+			],
+			[
+				"direc",
+				"direccion2"
+			],
+			[
+				"ti",
+				"tienda_id"
+			],
+			[
+				"compa",
+				"compania_id"
+			],
+			[
+				"re",
+				"referencia"
+			],
+			[
+				"un",
+				"unsigned"
+			],
+			[
+				"ap",
+				"$apiToken〔variable〕"
+			],
+			[
+				"e",
+				"else"
+			],
+			[
+				"u",
+				"update〔function〕"
+			],
+			[
+				"bas",
+				"base64_encode〔function〕"
+			],
+			[
+				"els",
+				"else〔keyword〕"
+			],
+			[
+				"res",
+				"response〔function〕"
+			],
+			[
+				"na",
+				"$name〔variable〕"
+			],
+			[
+				"S",
+				"Support〔namespace〕"
+			],
+			[
+				"H",
+				"Http〔namespace〕"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"t",
+				"$this〔variable〕"
+			],
+			[
+				"L",
+				"LumenPassport"
+			],
+			[
+				"Duser",
+				"Dusterio\\LumenPassport\\PassportServiceProvider〔class〕"
+			],
+			[
+				"fi",
+				"$filmID〔variable〕"
+			],
+			[
+				"film",
+				"filmID"
+			],
+			[
+				"clas",
+				"Class"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "database/factories/ModelFactory.php",
+			"settings":
+			{
+				"buffer_size": 5652,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "database/seeds/DatabaseSeeder.php",
+			"settings":
+			{
+				"buffer_size": 2344,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/CompraController.php",
+			"settings":
+			{
+				"buffer_size": 3725,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n\nnamespace App\\Http\\Controllers;\nuse Illuminate\\Http\\Request;\nuse App\\Venta;\nuse App\\VentaLinea;\nuse App\\Tienda;\nuse App\\Cliente;\nuse App\\Stock;\n\nclass VentaController extends Controller\n{   \n    \n    public function __construct()\n    {\n        $this->middleware('auth', ['only' => ['read', 'readAll']]);\n        $this->middleware('admin', ['only' => ['create', 'delete', 'update']]);\n    }\n\n    public function create(Request $request){\n\n        $this->validacion($request);\n        \n        $tienda_id = $request->input('tienda_id');\n        $cliente_id = $request->input('cliente_id');\n\n        if(!Tienda::where('id', $tienda_id)->first())\n        {\n            return $this->crearRespuestaError('Tienda no existe', 404);\n        }\n\n        if(!Cliente::where('id', $proveedor_id)->first())\n        {\n            return $this->crearRespuestaError('Cliente no existe', 404);\n        }\n\n\n        $venta = Venta::create([\n            'tienda_id' => $tienda_id,\n            'cliente_id' => $cliente_id,\n            'precio' => $request->input('precio'),\n            'iva' => $request->input('iva'),\n            'precio_total' => $request->input('precio_total')\n        ]);\n\n\n        foreach ($request->input('venta_lineas') as $linea) {\n            \n            $producto_id = $linea['producto_id'];\n\n            $venta_linea = VentaLinea::create([\n                'tienda_id' => $tienda_id,\n                'venta_id' => $venta['id'],\n                'producto_id' => $producto_id,\n                'precio' => $linea['precio'],\n                'tasa_id' => $linea['tasa_id'],\n                'cantidad' => $linea['cantidad'],\n                'unidad_mesura' => $linea['unidad_mesura']\n            ]);\n\n            $stock = Stock::where('tienda_id', $tienda_id)\n                ->where('producto_id', $producto_id)\n                ->first();\n\n            if(!$stock){\n                $stock = StockController::create($tienda_id, $producto_id);\n            }\n\n            \n            //$stock->increment('stock', $venta_producto['cantidad']);\n            // $stock->stock += $venta_producto['cantidad'];\n            $stock->decrement('stock', $venta_producto['cantidad']);\n            $stock->save();\n\n        }\n\n        return $this->crearRespuesta('Venta creada', $venta, 200);\n    }\n\n    public function read($tienda_id, $id){\n        \n        $venta = Venta::where('tienda_id', $tienda_id)\n            ->where('id', $id)\n            ->first();\n\n        if($venta)\n        {\n            $lineas = VentaLinea::where('tienda_id', $tienda_id)\n                ->where('venta_id', $venta['id'])\n                ->get();\n\n                $venta->venta_linea = $lineas;\n            \n            return $this->crearRespuesta('Venta encontrado', $venta, 200);\n        }\n        else{\n\n            return $this->crearRespuestaError('Venta no existe', 404);\n        }\n\n    }\n\n    public function readAll($tienda_id){\n\n        $ventas = Venta::where('tienda_id', $tienda_id)\n            ->get();\n\n        if (sizeof($ventas) > 0){\n\n            foreach ($ventas as $venta) {\n\n                $lineas = VentaLinea::where('tienda_id', $tienda_id)\n                ->where('venta_id', $venta['id'])\n                ->get();\n\n                $venta->venta_linea = $lineas;\n\n            }\n            return $this->crearRespuesta('Ventas encontradas', $ventas, 200);\n\n        }else{\n            return $this->crearRespuestaError('No existen ventas', 404);\n        }\n        \n\n    }\n\n    public function validacion($request)\n    {\n        \n        $reglas = \n            [   \n            'tienda_id' => 'required',\n            'cliente_id' => 'required',\n            'precio' => 'required',\n            'iva' => 'required',\n             'precio_total' => 'required'\n        ];\n\n        \n        $this->validate($request, $reglas);\n    }\n}\n",
+			"file": "app/Http/Controllers/VentaController.php",
+			"file_size": 3828,
+			"file_write_time": 132013145483648284,
+			"settings":
+			{
+				"buffer_size": 3828,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Categoria.php",
+			"settings":
+			{
+				"buffer_size": 542,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/StockController.php",
+			"settings":
+			{
+				"buffer_size": 3128,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/CompraLineaController.php",
+			"settings":
+			{
+				"buffer_size": 1809,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "routes/web.php",
+			"settings":
+			{
+				"buffer_size": 4556,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"git s",
+				"Git: Status"
+			],
+			[
+				"git c",
+				"Git: Commit"
+			],
+			[
+				"git sta",
+				"Git: Status"
+			],
+			[
+				"git pus",
+				"Git: Push Current Branch"
+			],
+			[
+				"git re",
+				"Git: Add Remote"
+			],
+			[
+				"git i",
+				"Git: Init"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 134.0,
+		"history":
+		[
+			"php artisan make:migration create_users_table --create=users",
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/xampp/htdocs/easyERP",
+		"/C/xampp/htdocs/easyERP/app",
+		"/C/xampp/htdocs/easyERP/app/Http",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers",
+		"/C/xampp/htdocs/easyERP/app/Jobs",
+		"/C/xampp/htdocs/easyERP/routes"
+	],
+	"file_history":
+	[
+		"/C/xampp/htdocs/easyERP/.gitignore",
+		"/C/xampp/htdocs/easyERP/database/factories/ModelFactory.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/UserController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/UsuarioAdminController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/CategoriaController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/GrupoClienteController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/ProveedorController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/TiendaController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/ProductoController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/TasaController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/StockController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Middleware/adminAuthenticate.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_05_01_233734_crear_tabla_stocks.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220629_crear_tabla_categorias.php",
+		"/C/xampp/htdocs/easyERP/app/Categoria.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_05_01_233759_crear_tabla_tasas.php",
+		"/C/xampp/htdocs/easyERP/app/Stock.php",
+		"/C/xampp/htdocs/easyERP/app/Tasa.php",
+		"/C/xampp/htdocs/easyERP/database/seeds/DatabaseSeeder.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_221426_crear_tabla_usuarios.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220729_crear_tabla_compras_productos.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_221316_crear_tabla_ventas_productos.php",
+		"/C/xampp/htdocs/easyERP/app/Tienda.php",
+		"/C/xampp/htdocs/easyERP/app/Proveedor.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220804_crear_tabla_proveedores.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220154_crear_tabla_tienas.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/ClienteController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/CompraController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/CompraLineaController.php",
+		"/C/xampp/htdocs/easyERP/routes/web.php",
+		"/C/xampp/htdocs/easyERP/app/CompraLinea.php",
+		"/C/xampp/htdocs/easyERP/app/VentaLinea.php",
+		"/C/xampp/htdocs/easyERP/app/Compra.php",
+		"/C/xampp/htdocs/easyERP/database/seeds/AdminUser.php",
+		"/C/xampp/htdocs/easyERP/app/Providers/AuthServiceProvider.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/AuthController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/Controller.php",
+		"/C/xampp/htdocs/easyERP/bootstrap/app.php",
+		"/C/xampp/htdocs/easyERP/vendor/fzaninotto/faker/src/Faker/Factory.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_221255_crear_tabla_ventas.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220715_crear_tabla_compras.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220229_crear_tabla_productos.php",
+		"/C/xampp/htdocs/easyERP/app/Cliente.php",
+		"/C/xampp/htdocs/easyERP/app/CompraProducto.php",
+		"/C/xampp/htdocs/easyERP/app/GrupoCliente.php",
+		"/C/xampp/htdocs/easyERP/app/Producto.php",
+		"/C/xampp/htdocs/easyERP/app/Usuario.php",
+		"/C/xampp/htdocs/easyERP/app/Venta.php",
+		"/C/xampp/htdocs/easyERP/app/VentaProducto.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220652_crear_tabla_fabricantes.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220844_crear_tabla_clientes.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220901_crear_tabla_direcciones.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220934_crear_tabla_divisas.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220827_crear_tabla_grupo_clientes.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220546_crear_tabla_atributos_valores.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220122_crear_tabla_companias.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220526_crear_tabla_atributos.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220509_crear_tabla_atributos_valores_productos.php",
+		"/C/xampp/htdocs/easyERP/app/User.php",
+		"/C/xampp/htdocs/easyERP/.env",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_21_082934_create_users_table.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/ExampleController.php",
+		"/C/xampp/htdocs/LumenAPI-master/.env",
+		"/C/xampp/htdocs/LumenAPI-master/.env.example",
+		"/C/xampp/htdocs/LumenAPI-master/tests/TestCase.php",
+		"/C/xampp/htdocs/LumenAPI-master/database/migrations/2014_04_24_111810_create_oauth_refresh_tokens_table.php",
+		"/C/xampp/htdocs/lumenProject/.env",
+		"/C/Users/bydos/eclipse-workspace/M9_Certificado/src/main/Encryptor.java",
+		"/C/xampp/htdocs/lumenProject/app/Http/Middleware/Authenticate.php",
+		"/C/xampp/htdocs/lumenProject/vendor/illuminate/database/Eloquent/Collection.php",
+		"/C/xampp/htdocs/lumenProject/vendor/phar-io/manifest/src/values/AuthorCollectionIterator.php",
+		"/C/xampp/htdocs/lumenProject/bootstrap/app.php",
+		"/C/xampp/htdocs/lumenProject/app/Film.php",
+		"/C/xampp/htdocs/lumenProject/resources/lang/en/validation.php",
+		"/C/xampp/htdocs/lumenProject/routes/web.php",
+		"/C/xampp/htdocs/lumenProject/app/Http/Controllers/FilmController.php",
+		"/C/xampp/htdocs/lumenProject/resources/lang/es/validation.php",
+		"/C/xampp/htdocs/lumenProject/lumenProject.sublime-project"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"Compra",
+			"compra",
+			"tienda",
+			"Tienda",
+			"tienda",
+			"Proveedor",
+			"proveedor",
+			"Proveedor",
+			"Grupo de clientes",
+			"GrupoCliente",
+			"grupo_cliente",
+			"();\n",
+			"\n            ",
+			"            $"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Venta",
+			"venta",
+			"producto",
+			"Producto",
+			"Tasa",
+			"tasa",
+			"Tienda",
+			"tienda",
+			"Tienda",
+			"Proveedor",
+			"proveedor"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "database/factories/ModelFactory.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5652,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4133,
+								4133
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 66.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "database/seeds/DatabaseSeeder.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2344,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2344,
+								2344
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 968.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/Http/Controllers/CompraController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3725,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1891,
+								1891
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1561.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/Http/Controllers/VentaController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3828,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								197,
+								197
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"open_with_edit": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/Categoria.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 542,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								445,
+								445
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/Http/Controllers/StockController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3128,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								572,
+								572
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/Http/Controllers/CompraLineaController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1809,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1200,
+								1200
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 318.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "routes/web.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4556,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3466,
+								3494
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1308.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 39.3333333333
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git-commit":
+	{
+		"height": 76.0
+	},
+	"output.git-init":
+	{
+		"height": 126.0
+	},
+	"pinned_build_system": "",
+	"project": "easyERP.sublime-project",
+	"replace":
+	{
+		"height": 70.6666666667
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 337.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
