@@ -19,11 +19,6 @@ $router->get('/', function () use ($router) {
 $router->post('/registrar', 'UsuarioAdminController@registrar');
 $router->post('/login', 'UsuarioAdminController@login');
 
-$router->post('/admin/login', 'UsuarioAdminController@login');
-$router->post('/admin/registrar', 'UsuarioAdminController@registrar');
-
-$router->get('/user/{id}', 'UserController@read');
-
 $router->group(['prefix' => 'categoria'], function () use ($router) 
 {
 	$router->get('/', ['uses' => 'CategoriaController@readAll']);

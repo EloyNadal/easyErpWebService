@@ -51,14 +51,8 @@ class CategoriaController extends Controller
         
         $categoria = Categoria::where('id', $id)->first();
 
+
         if($categoria){
-
-            $categoria_padre = Categoria::where('id', $categoria['categoria_id'])->first();
-
-            if ($categoria_padre){
-                $categoria['categoria_id'] = $categoria_padre;
-            }
-
             return $this->crearRespuesta('Categoria encontrada', $categoria, 200);
         }
         else{
