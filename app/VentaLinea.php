@@ -19,7 +19,7 @@ class VentaLinea extends Model
      * @var array
      */
 
-    protected $fillable = ['tienda_id', 'venta_id', 'producto_id' , 'precio', 'tasa_id', 'cantidad', 'unidad_mesura'];
+    protected $fillable = ['tienda_id', 'venta_id', 'producto_id' , 'precio', 'tasa_id', 'cantidad'];
 
 
 }

@@ -18,6 +18,7 @@ class Venta extends Model
      *
      * @var array
      */
-    protected $fillable = ['tienda_id', 'cliente_id', 'usuario_id', 'precio', 'iva', 'precio_total'];
+    protected $fillable = ['tienda_id', 'cliente_id', 'usuario_id', 'precio_sin_tasas', 'total_tasas', 'precio_total'];
+
 
 }

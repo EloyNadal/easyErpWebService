@@ -38,8 +38,8 @@ class CompraController extends Controller
         $compra = Compra::create([
             'tienda_id' => $tienda_id,
             'proveedor_id' => $proveedor_id,
-            'precio' => $request->input('precio'),
-            'iva' => $request->input('iva'),
+            'precio_sin_tasas' => $request->input('precio_sin_tasas'),
+            'total_tasas' => $request->input('total_tasas'),
             'precio_total' => $request->input('precio_total')
         ]);
 
@@ -54,15 +54,14 @@ class CompraController extends Controller
                 'producto_id' => $producto_id,
                 'precio' => $linea['precio'],
                 'tasa_id' => $linea['tasa_id'],
-                'cantidad' => $linea['cantidad'],
-                'unidad_mesura' => $linea['unidad_mesura']
+                'cantidad' => $linea['cantidad']
             ]);
 
             $stock = Stock::where('tienda_id', $tienda_id)
                 ->where('producto_id', $producto_id)
                 ->first();
             
-            $stock->increment('stock', $compra_producto['cantidad']);
+            $stock->increment('cantidad', $compra_producto['cantidad']);
             // $stock->stock += $compra_producto['cantidad'];
             //$stock->decrement
             $stock->save();
@@ -127,8 +126,8 @@ class CompraController extends Controller
             [   
             'tienda_id' => 'required',
             'proveedor_id' => 'required',
-            'precio' => 'required',
-            'iva' => 'required',
+            'precio_sin_tasas' => 'required',
+            'total_tasas' => 'required',
              'precio_total' => 'required'
         ];
 

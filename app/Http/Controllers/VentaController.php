@@ -38,8 +38,8 @@ class VentaController extends Controller
         $venta = Venta::create([
             'tienda_id' => $tienda_id,
             'cliente_id' => $cliente_id,
-            'precio' => $request->input('precio'),
-            'iva' => $request->input('iva'),
+            'precio_sin_tasas' => $request->input('precio_sin_tasas'),
+            'total_tasas' => $request->input('total_tasas'),
             'precio_total' => $request->input('precio_total')
         ]);
 
@@ -54,8 +54,7 @@ class VentaController extends Controller
                 'producto_id' => $producto_id,
                 'precio' => $linea['precio'],
                 'tasa_id' => $linea['tasa_id'],
-                'cantidad' => $linea['cantidad'],
-                'unidad_mesura' => $linea['unidad_mesura']
+                'cantidad' => $linea['cantidad']
             ]);
 
             $stock = Stock::where('tienda_id', $tienda_id)
@@ -69,7 +68,7 @@ class VentaController extends Controller
             
             //$stock->increment('stock', $venta_producto['cantidad']);
             // $stock->stock += $venta_producto['cantidad'];
-            $stock->decrement('stock', $venta_producto['cantidad']);
+            $stock->decrement('cantidad', $venta_producto['cantidad']);
             $stock->save();
 
         }
@@ -132,9 +131,9 @@ class VentaController extends Controller
             [   
             'tienda_id' => 'required',
             'cliente_id' => 'required',
-            'precio' => 'required',
-            'iva' => 'required',
-             'precio_total' => 'required'
+            'precio_sin_tasas' => 'required',
+            'total_tasas' => 'required',
+            'precio_total' => 'required'
         ];
 
         

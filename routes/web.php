@@ -100,6 +100,7 @@ $router->group(['prefix' => 'producto'], function () use ($router)
 {
 	$router->get('/', ['uses' => 'ProductoController@readAll']);
 	$router->get('/{campo}={valor}', ['uses' => 'ProductoController@read']);
+	$router->post('/param/{metodo}', ['uses' => 'ProductoController@readQuery']);
 	$router->post('/', ['uses' => 'ProductoController@create']);
 	$router->delete('/{id}', ['uses' => 'ProductoController@delete']);
 	$router->put('/{id}', ['uses' => 'ProductoController@update']);

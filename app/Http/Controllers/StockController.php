@@ -19,7 +19,7 @@ class StockController extends Controller
         $stock = Stock::create(
             'tienda_id' => $tienda_id,
             'producto_id' => $producto_id,
-            'stock' => 0
+            'cantidad' => 0
         );
     }
 
@@ -34,7 +34,7 @@ class StockController extends Controller
 
             if ($stock)
             {
-                $stock->stock = $stocks['stock'];
+                $stock->stock = $stocks['cantidad'];
             }
             else{
                 $stock = Stock::create($stocks->all());    
@@ -94,7 +94,7 @@ class StockController extends Controller
 
         if($stock)
         {
-            $stock->stock += $request->input('stock');
+            $stock->stock += $request->input('cantidad');
             $stock->save();
 
         }else{

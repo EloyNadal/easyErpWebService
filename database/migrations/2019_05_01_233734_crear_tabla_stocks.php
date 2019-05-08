@@ -17,7 +17,7 @@ class CrearTablaStocks extends Migration
             $table->increments('id');
             $table->integer('tienda_id')->unsigned();
             $table->integer('producto_id')->unsigned();
-            $table->float('stock', 8, 3);
+            $table->float('cantidad', 8, 3);
         });
     }
 

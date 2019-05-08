@@ -18,7 +18,7 @@ class Compra extends Model
      *
      * @var array
      */
-    protected $fillable = ['tienda_id', 'proveedor_id', 'precio', 'iva', 'precio_total'];
+    protected $fillable = ['tienda_id', 'proveedor_id', 'precio_sin_tasas', 'total_tasas', 'precio_total'];
 
 
     public function comprasProductos($id)

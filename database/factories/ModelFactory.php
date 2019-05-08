@@ -27,8 +27,8 @@ $factory->define(App\Compra::class, function ($faker) {
     return [
         'tienda_id' => $faker->numberBetween(1,5),
         'proveedor_id' => $faker->numberBetween(1,5),
-        'precio' => $faker->randomFloat(3, 0.000, 100.999),
-        'iva' => $faker->randomFloat(3, 0.000, 100.999),
+        'precio_sin_tasas' => $faker->randomFloat(3, 0.000, 100.999),
+        'total_tasas' => $faker->randomFloat(3, 0.000, 100.999),
         'precio_total' => $faker->randomFloat(3, 0.000, 100.999)
     ];
 });
@@ -42,7 +42,6 @@ $factory->define(App\CompraLinea::class, function ($faker) {
         'precio' => $faker->randomFloat(3, 0.000, 100.999),
         'tasa_id' => $faker->numberBetween(1,5),
         'cantidad' => $faker->randomFloat(3, 0.000, 10.999),
-        'unidad_mesura' => $faker->randomElement($array = array ('unidad','Kg','L'))
     ];
 });
 
@@ -107,8 +106,8 @@ $factory->define(App\Venta::class, function ($faker) {
         'tienda_id' => $faker->numberBetween(1,5),
         'cliente_id' => $faker->numberBetween(1,5),
         'usuario_id' => $faker->numberBetween(2,6),
-        'precio' => $faker->randomFloat(3, 0.000, 100.999),
-        'iva' => $faker->randomFloat(3, 0.000, 100.999),
+        'precio_sin_tasas' => $faker->randomFloat(3, 0.000, 100.999),
+        'total_tasas' => $faker->randomFloat(3, 0.000, 100.999),
         'precio_total' => $faker->randomFloat(3, 0.000, 100.999)
     ];
 });
@@ -121,8 +120,7 @@ $factory->define(App\VentaLinea::class, function ($faker) {
         'producto_id' => $faker->numberBetween(1,10),
         'precio' => $faker->randomFloat(3, 0.000, 100.999),
         'tasa_id' => $faker->numberBetween(1,5),
-        'cantidad' => $faker->randomFloat(3, 0.000, 10.999),
-        'unidad_mesura' => $faker->randomElement($array = array ('unidad','Kg','L'))
+        'cantidad' => $faker->randomFloat(3, 0.000, 10.999)
     ];
 });
 
@@ -147,7 +145,7 @@ $factory->define(App\Stock::class, function ($faker) {
     return [
         'tienda_id' => $faker->numberBetween(1,3),
         'producto_id' => $faker->numberBetween(1,3),
-        'stock' => $faker->randomFloat(3, 0.000, 100.999)
+        'cantidad' => $faker->randomFloat(3, 0.000, 100.999)
     ];
 });
 

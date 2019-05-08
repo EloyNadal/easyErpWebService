@@ -61,7 +61,8 @@ class ProductoController extends Controller
 
         if ($campo == 'id' || $campo == 'referencia' || $campo == 'categoria_id')
         {
-            $producto = Producto::where($campo, $valor)->get();
+            $producto = Producto::where($campo, $valor)
+                                ->get();
         }
         else
         {
@@ -73,6 +74,83 @@ class ProductoController extends Controller
             return $this->crearRespuestaError('Producto no existe', 404);
         }
         return $this->crearRespuesta('Producto encontrado', $producto, 200);     
+
+    }
+
+    public function readQuery(Request $request, $metodo){
+
+        $valores = array();
+        $ky = array_keys($request->input());
+        $val = array_values($request->input());
+
+        $productos = Producto::where($request->input())
+                                    ->get();        
+
+        return $this->crearRespuesta('Producto encontrado', $productos, 200);     
+
+        if ($metodo == 'and'){
+
+
+        }else
+        
+        {
+            foreach ($request->input() as $key => $value) {
+                
+                switch ($key) {
+
+
+                    case 'categoria_id':
+                    case 'tasa_id':
+
+
+                        $productos = Producto::where($key, "=" , $value)
+                                    ->get();
+                        break;
+
+                    default: 
+                        $productos = Producto::where($key, "LIKE" , "%$value%");
+                        break;
+                }
+            
+                array_push($valores, $productos);
+            }
+
+        }
+
+        
+        return $this->crearRespuesta('Producto encontrado', $valores, 200);
+
+        $producto = Producto::where($campo, $valor)->get();
+        
+        if(!$producto)
+        {
+            return $this->crearRespuestaError('Producto no existe', 404);
+        }
+        return $this->crearRespuesta('Producto encontrado', $producto, 200);     
+
+    }
+
+    public function readParam($param){
+
+        return $this->crearRespuesta('Producto encontrado', $param, 200);
+
+        $valores = array();
+        foreach ($request->input() as $key => $value) {
+            
+            $productos = Producto::where($key, "LIKE" , "%$value%")
+            ->get();
+
+            array_push($valores, $productos);
+        }
+        
+
+        $producto = Producto::where($campo, $valor)->get();
+        
+        if(!$producto)
+        {
+            return $this->crearRespuestaError('Producto no existe', 404);
+        }
+        return $this->crearRespuesta('Producto encontrado', $producto, 200);
 
     }
 

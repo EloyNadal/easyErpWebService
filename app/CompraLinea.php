@@ -22,10 +22,6 @@ class CompraLinea extends Model
     //falta añadir el producto en la tabla
     protected $fillable = ['tienda_id', 'compra_id', 'producto_id' , 'precio', 'tasa_id', 'cantidad', 'unidad_mesura'];
 
-    public function compra()
-	{
-		return $this->belongsToMany('App\Compra');
-	}
+   //nombre de stok
 
-//estoy modificando compra linea venta. falta crear seeder de admin, categorias e ivas
 }
