@@ -35,40 +35,10 @@ class ProductoController extends Controller
 
     }
 
-    public function readId($id){
+    public function read($id){
 
-        return $this->crearRespuesta('Producto encontrado', $id, 200);
-        $referencia = $request->input('referencia');
-        if ($referencia)
-        {
-            $producto = Producto::where('referencia', $referencia)->first();
-        }
-        else{
-            $producto = Producto::where('id', $id)->first();    
-        }
-        
+        $producto = Producto::where('id', $id)->first();    
 
-        if(!$producto)
-        {
-            return $this->crearRespuestaError('Producto no existe', 404);
-        }
-        return $this->crearRespuesta('Producto encontrado', $producto, 200);     
-
-    }
-
-    public function read($campo, $valor){
-
-
-        if ($campo == 'id' || $campo == 'referencia' || $campo == 'categoria_id')
-        {
-            $producto = Producto::where($campo, $valor)
-                                ->get();
-        }
-        else
-        {
-            return $this->crearRespuestaError("opcion no valida, formato correcto: 'campo = valor'", 404);
-        }
-        
         if(!$producto)
         {
             return $this->crearRespuestaError('Producto no existe', 404);
@@ -79,78 +49,30 @@ class ProductoController extends Controller
 
     public function readQuery(Request $request, $metodo){
 
-        $valores = array();
-        $ky = array_keys($request->input());
-        $val = array_values($request->input());
+        return $this->crearRespuesta('Producto encontrado', $request->input(), 200);
 
-        $productos = Producto::where($request->input())
-                                    ->get();        
+        $query = array();
+        $condicion = ($metodo == 0) ? "and" : "or";
 
-        return $this->crearRespuesta('Producto encontrado', $productos, 200);     
-
-        if ($metodo == 'and'){
-
-
-        }else
-        
-        {
-            foreach ($request->input() as $key => $value) {
-                
-                switch ($key) {
-
-
-                    case 'categoria_id':
-                    case 'tasa_id':
-
-
-                        $productos = Producto::where($key, "=" , $value)
-                                    ->get();
-                        break;
-
-                    default: 
-                        $productos = Producto::where($key, "LIKE" , "%$value%");
-                        break;
-                }
-            
-                array_push($valores, $productos);
-            }
-
-        }
-
-        
-        return $this->crearRespuesta('Producto encontrado', $valores, 200);
-
-        $producto = Producto::where($campo, $valor)->get();
-        
-        if(!$producto)
-        {
-            return $this->crearRespuestaError('Producto no existe', 404);
-        }
-        return $this->crearRespuesta('Producto encontrado', $producto, 200);     
-
-    }
-
-    public function readParam($param){
-
-        return $this->crearRespuesta('Producto encontrado', $param, 200);
-
-        $valores = array();
         foreach ($request->input() as $key => $value) {
-            
-            $productos = Producto::where($key, "LIKE" , "%$value%")
-            ->get();
 
-            array_push($valores, $productos);
-        }
-        
+                if (is_numeric($value)){
+                    $queryvalue = [$key, '=', $value, $condicion];    
+                }
+                else{
+                    $queryvalue = [$key, 'LIKE', "%$value%", $condicion];       
+                }
+                
+                array_push($query, $queryvalue);
+        }   
 
-        $producto = Producto::where($campo, $valor)->get();
+        $productos = Producto::where($query)->get();
         
-        if(!$producto)
+        if(!$productos)
         {
-            return $this->crearRespuestaError('Producto no existe', 404);
+            return $this->crearRespuestaError('Productos no encontrados', 404);
         }
-        return $this->crearRespuesta('Producto encontrado', $producto, 200);
+        return $this->crearRespuesta('Producto encontrado', $productos, 200);     
 
     }
 

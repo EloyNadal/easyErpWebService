@@ -19,7 +19,7 @@ class Usuario extends Model implements AuthenticatableContract, AuthorizableCont
      * @var array
      */
     protected $fillable = [
-        'nombre', 'apellidos' ,'email', 'password', 'admin', 'tienda_id' ,'api_token'
+        'id', 'password','api_token', 'empleado_id', 'user_name', 'grupo_usuario_id'
     ];
     /**
      * The attributes excluded from the model's JSON form.

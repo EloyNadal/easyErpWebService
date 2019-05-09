@@ -99,13 +99,21 @@ $router->group(['prefix' => 'tasa'], function () use ($router)
 $router->group(['prefix' => 'producto'], function () use ($router) 
 {
 	$router->get('/', ['uses' => 'ProductoController@readAll']);
-	$router->get('/{campo}={valor}', ['uses' => 'ProductoController@read']);
-	$router->post('/param/{metodo}', ['uses' => 'ProductoController@readQuery']);
+	$router->get('/{id}', ['uses' => 'ProductoController@read']);
+	$router->post('/{metodo}', ['uses' => 'ProductoController@readQuery']);
 	$router->post('/', ['uses' => 'ProductoController@create']);
 	$router->delete('/{id}', ['uses' => 'ProductoController@delete']);
 	$router->put('/{id}', ['uses' => 'ProductoController@update']);
 });
 
+$router->group(['prefix' => 'grupousuario'], function () use ($router) 
+{
+	$router->get('/', ['uses' => 'GrupoUsuario@readAll']);
+	$router->get('/{id}', ['uses' => 'GrupoUsuario@read']);
+	$router->post('/', ['uses' => 'GrupoUsuario@create']);
+	$router->delete('/{id}', ['uses' => 'GrupoUsuario@delete']);
+	$router->put('/{id}', ['uses' => 'GrupoUsuario@update']);
+});
 
 
 //Generar key

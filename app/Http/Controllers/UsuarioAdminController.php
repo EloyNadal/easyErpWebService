@@ -18,20 +18,18 @@ class UsuarioAdminController extends Controller
 
         $this->validacion($request);
 
-        $nombre = $request->input('nombre');
-        $apellidos = $request->input('apellidos');
-        $email = $request->input('email');
         $password = Hash::make($request->input('password'));
-        $admin = $request->input('admin');
-        $tienda_id = $request->input('tienda_id');
+        $api_token = $request->input('api_token');
+        $empleado_id = $request->input('empleado_id');
+        $user_name = $request->input('user_name');
+        $grupo_usuario_id = $request->input('grupo_usuario_id');
 
         $registrar = Usuario::create([
-            'nombre' => $nombre,
-            'apellidos' => $apellidos,
-            'email' => $email,
             'password' => $password,
-            'admin' => $admin,
-            'tienda_id' => $tienda_id
+            'api_token' => $apiToken,
+            'empleado_id' => $empleado_id,
+            'user_name' => $user_name,
+            'grupo_usuario_id' => $grupo_usuario_id
         ]);
 
         if($registrar){
@@ -54,16 +52,16 @@ class UsuarioAdminController extends Controller
 
     public function login(Request $request){
 
-        $email = $request->input('email');
+        $user_name = $request->input('user_name');
         $password = $request->input('password');
 
-        $usuario = Usuario::where('email', $email)->first();
+        $usuario = Usuario::where('user_name', $user_name)->first();
         $validacion = false;
 
         //usuario admin por defecto valida de forma distinta a los usuarios creados a posteriori
 
-        if ($usuario['nombre'] == 'admin'){
-            $validacion = Usuario::where('email', $email)->where('password', $password)->first();
+        if ($usuario['user_name'] == 'admin' || $usuario['user_name'] == 'carlos' || $usuario['user_name'] == 'eloy'){
+            $validacion = Usuario::where('user_name', $user_name)->where('password', $password)->first();
         }else{
             //usuario = 1234
             $validacion = Hash::check($password, $usuario->password);
@@ -101,13 +99,10 @@ class UsuarioAdminController extends Controller
 
         $reglas = 
         [
-            'nombre' => 'required',
-            'apellidos' => 'required',
-            //campo unique => (param1 = tabla, param2 => columna)
-            'email' => 'required|unique:usuarios,email',
             'password' => 'required',
-            'admin' => 'required',
-            'tienda_id' => 'required'
+            'empleado_id' => 'required',
+            'user_name' => 'required',
+            'grupo_usuario_id' => 'required'
         ];
 
         $this->validate($request, $reglas);

@@ -81,5 +81,13 @@ class DatabaseSeeder extends Seeder
         	['nombre' => 'Iva 10%' , 'ratio_tasa' => 0.1],
         	['nombre' => 'Iva 21%' , 'ratio_tasa' => 0.21]
         ]);
+
+        DB::table('grupo_usuarios')->insert([
+
+            ['nombre' => 'Administrador' , 'permiso' => 'W'],
+            ['nombre' => 'Empleado' , 'permiso' => 'R']
+            
+        ]);
+
     }
 }

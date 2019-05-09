@@ -25,11 +25,11 @@ class adminAuthenticate
         else
         {
 
-            $apiToken = explode(' ', $request->header('Authorization'));
+            $apiToken = $request->header('Authorization');
 
-            $usuario = Usuario::where('admin', $apiToken[0])->where('api_token', $apiToken[1])->first();
+            $usuario = where('api_token', $apiToken)->first();
 
-            if (!$usuario || $usuario['admin'] != 1)
+            if (!$usuario || $usuario['grupo_usuario_id'] != 1)
             {
                 return response('Unauthorized.', 401);                
             }

@@ -33,12 +33,13 @@ class AuthServiceProvider extends ServiceProvider
         $this->app['auth']->viaRequest('api', function ($request) {
             if ($request->header('Authorization')) {
 
-                $apiToken = explode(' ', $request->header('Authorization'));
+                //$apiToken = explode(' ', $request->header('Authorization'));
+                $apiToken = $request->header('Authorization');
 
                 //la posicion [0] del apitoken ahora mismo puede ser cualquier valor, pero podria mirar de añadir una barrera mas para segun que permisos necesite
 
                 //ahora el valor admin debe coincidir con el usuario (1)admin (0)user
-                return Usuario::where('admin', $apiToken[0])->where('api_token', $apiToken[1])->first();
+                return Usuario::where('api_token', $apiToken)->first();
             }
         });
     }
