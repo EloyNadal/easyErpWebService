@@ -49,8 +49,6 @@ class ProductoController extends Controller
 
     public function readQuery(Request $request, $metodo){
 
-        return $this->crearRespuesta('Producto encontrado', $request->input(), 200);
-
         $query = array();
         $condicion = ($metodo == 0) ? "and" : "or";
 

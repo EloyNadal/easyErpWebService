@@ -93,7 +93,7 @@ class UsuarioAdminController extends Controller
         }
     }
 
-
+    
     public function validacion($request)
     {   
 
