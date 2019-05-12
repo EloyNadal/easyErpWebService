@@ -6,10 +6,7 @@ use Laravel\Lumen\Routing\Controller as BaseController;
 
 class Controller extends BaseController
 {   
-
-    protected $key = 'eAsYeRpCeRn0vIGV';
     
-
 	public function crearRespuesta($mensaje, $datos, $codigo)
     {   
 
@@ -17,7 +14,8 @@ class Controller extends BaseController
     	return response()->json([
             'succes' => true,
             'message' => $mensaje,
-            'data' => $this->encrypt($datos, $this->key)
+            //'data' => $datos
+            'data' => $this->encrypt($datos, getenv('KEY'))
         ], $codigo);
     }
 
