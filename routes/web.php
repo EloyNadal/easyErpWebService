@@ -32,6 +32,7 @@ $router->group(['prefix' => 'cliente'], function () use ($router)
 {
 	$router->get('/', ['uses' => 'ClienteController@readAll']);
 	$router->get('/{id}', ['uses' => 'ClienteController@read']);
+	$router->post('/{metodo}', ['uses' => 'ProductoController@readQuery']);
 	$router->post('/', ['uses' => 'ClienteController@create']);
 	$router->delete('/{id}', ['uses' => 'ClienteController@delete']);
 	$router->put('/{id}', ['uses' => 'ClienteController@update']);
@@ -63,6 +64,7 @@ $router->group(['prefix' => 'proveedor'], function () use ($router)
 {
 	$router->get('/', ['uses' => 'ProveedorController@readAll']);
 	$router->get('/{id}', ['uses' => 'ProveedorController@read']);
+	$router->post('/{metodo}', ['uses' => 'ProductoController@readQuery']);
 	$router->post('/', ['uses' => 'ProveedorController@create']);
 	$router->delete('/{id}', ['uses' => 'ProveedorController@delete']);
 	$router->put('/{id}', ['uses' => 'ProveedorController@update']);
@@ -113,6 +115,16 @@ $router->group(['prefix' => 'grupousuario'], function () use ($router)
 	$router->post('/', ['uses' => 'GrupoUsuario@create']);
 	$router->delete('/{id}', ['uses' => 'GrupoUsuario@delete']);
 	$router->put('/{id}', ['uses' => 'GrupoUsuario@update']);
+});
+
+$router->group(['prefix' => 'empleado'], function () use ($router) 
+{
+	$router->get('/', ['uses' => 'EmpleadoController@readAll']);
+	$router->get('/{id}', ['uses' => 'EmpleadoController@read']);
+	$router->post('/{metodo}', ['uses' => 'EmpleadoController@readQuery']);
+	$router->post('/', ['uses' => 'EmpleadoController@create']);
+	$router->delete('/{id}', ['uses' => 'EmpleadoController@delete']);
+	$router->put('/{id}', ['uses' => 'EmpleadoController@update']);
 });
 
 

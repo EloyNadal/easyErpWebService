@@ -60,6 +60,33 @@ class ClienteController extends Controller
 
     }
 
+    public function readQuery(Request $request, $metodo){
+
+        $query = array();
+        $condicion = ($metodo == 0) ? "and" : "or";
+
+        foreach ($request->input() as $key => $value) {
+
+                if (is_numeric($value)){
+                    $queryvalue = [$key, '=', $value, $condicion];    
+                }
+                else{
+                    $queryvalue = [$key, 'LIKE', "%$value%", $condicion];       
+                }
+                
+                array_push($query, $queryvalue);
+        }   
+
+        $clientes = Cliente::where($query)->get();
+        
+        if(!$clientes)
+        {
+            return $this->crearRespuestaError('Productos no encontrados', 404);
+        }
+        return $this->crearRespuesta('Producto encontrado', $clientes, 200);     
+
+    }
+
     public function update($id, Request $request){
 
         $this->validacion($request, 'update');

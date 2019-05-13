@@ -54,6 +54,33 @@ class ProveedorController extends Controller
 
     }
 
+    public function readQuery(Request $request, $metodo){
+
+        $query = array();
+        $condicion = ($metodo == 0) ? "and" : "or";
+
+        foreach ($request->input() as $key => $value) {
+
+                if (is_numeric($value)){
+                    $queryvalue = [$key, '=', $value, $condicion];    
+                }
+                else{
+                    $queryvalue = [$key, 'LIKE', "%$value%", $condicion];       
+                }
+                
+                array_push($query, $queryvalue);
+        }   
+
+        $proveedor = Proveedor::where($query)->get();
+        
+        if(!$proveedor)
+        {
+            return $this->crearRespuestaError('Productos no encontrados', 404);
+        }
+        return $this->crearRespuesta('Producto encontrado', $proveedor, 200);     
+
+    }
+
     public function update(Request $request, $id){
 
         $this->validacion($request);
