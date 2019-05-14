@@ -17,35 +17,67 @@ class CompraLineaController extends Controller
         $this->middleware('admin', ['only' => ['create', 'delete', 'update']]);
     }
 
-    public function read($tienda_id, $compra_id){
+    public function read($id){
         
-        $compra_linea = Compralinea::where('tienda_id', $tienda_id)
-                ->where('compra_id', $compra_id)
+        $compra_linea = Compralinea::where('id', $id)
                 ->get();
 
         if($compra_linea)
         {
-            return $this->crearRespuesta('Lineas encontradas', $compra, 200);
+            return $this->crearRespuesta('Linea encontradas', $compra, 200);
         }
         else{
-            return $this->crearRespuestaError('No existen', 404);
+            return $this->crearRespuestaError('No existe', 404);
         }
 
     }
 
-    public function readAll($tienda_id){
+    public function readQuery(Request $request, $metodo){
 
-        $compra_linea = Compralinea::where('tienda_id', $tienda_id)
-                ->get();
+        $query = array();
+        $condicion = ($metodo == 0) ? "and" : "or";
 
-        if($compra_linea)
-        {
-            return $this->crearRespuesta('Lineas encontradas', $compra, 200);
-        }
-        else{
-            return $this->crearRespuestaError('No existen', 404);
-        }
+        foreach ($request->input() as $key => $value) {
+
+            if (is_numeric($value)){
+                $queryvalue = [$key, '=', $value, $condicion];    
+            }
+            else{
+                $queryvalue = [$key, 'LIKE', "%$value%", $condicion];       
+            }
+                
+            array_push($query, $queryvalue);
+        }   
+
+        $compra_lineas = Compralinea::where($query)->get();
         
+        if(!$compra_lineas)
+        {
+            return $this->crearRespuestaError('Lineas de compra no encontrados', 404);
+        }
+        return $this->crearRespuesta('Lineas de compra encontradas', $compra_lineas, 200);
+    }
+
+
+    //$request= Array con los paramaetro id y cantidad de la linea
+    //$compra_id = id de la compra
+    public function update(Request $request, $compra_id){
+
+        $compra = Compra::where('id', $compra_id)->first();
+
+        if($compra){
+
+            foreach ($request->input() as $linea) {
+                
+                Compralinea::where('id', $linea['id'])
+                    ->update(['cantidad' => $linea['cantidad']]);
+            
+            }
+            $compra_lineas = Compralinea::where('compra_id', $compra_id)->get();
+            return $this->crearRespuesta('Lineas actualizadas', $compra_lineas, 200);
+        }
+
+        return $this->crearRespuestaError('Compra no existe', 404);        
     }
 
     public function validacion($request, $metodo)

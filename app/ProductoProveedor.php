@@ -8,15 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 
-class GrupoUsuario extends Model
+
+class ProductoProveedor extends Model
 {
-    protected $table = 'grupo_usuarios';
+    protected $table = 'producto_proveedores';
     public $timestamps = false;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['id', 'nombre', 'permiso'];
-    
+    protected $fillable = ['producto_id', 'proveedor_id'];
+
+
 }

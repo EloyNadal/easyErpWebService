@@ -14,8 +14,8 @@ class Controller extends BaseController
     	return response()->json([
             'succes' => true,
             'message' => $mensaje,
-            //'data' => $datos
-            'data' => $this->encrypt($datos, getenv('KEY'))
+            'data' => $datos
+            //'data' => $this->encrypt($datos, getenv('KEY'))
         ], $codigo);
     }
 

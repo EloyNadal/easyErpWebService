@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\GrupoCliente;
+use App\Cliente;
 
 class GrupoClienteController extends Controller
 {    
@@ -24,8 +25,14 @@ class GrupoClienteController extends Controller
     public function delete($id){
 
         $grupo_cliente = GrupoCliente::where('id', $id)->first();
-
+        
         if($grupo_cliente){
+
+            $clientes = Cliente::where('grupo_cliente_id', $id)->get();
+            if (sizeof($clientes) > 0){
+                return $this->crearRespuestaError("El grupo contiene clientes que se deben borrar antes", 404);    
+            }
+
             $grupo_cliente->delete();
             return $this->crearRespuesta("Grupo de clientes $id eliminado", $grupo_cliente, 200);
         }
@@ -53,6 +60,36 @@ class GrupoClienteController extends Controller
         return $this->crearRespuesta('Grupo de clientes encontrados', $grupo_clientes, 200);
 
     }
+
+    public function readQuery(Request $request, $metodo){
+        
+        //cambiar nombre variables
+
+        $query = array();
+        $condicion = ($metodo == 0) ? "and" : "or";
+
+        foreach ($request->input() as $key => $value) {
+
+                if (is_numeric($value)){
+                    $queryvalue = [$key, '=', $value, $condicion];    
+                }
+                else{
+                    $queryvalue = [$key, 'LIKE', "%$value%", $condicion];       
+                }
+                
+                array_push($query, $queryvalue);
+        }   
+
+        $grupo_cliente = GrupoCliente::where($query)->get();
+        
+        if(!$grupo_clientes)
+        {
+            return $this->crearRespuestaError('Grupos de clientes no encontrados', 404);
+        }
+        return $this->crearRespuesta('Grupos de clientes encontrados', $clientes, 200);     
+
+    }
+
 
     public function update(Request $request, $id){
 

@@ -17,18 +17,16 @@ class CrearTablaUsuarios extends Migration
         //Schema::disableForeignKeyConstraints();
         Schema::create('usuarios', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
-            $table->string('apellidos');
-            $table->string('email'); //-> unique();
+            $table->integer('empleado_id')->unsigned();
+            $table->string('user_name', 32);
+            $table->integer('grupo_usuario_id')->unsigned();
             $table->string('password');
-            $table->boolean('admin');
-            $table->integer('tienda_id')->unsigned();
             $table->string('api_token');
             $table->timestamps();
 
         });
     }
-
+            
     /**
      * Reverse the migrations.
      *

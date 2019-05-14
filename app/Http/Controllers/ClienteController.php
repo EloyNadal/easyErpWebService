@@ -44,7 +44,12 @@ class ClienteController extends Controller
         
         $cliente = Cliente::where('id', $id)->first();
 
+
         if($cliente){
+
+            $grupo_cliente = GrupoCliente::where('id', $cliente['grupo_cliente_id'])->first();
+            $cliente->grupo_cliente = $grupo_cliente;
+
             return $this->crearRespuesta('Cliente encontrado', $cliente, 200);
         }
         else{
@@ -56,8 +61,18 @@ class ClienteController extends Controller
     public function readAll(){
 
         $clientes = Cliente::all();
-        return $this->crearRespuesta('Clientes encontradas', $clientes, 200);
 
+        if (sizeof($clientes)>0){
+
+            foreach ($clientes as $cliente) {
+                $grupo_cliente = GrupoCliente::where('id', $cliente['grupo_cliente_id'])->first();
+                $cliente->grupo_cliente = $grupo_cliente;
+            }
+
+            return $this->crearRespuesta('Clientes encontradas', $clientes, 200);
+
+        }
+        return $this->crearRespuestaError('No existen clientes', 404);
     }
 
     public function readQuery(Request $request, $metodo){
@@ -83,6 +98,10 @@ class ClienteController extends Controller
         {
             return $this->crearRespuestaError('Productos no encontrados', 404);
         }
+        foreach ($clientes as $cliente) {
+                $grupo_cliente = GrupoCliente::where('id', $cliente['grupo_cliente_id'])->first();
+                $cliente->grupo_cliente = $grupo_cliente;
+            }        
         return $this->crearRespuesta('Producto encontrado', $clientes, 200);     
 
     }

@@ -13,26 +13,6 @@
 use Illuminate\Support\Facades\DB;
 
 
-$factory->define(App\Categoria::class, function ($faker) {
-    $faker = Faker\Factory::create('es_ES');
-    return [
-        'nombre' => $faker->name,
-        'categoria_id' => $faker->numberBetween(1,5)
-    ];
-});
-
-
-$factory->define(App\Compra::class, function ($faker) {
-    $faker = Faker\Factory::create('es_ES');
-    return [
-        'tienda_id' => $faker->numberBetween(1,5),
-        'proveedor_id' => $faker->numberBetween(1,5),
-        'precio_sin_tasas' => $faker->randomFloat(3, 0.000, 100.999),
-        'total_tasas' => $faker->randomFloat(3, 0.000, 100.999),
-        'precio_total' => $faker->randomFloat(3, 0.000, 100.999)
-    ];
-});
-
 $factory->define(App\CompraLinea::class, function ($faker) {
     $faker = Faker\Factory::create('es_ES');
     return [
@@ -100,29 +80,6 @@ $factory->define(App\Tienda::class, function (Faker\Generator $faker) {
 });
 
 
-$factory->define(App\Venta::class, function ($faker) {
-    $faker = Faker\Factory::create('es_ES');
-    return [
-        'tienda_id' => $faker->numberBetween(1,5),
-        'cliente_id' => $faker->numberBetween(1,5),
-        'usuario_id' => $faker->numberBetween(2,6),
-        'precio_sin_tasas' => $faker->randomFloat(3, 0.000, 100.999),
-        'total_tasas' => $faker->randomFloat(3, 0.000, 100.999),
-        'precio_total' => $faker->randomFloat(3, 0.000, 100.999)
-    ];
-});
-
-$factory->define(App\VentaLinea::class, function ($faker) {
-    $faker = Faker\Factory::create('es_ES');
-    return [
-        'tienda_id' => $faker->numberBetween(1,5),
-        'venta_id' => $faker->numberBetween(1,5),
-        'producto_id' => $faker->numberBetween(1,10),
-        'precio' => $faker->randomFloat(3, 0.000, 100.999),
-        'tasa_id' => $faker->numberBetween(1,5),
-        'cantidad' => $faker->randomFloat(3, 0.000, 10.999)
-    ];
-});
 
 $factory->define(App\Cliente::class, function (Faker\Generator $faker) {
     $faker = Faker\Factory::create('es_ES');
@@ -143,19 +100,17 @@ $factory->define(App\Cliente::class, function (Faker\Generator $faker) {
 $factory->define(App\Stock::class, function ($faker) {
     $faker = Faker\Factory::create('es_ES');
     return [
-        'tienda_id' => $faker->numberBetween(1,3),
-        'producto_id' => $faker->numberBetween(1,3),
-        'cantidad' => $faker->randomFloat(3, 0.000, 100.999)
+        'tienda_id' => $faker->numberBetween(1,5),
+        'producto_id' => $faker->numberBetween(1,5),
+        'cantidad' => $faker->randomFloat(3, 0.000, 100.000)
     ];
 });
 
-$factory->define(App\Tasa::class, function ($faker) {
+
+$factory->define(App\ProductoProveedor::class, function ($faker) {
     $faker = Faker\Factory::create('es_ES');
     return [
-        'nombre' => $faker->firstName(null),
-        'ratio_tasa' => $faker->randomFloat(3, 0.000, 10.000)
+        'proveedor_id' => $faker->numberBetween(1,5),
+        'producto_id' => $faker->numberBetween(1,5),
     ];
 });
-
-
-

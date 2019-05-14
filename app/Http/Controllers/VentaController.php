@@ -76,10 +76,9 @@ class VentaController extends Controller
         return $this->crearRespuesta('Venta creada', $venta, 200);
     }
 
-    public function read($tienda_id, $id){
+    public function read($id){
         
-        $venta = Venta::where('tienda_id', $tienda_id)
-            ->where('id', $id)
+        $venta = Venta::where('id', $id)
             ->first();
 
         if($venta)
@@ -99,16 +98,31 @@ class VentaController extends Controller
 
     }
 
-    public function readAll($tienda_id){
+    public function readQuery(Request $request, $metodo){
 
-        $ventas = Venta::where('tienda_id', $tienda_id)
-            ->get();
+        $query = array();
+        $condicion = ($metodo == 0) ? "and" : "or";
+
+        foreach ($request->input() as $key => $value) {
+
+                if (is_numeric($value)){
+                    $queryvalue = [$key, '=', $value, $condicion];    
+                }
+                else{
+                    $queryvalue = [$key, 'LIKE', "%$value%", $condicion];       
+                }
+                
+                array_push($query, $queryvalue);
+        }   
+
+        $ventas = Venta::where($query)->get();
+
 
         if (sizeof($ventas) > 0){
 
             foreach ($ventas as $venta) {
 
-                $lineas = VentaLinea::where('tienda_id', $tienda_id)
+                $lineas = VentaLinea::where('tienda_id', $venta['tienda_id'])
                 ->where('venta_id', $venta['id'])
                 ->get();
 
@@ -120,7 +134,6 @@ class VentaController extends Controller
         }else{
             return $this->crearRespuestaError('No existen ventas', 404);
         }
-        
 
     }
 

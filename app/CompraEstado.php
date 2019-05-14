@@ -7,16 +7,17 @@ use Laravel\Lumen\Auth\Authorizable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
+use App\CompraProducto;
 
-class GrupoUsuario extends Model
+class CompraEstado extends Model
 {
-    protected $table = 'grupo_usuarios';
-    public $timestamps = false;
+ 	protected $table = 'compra_estados';
+ 	//public $timestamps = false;   
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['id', 'nombre', 'permiso'];
-    
+    protected $fillable = ['compra_id', 'estado'];
+
 }

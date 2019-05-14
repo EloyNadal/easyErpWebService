@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaStocks extends Migration
+class CrearTablaGrupoUsuarios extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class CrearTablaStocks extends Migration
      */
     public function up()
     {
-        Schema::create('stocks', function (Blueprint $table) {
+        Schema::dropIfExists('grupo_usuarios');
+        Schema::create('grupo_usuarios', function (Blueprint $table) {
+
             $table->increments('id');
-            $table->integer('tienda_id')->unsigned();
-            $table->integer('producto_id')->unsigned();
-            $table->float('cantidad', 8, 3);
+            $table->string('nombre', 64);            
+            $table->enum('permiso', ['R', 'W']);
+
         });
     }
-
 
     /**
      * Reverse the migrations.
@@ -29,6 +30,6 @@ class CrearTablaStocks extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stocks');
+        Schema::dropIfExists('grupo_usuarios');
     }
 }

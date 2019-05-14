@@ -14,7 +14,6 @@ class CrearTablaVentasProductos extends Migration
     public function up()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('ventas_productos');
         Schema::dropIfExists('venta_lineas');
         Schema::create('venta_lineas', function (Blueprint $table) {
             $table->increments('id');
@@ -24,10 +23,7 @@ class CrearTablaVentasProductos extends Migration
             $table->float('precio', 8, 3);
             $table->integer('tasa_id')->unsigned();
             $table->float('cantidad', 8, 3);
-            $table->string('unidad_mesura', 16);
 
-
-          
         });
     }
 
@@ -38,7 +34,6 @@ class CrearTablaVentasProductos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ventas_productos');
         Schema::dropIfExists('venta_lineas');
     }
 }

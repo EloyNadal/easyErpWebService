@@ -18,8 +18,8 @@ class CrearTablaCompras extends Migration
             $table->increments('id');
             $table->integer('tienda_id')->unsigned();
             $table->integer('proveedor_id')->unsigned();
-            $table->float('precio', 8, 3);
-            $table->float('iva', 8, 3);
+            $table->float('precio_sin_tasas', 8, 3);
+            $table->float('total_tasas', 8, 3);
             $table->float('precio_total', 8, 3);
             $table->timestamps();
 

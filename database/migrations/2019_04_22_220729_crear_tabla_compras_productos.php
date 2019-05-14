@@ -13,7 +13,6 @@ class CrearTablaComprasProductos extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('compras_productos');
         Schema::dropIfExists('compra_lineas');
         Schema::create('compra_lineas', function (Blueprint $table) {
             
@@ -24,7 +23,6 @@ class CrearTablaComprasProductos extends Migration
             $table->float('precio', 8, 3);
             $table->integer('tasa_id')->unsigned();
             $table->float('cantidad', 8, 3);
-            $table->string('unidad_mesura', 16);
         });
     }
 

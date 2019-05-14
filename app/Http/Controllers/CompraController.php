@@ -44,7 +44,7 @@ class CompraController extends Controller
         ]);
 
 
-        foreach ($request->input('compras_productos') as $linea) {
+        foreach ($request->input('compra_linea') as $linea) {
             
             $producto_id = $linea['producto_id'];
 
@@ -71,15 +71,14 @@ class CompraController extends Controller
         return $this->crearRespuesta('Compra creada', $compra, 200);
     }
 
-    public function read($tienda_id, $id){
+    public function read($id){
         
-        $compra = Compra::where('tienda_id', $tienda_id)
-            ->where('id', $id)
+        $compra = Compra::where('id', $id)
             ->first();
 
         if($compra)
         {
-            $lineas = CompraLinea::where('tienda_id', $tienda_id)
+            $lineas = CompraLinea::where('tienda_id', $compra['tienda_id'])
                 ->where('compra_id', $compra['id'])
                 ->get();
 
@@ -94,16 +93,30 @@ class CompraController extends Controller
 
     }
 
-    public function readAll($tienda_id){
+    public function readQuery(Request $request, $metodo){
 
-        $compras = Compra::where('tienda_id', $tienda_id)
-            ->get();
+        $query = array();
+        $condicion = ($metodo == 0) ? "and" : "or";
+
+        foreach ($request->input() as $key => $value) {
+
+                if (is_numeric($value)){
+                    $queryvalue = [$key, '=', $value, $condicion];    
+                }
+                else{
+                    $queryvalue = [$key, 'LIKE', "%$value%", $condicion];       
+                }
+                
+                array_push($query, $queryvalue);
+        }   
+
+        $compras = Compra::where($query)->get();
 
         if (sizeof($compras) > 0){
 
             foreach ($compras as $compra) {
 
-                $lineas = CompraLinea::where('tienda_id', $tienda_id)
+                $lineas = CompraLinea::where('tienda_id', $compra['tienda_id'])
                 ->where('compra_id', $compra['id'])
                 ->get();
 
@@ -115,9 +128,60 @@ class CompraController extends Controller
         }else{
             return $this->crearRespuestaError('No existen compras', 404);
         }
-        
+    }
+
+    public function update(Request $request, $id){
+
+        $this->validacion($request);
+
+        $tienda_id = $request->input('tienda_id');
+        $proveedor_id = $request->input('proveedor_id');
+
+        if(!Tienda::where('id', $tienda_id)->first())
+        {
+            return $this->crearRespuestaError('Tienda no existe', 404);
+        }
+
+        if(!Proveedor::where('id', $proveedor_id)->first())
+        {
+            return $this->crearRespuestaError('Proveedor no existe', 404);
+        }
+
+        $compra = Compra::where('id', $id)
+            ->first();
+
+
+        if($compra)
+        {   
+            $lineas_actualizadas = $request->input('compra_linea');
+
+            if ($lineas_actualizadas){
+
+                foreach ($lineas_actualizadas as $linea) {
+                    
+                    Compralinea::where('id', $linea['id'])
+                            ->update(['cantidad' => $linea['cantidad']]);
+
+                }
+            }
+
+            $compra->update($request->all());
+            $compra->compra_linea = CompraLinea::where('tienda_id', $compra['tienda_id'])
+                ->where('compra_id', $compra['id'])
+                ->get();
+            
+            return $this->crearRespuesta('Compra actualizada', $compra, 200);
+        }
+        else{
+
+            return $this->crearRespuestaError('Compra no existe', 404);
+        }
+
+
+
 
     }
+
 
     public function validacion($request)
     {

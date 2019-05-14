@@ -32,7 +32,7 @@ $router->group(['prefix' => 'cliente'], function () use ($router)
 {
 	$router->get('/', ['uses' => 'ClienteController@readAll']);
 	$router->get('/{id}', ['uses' => 'ClienteController@read']);
-	$router->post('/{metodo}', ['uses' => 'ProductoController@readQuery']);
+	$router->post('/{metodo}', ['uses' => 'ClienteController@readQuery']);
 	$router->post('/', ['uses' => 'ClienteController@create']);
 	$router->delete('/{id}', ['uses' => 'ClienteController@delete']);
 	$router->put('/{id}', ['uses' => 'ClienteController@update']);
@@ -40,15 +40,16 @@ $router->group(['prefix' => 'cliente'], function () use ($router)
 
 $router->group(['prefix' => 'compra'], function () use ($router) 
 {
-	$router->get('/{tienda_id}', ['uses' => 'CompraController@readAll']);
-	$router->get('/{tienda_id}/{id}', ['uses' => 'CompraController@read']);
+	$router->get('/{id}', ['uses' => 'CompraController@read']);
+	$router->post('/{metodo}', ['uses' => 'CompraController@readQuery']);
 	$router->post('/', ['uses' => 'CompraController@create']);
+	$router->put('/{id}', ['uses' => 'CompraController@update']);
 });
 
-$router->group(['prefix' => 'compraLina'], function () use ($router) 
+$router->group(['prefix' => 'compralinea'], function () use ($router) 
 {
-	$router->get('/{tienda_id}', ['uses' => 'CompraController@readAll']);
-	$router->get('/{tienda_id}/{compra_id}', ['uses' => 'CompraController@read']);
+	$router->get('/{id}', ['uses' => 'CompraLineaController@read']);
+	$router->put('/{compra_id}', ['uses' => 'CompraLineaController@update']);
 });
 
 $router->group(['prefix' => 'grupocliente'], function () use ($router) 
@@ -82,11 +83,12 @@ $router->group(['prefix' => 'tienda'], function () use ($router)
 
 $router->group(['prefix' => 'stock'], function () use ($router) 
 {
-	$router->get('/{tienda_id}/{producto_id}', ['uses' => 'StockController@read']);
-	$router->get('/', ['uses' => 'StockController@readAllShops']);
-	$router->get('/{tienda_id}', ['uses' => 'StockController@readOneShop']);
-	$router->post('/', ['uses' => 'StockController@createAll']);
-	$router->put('/', ['uses' => 'StockController@update']);
+	$router->get('/{id}', ['uses' => 'StockController@read']);
+	$router->get('/', ['uses' => 'StockController@readAll']);
+	$router->post('/{metodo}', ['uses' => 'StockController@readQuery']);
+	$router->post('/', ['uses' => 'StockController@create']);
+	$router->post('/[/init/]', ['uses' => 'StockController@createAll']);
+	$router->put('/{id}', ['uses' => 'StockController@update']);
 });
 
 $router->group(['prefix' => 'tasa'], function () use ($router) 
@@ -125,6 +127,13 @@ $router->group(['prefix' => 'empleado'], function () use ($router)
 	$router->post('/', ['uses' => 'EmpleadoController@create']);
 	$router->delete('/{id}', ['uses' => 'EmpleadoController@delete']);
 	$router->put('/{id}', ['uses' => 'EmpleadoController@update']);
+});
+
+$router->group(['prefix' => 'venta'], function () use ($router) 
+{
+	$router->get('/{id}', ['uses' => 'VentaController@readAll']);
+	$router->post('/{metodo}', ['uses' => 'VentaController@readQuery']);
+	$router->post('/', ['uses' => 'VentaController@create']);
 });
 
 

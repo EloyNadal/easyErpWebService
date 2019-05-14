@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Producto;
+use App\Tasa;
+use App\Categoria;
 
 class ProductoController extends Controller
 {    
@@ -43,6 +45,13 @@ class ProductoController extends Controller
         {
             return $this->crearRespuestaError('Producto no existe', 404);
         }
+
+        $tasa = Tasa::where('id', $producto['tasa_id'])->first();
+        $categoria = Categoria::where('id', $producto['categoria_id'])->first();
+
+        $producto->categoria = $categoria;
+        $producto->tasa = $tasa;
+
         return $this->crearRespuesta('Producto encontrado', $producto, 200);     
 
     }
@@ -70,15 +79,38 @@ class ProductoController extends Controller
         {
             return $this->crearRespuestaError('Productos no encontrados', 404);
         }
-        return $this->crearRespuesta('Producto encontrado', $productos, 200);     
 
+        foreach ($productos as $producto) {
+
+            $tasa = Tasa::where('id', $producto['tasa_id'])->first();
+            $categoria = Categoria::where('id', $producto['categoria_id'])->first();
+
+            $producto->categoria = $categoria;
+            $producto->tasa = $tasa;
+        }
+
+        return $this->crearRespuesta('Producto encontrado', $productos, 200);     
     }
 
     public function readAll(){
 
         $productos = Producto::all();
-        return $this->crearRespuesta('Productos encontrados', $productos, 200);
 
+        if(sizeof($productos)>0){
+
+            foreach ($productos as $producto) {
+
+                $tasa = Tasa::where('id', $producto['tasa_id'])->first();
+                $categoria = Categoria::where('id', $producto['categoria_id'])->first();
+
+                $producto->categoria = $categoria;
+                $producto->tasa = $tasa;
+                
+            }
+            return $this->crearRespuesta('Productos encontrados', $productos, 200);
+        }
+
+        return $this->crearRespuestaError('Productos no encontrados', 404);
     }
 
     public function update(Request $request, $id){

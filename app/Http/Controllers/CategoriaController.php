@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Categoria;
+use App\Producto;
 
 class CategoriaController extends Controller
 {    
@@ -38,6 +39,12 @@ class CategoriaController extends Controller
         $categoria = Categoria::where('id', $id)->first();
 
         if($categoria){
+
+            $productos = Producto::where('categoria_id', $id)->get();
+            if (sizeof($productos) > 0){
+                return $this->crearRespuestaError("La categoria contiene productos que se deben borrar antes", 404);    
+            }
+
             $categoria->delete();
             return $this->crearRespuesta('Categoria eliminada', $categoria, 200);
         }
@@ -50,6 +57,7 @@ class CategoriaController extends Controller
     public function read($id){
         
         $categoria = Categoria::where('id', $id)->first();
+
 
 
         if($categoria){

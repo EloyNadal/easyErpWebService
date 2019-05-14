@@ -27,7 +27,7 @@ class adminAuthenticate
 
             $apiToken = $request->header('Authorization');
 
-            $usuario = where('api_token', $apiToken)->first();
+            $usuario = Usuario::where('api_token', $apiToken)->first();
 
             if (!$usuario || $usuario['grupo_usuario_id'] != 1)
             {

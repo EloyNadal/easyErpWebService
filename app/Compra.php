@@ -21,10 +21,4 @@ class Compra extends Model
     protected $fillable = ['tienda_id', 'proveedor_id', 'precio_sin_tasas', 'total_tasas', 'precio_total'];
 
 
-    public function comprasProductos($id)
-	{
-		$compras = CompraProducto::where('compra_id', $id);
-		return $compras;
-	}
-
 }

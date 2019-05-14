@@ -19,15 +19,14 @@ class CrearTablaVentas extends Migration
             $table->integer('tienda_id')->unsigned();
             $table->integer('cliente_id')->unsigned();
             $table->integer('usuario_id')->unsigned();
-            $table->float('precio', 8, 3);
-            $table->float('iva', 8, 3);
+            $table->float('precio_sin_tasas', 8, 3);
+            $table->float('total_tasas', 8, 3);
             $table->float('precio_total', 8, 3);            
             $table->timestamps();
 
-
-
         });
     }
+
 
     /**
      * Reverse the migrations.
