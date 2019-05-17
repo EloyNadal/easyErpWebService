@@ -16,11 +16,7 @@ class StockController extends Controller
 
     public function create(Request $request){
 
-        $stock = Stock::create(
-            'tienda_id' => $tienda_id,
-            'producto_id' => $producto_id,
-            'cantidad' => 0
-        );
+        $stock = Stock::create($request->all());
 
         return $this->crearRespuesta('Stock almacenado', $stock, 201);
     }
@@ -56,17 +52,26 @@ class StockController extends Controller
         {
             return $this->crearRespuestaError('El producto no contiene datos', 404);
         }
-        return $this->crearRespuesta('Stock encontrado', $tienda, 200);
+        $stock->tienda = Tienda::where('id', $stock['tienda_id'])->first();
+        $stock->producto = Producto::where('id', $stock['producto_id'])->first();
+        return $this->crearRespuesta('Stock encontrado', $stock, 200);
 
     }
 
     public function readAll(){
 
-        $stock = Stock::all();
+        $stocks = Stock::all();
         if(!$stock){
             return $this->crearRespuestaError("Sin stocks credos", 404);   
         }
-        return $this->crearRespuesta('Stocks encontrados', $stock, 200);
+
+        foreach ($stock as $stock) {
+            
+            $stock->tienda = Tienda::where('id', $stock['tienda_id'])->first();
+            $stock->producto = Producto::where('id', $stock['producto_id'])->first();
+        }
+
+        return $this->crearRespuesta('Stocks encontrados', $stocks, 200);
 
     }
 
@@ -87,13 +92,24 @@ class StockController extends Controller
                 array_push($query, $queryvalue);
         }   
 
-        $stock = Stock::where($query)->get();
+        $stocks = Stock::where($query)->get();
         
-        if(!$stock)
-        {
+        if(sizeof($stocks) < 0)
+        {   
             return $this->crearRespuestaError('Stocks no encontrados', 404);
         }
-        return $this->crearRespuesta('Stocks encontrados', $proveedor, 200);     
+        
+        foreach ($stocks as $stock) {
+
+            $tienda = Tienda::where('id', $stock['tienda_id'])->first();
+            $stock->tienda = $tienda;
+            $producto = Producto::where('id', $stock['producto_id'])->first();
+            $stock->producto = $producto;
+            
+        }
+
+
+        return $this->crearRespuesta('Stocks encontrados', $stocks, 200);     
 
     }
 

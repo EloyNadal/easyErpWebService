@@ -130,10 +130,16 @@ $router->group(['prefix' => 'empleado'], function () use ($router)
 });
 
 $router->group(['prefix' => 'venta'], function () use ($router) 
-{
+{	
 	$router->get('/{id}', ['uses' => 'VentaController@readAll']);
 	$router->post('/{metodo}', ['uses' => 'VentaController@readQuery']);
 	$router->post('/', ['uses' => 'VentaController@create']);
+});
+
+$router->group(['prefix' => 'ventalinea'], function () use ($router) 
+{
+	$router->get('/{id}', ['uses' => 'VentaLineaController@read']);
+	$router->post('/{metodo}', ['uses' => 'VentaLineaController@readQuery']);
 });
 
 

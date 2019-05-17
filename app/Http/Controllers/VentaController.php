@@ -83,7 +83,7 @@ class VentaController extends Controller
 
         if($venta)
         {
-            $lineas = VentaLinea::where('tienda_id', $tienda_id)
+            $lineas = VentaLinea::where('tienda_id', $venta['tienda_id'])
                 ->where('venta_id', $venta['id'])
                 ->get();
 

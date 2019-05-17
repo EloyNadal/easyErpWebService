@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Producto;
 use App\Tasa;
 use App\Categoria;
+use App\Stock;
 
 class ProductoController extends Controller
 {    
@@ -48,7 +49,12 @@ class ProductoController extends Controller
 
         $tasa = Tasa::where('id', $producto['tasa_id'])->first();
         $categoria = Categoria::where('id', $producto['categoria_id'])->first();
+        $stocks = Stock::where('producto_id', $productos['id'])->get();
 
+        if($stocks){
+            $producto->stocks = $stocks;    
+        }
+        
         $producto->categoria = $categoria;
         $producto->tasa = $tasa;
 
@@ -84,6 +90,11 @@ class ProductoController extends Controller
 
             $tasa = Tasa::where('id', $producto['tasa_id'])->first();
             $categoria = Categoria::where('id', $producto['categoria_id'])->first();
+            $stocks = Stock::where('producto_id', $producto['id'])->get();
+
+            if($stocks){
+                $producto->stocks = $stocks;    
+            }
 
             $producto->categoria = $categoria;
             $producto->tasa = $tasa;
@@ -102,9 +113,17 @@ class ProductoController extends Controller
 
                 $tasa = Tasa::where('id', $producto['tasa_id'])->first();
                 $categoria = Categoria::where('id', $producto['categoria_id'])->first();
+                $stocks = Stock::where('producto_id', $producto['id'])->get();
+                
 
+
+
+                if($stocks){
+                   $producto->stocks = $stocks;    
+                }
                 $producto->categoria = $categoria;
                 $producto->tasa = $tasa;
+                $producto->stocks = $stocks;
                 
             }
             return $this->crearRespuesta('Productos encontrados', $productos, 200);
@@ -151,7 +170,7 @@ class ProductoController extends Controller
             'unidad_mesura' => 'required',
             'precio' => 'required',
             'tasa_id' => 'required',
-            'stock_minimo' => 'required',
+            'stocks_minimo' => 'required',
             'activo' => 'required'
         ];
 
