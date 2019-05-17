@@ -138,8 +138,8 @@ $router->group(['prefix' => 'venta'], function () use ($router)
 
 $router->group(['prefix' => 'ventalinea'], function () use ($router) 
 {
-	$router->get('/{id}', ['uses' => 'VentaLineaController@read']);
-	$router->post('/{metodo}', ['uses' => 'VentaLineaController@readQuery']);
+	$router->get('/{id}', ['uses' => 'ventaLineaController@read']);
+	$router->post('/{metodo}', ['uses' => 'ventaLineaController@readQuery']);
 });
 
 

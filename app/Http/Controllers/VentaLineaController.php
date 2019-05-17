@@ -7,12 +7,12 @@ use App\VentaLinea;
 use App\Tienda;
 use App\Producto;
 
-class VentaController extends Controller
+class VentaLineaController extends Controller
 {   
     
     public function __construct()
     {
-        $this->middleware('auth', ['only' => ['read', 'readAll']]);
+        $this->middleware('auth', ['only' => ['read', 'readQuery']]);
     }
 
     public function read($id){
@@ -55,7 +55,7 @@ class VentaController extends Controller
                 array_push($query, $queryvalue);
         }   
 
-        $ventaLineas = Venta::where($query)->get();
+        $ventaLineas = VentaLinea::where($query)->get();
 
 
         if (sizeof($ventaLineas) > 0){
@@ -70,7 +70,7 @@ class VentaController extends Controller
                   ->first();
 
             }
-            return $this->crearRespuesta('Ventas encontradas', $ventas, 200);
+            return $this->crearRespuesta('Ventas encontradas', $ventaLineas, 200);
 
         }else{
             return $this->crearRespuestaError('No existen ventas', 404);
