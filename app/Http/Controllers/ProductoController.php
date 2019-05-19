@@ -165,14 +165,10 @@ class ProductoController extends Controller
         {
             return $this->crearRespuestaError("Producto $id no existe", 404);   
         }
-        
-        $producto->nombre = $request->input('nombre');
-        $producto->direccion = $request->input('direccion');
-        $producto->ciudad = $request->input('ciudad');
-        $producto->telefono = $request->input('telefono');
-        $producto->email = $request->input('email');
-        $producto->codigo_postal = $request->input('codigo_postal');
-        $producto->pais = $request->input('pais');
+
+        foreach ($request->input() as $key => $value) {
+            $producto[$key] = $value;
+        }
 
         $producto->save();
 
@@ -187,13 +183,11 @@ class ProductoController extends Controller
             'categoria_id' => 'required',
             'ean13' => 'required',
             'referencia' => 'required',
-            'atributo' => 'required',
-            'atributo_valor' => 'required',
             'nombre' => 'required',
             'unidad_mesura' => 'required',
             'precio' => 'required',
             'tasa_id' => 'required',
-            'stocks_minimo' => 'required',
+            'stock_minimo' => 'required',
             'activo' => 'required'
         ];
 
