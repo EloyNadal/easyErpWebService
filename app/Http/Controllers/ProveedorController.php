@@ -49,8 +49,8 @@ class ProveedorController extends Controller
 
     public function readAll(){
 
-        $proveedors = Proveedor::all();
-        return $this->crearRespuesta('Proveedor encontrados', $proveedors, 200);
+        $proveedores = Proveedor::all();
+        return $this->crearRespuesta('Proveedores encontrados', $proveedores, 200);
 
     }
 
@@ -75,9 +75,9 @@ class ProveedorController extends Controller
         
         if(!$proveedor)
         {
-            return $this->crearRespuestaError('Productos no encontrados', 404);
+            return $this->crearRespuestaError('Proveedores no encontrados', 404);
         }
-        return $this->crearRespuesta('Producto encontrado', $proveedor, 200);     
+        return $this->crearRespuesta('Proveedores encontrados encontrados', $proveedor, 200);     
 
     }
 

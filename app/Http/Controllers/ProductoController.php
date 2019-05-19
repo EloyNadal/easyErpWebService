@@ -6,6 +6,8 @@ use App\Producto;
 use App\Tasa;
 use App\Categoria;
 use App\Stock;
+use App\ProductoProveedor;
+use App\Proveedor;
 
 class ProductoController extends Controller
 {    
@@ -49,11 +51,19 @@ class ProductoController extends Controller
 
         $tasa = Tasa::where('id', $producto['tasa_id'])->first();
         $categoria = Categoria::where('id', $producto['categoria_id'])->first();
-        $stocks = Stock::where('producto_id', $productos['id'])->get();
+        $stocks = Stock::where('producto_id', $producto['id'])->get();
 
         if($stocks){
             $producto->stocks = $stocks;    
         }
+        
+        $relacion = ProductoProveedor::where('producto_id', $producto['id'])->first();
+
+        if($relacion){
+            $proveedor = Proveedor::where('id', $relacion['proveedor_id'])->first();
+            $producto->proveedor = $proveedor;
+        }
+
         
         $producto->categoria = $categoria;
         $producto->tasa = $tasa;
@@ -92,6 +102,14 @@ class ProductoController extends Controller
             $categoria = Categoria::where('id', $producto['categoria_id'])->first();
             $stocks = Stock::where('producto_id', $producto['id'])->get();
 
+            $relacion = ProductoProveedor::where('producto_id', $producto['id'])->first();
+
+            if($relacion){
+                $proveedor = Proveedor::where('id', $relacion['proveedor_id'])->first();
+                $producto->proveedor = $proveedor;
+            }
+            
+
             if($stocks){
                 $producto->stocks = $stocks;    
             }
@@ -114,13 +132,18 @@ class ProductoController extends Controller
                 $tasa = Tasa::where('id', $producto['tasa_id'])->first();
                 $categoria = Categoria::where('id', $producto['categoria_id'])->first();
                 $stocks = Stock::where('producto_id', $producto['id'])->get();
-                
-
-
 
                 if($stocks){
                    $producto->stocks = $stocks;    
                 }
+                $relacion = ProductoProveedor::where('producto_id', $producto['id'])->first();
+
+                if($relacion){
+                    $proveedor = Proveedor::where('id', $relacion['proveedor_id'])->first();
+                    $producto->proveedor = $proveedor;
+                }   
+
+
                 $producto->categoria = $categoria;
                 $producto->tasa = $tasa;
                 $producto->stocks = $stocks;

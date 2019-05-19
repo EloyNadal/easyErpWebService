@@ -50,7 +50,7 @@ class TasaController extends Controller
     public function readAll(){
 
         $tasas = Tasa::all();
-        return $this->crearRespuesta('Tasa encontrados', $tasas, 200);
+        return $this->crearRespuesta('Tasas encontradas', $tasas, 200);
 
     }
 
