@@ -23,6 +23,19 @@ class ProductoController extends Controller
 
         $producto = Producto::create($request->all());
 
+        if ($request->input('proveedor_id')){
+
+            $relacion = ProductoProveedor::updateOrInsert(
+                    ['producto_id' => $producto['id']],
+                    ['proveedor_id' => $request->input('proveedor_id')]
+            )->first();
+
+            if($relacion){
+                $proveedor = Proveedor::where('id', $relacion['proveedor_id'])->first();
+                $producto->proveedor = $proveedor;
+            }
+        }
+
         return $this->crearRespuesta('Producto creado', $producto, 201);
     }
 
@@ -167,10 +180,23 @@ class ProductoController extends Controller
         }
 
         foreach ($request->input() as $key => $value) {
-            $producto[$key] = $value;
+            if ($key != 'proveedor_id'){
+                $producto[$key] = $value;
+            }else{
+                
+                $relacion = ProductoProveedor::updateOrInsert(
+                    ['producto_id' => $producto['id']],
+                    [$key => $value]
+                )->first();
+            }
         }
 
         $producto->save();
+
+        if($relacion){
+            $proveedor = Proveedor::where('id', $relacion['proveedor_id'])->first();
+            $producto->proveedor = $proveedor;
+        }
 
         return $this->crearRespuesta("Producto $id actualizado", $producto, 200);        
     }

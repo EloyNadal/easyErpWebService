@@ -142,6 +142,15 @@ $router->group(['prefix' => 'ventalinea'], function () use ($router)
 	$router->post('/{metodo}', ['uses' => 'ventaLineaController@readQuery']);
 });
 
+$router->group(['prefix' => 'productoproveedor'], function () use ($router) 
+{
+	$router->get('/', ['uses' => 'ProductoProveedorController@readAll']);
+	$router->get('/{id}', ['uses' => 'ProductoProveedorController@read']);
+	$router->post('/', ['uses' => 'ProductoProveedorController@create']);
+	$router->delete('/{id}', ['uses' => 'ProductoProveedorController@delete']);
+	$router->put('/{id}', ['uses' => 'ProductoProveedorController@update']);
+});
+
 
 //Generar key
 $router->get('/key', function () {
