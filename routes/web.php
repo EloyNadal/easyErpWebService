@@ -139,6 +139,7 @@ $router->group(['prefix' => 'venta'], function () use ($router)
 $router->group(['prefix' => 'ventalinea'], function () use ($router) 
 {
 	$router->get('/{id}', ['uses' => 'ventaLineaController@read']);
+	$router->get('/', ['uses' => 'ventaLineaController@readByProduct']);
 	$router->post('/{metodo}', ['uses' => 'ventaLineaController@readQuery']);
 });
 

@@ -15,7 +15,7 @@ class CrearTablaCategorias extends Migration
     {
         Schema::disableForeignKeyConstraints();
         Schema::create('categorias', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unique();
             $table->string('nombre', 32);
             $table->integer('categoria_id')->unsigned();
         });

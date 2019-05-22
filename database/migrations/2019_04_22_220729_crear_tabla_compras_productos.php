@@ -16,7 +16,7 @@ class CrearTablaComprasProductos extends Migration
         Schema::dropIfExists('compra_lineas');
         Schema::create('compra_lineas', function (Blueprint $table) {
             
-            $table->increments('id');
+            $table->increments('id')->unique();
             $table->integer('tienda_id')->unsigned();
             $table->integer('compra_id')->unsigned();
             $table->integer('producto_id')->unsigned();

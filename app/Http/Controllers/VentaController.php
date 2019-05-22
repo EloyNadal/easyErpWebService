@@ -29,12 +29,6 @@ class VentaController extends Controller
             return $this->crearRespuestaError('Tienda no existe', 404);
         }
 
-        if(!Cliente::where('id', $proveedor_id)->first())
-        {
-            return $this->crearRespuestaError('Cliente no existe', 404);
-        }
-
-
         $venta = Venta::create([
             'tienda_id' => $tienda_id,
             'cliente_id' => $cliente_id,
@@ -49,7 +43,7 @@ class VentaController extends Controller
             $producto_id = $linea['producto_id'];
 
             $venta_linea = VentaLinea::create([
-                'tienda_id' => $tienda_id,
+                'tienda_id' => $venta['tienda_id'],
                 'venta_id' => $venta['id'],
                 'producto_id' => $producto_id,
                 'precio' => $linea['precio'],
@@ -64,7 +58,6 @@ class VentaController extends Controller
             if(!$stock){
                 $stock = StockController::create($tienda_id, $producto_id);
             }
-
             
             //$stock->increment('stock', $venta_producto['cantidad']);
             // $stock->stock += $venta_producto['cantidad'];
@@ -143,7 +136,6 @@ class VentaController extends Controller
         $reglas = 
             [   
             'tienda_id' => 'required',
-            'cliente_id' => 'required',
             'precio_sin_tasas' => 'required',
             'total_tasas' => 'required',
             'precio_total' => 'required'

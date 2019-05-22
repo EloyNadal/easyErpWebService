@@ -16,7 +16,7 @@ class CrearTablaGrupoUsuarios extends Migration
         Schema::dropIfExists('grupo_usuarios');
         Schema::create('grupo_usuarios', function (Blueprint $table) {
 
-            $table->increments('id');
+            $table->increments('id')->unique();
             $table->string('nombre', 64);            
             $table->enum('permiso', ['R', 'W']);
 

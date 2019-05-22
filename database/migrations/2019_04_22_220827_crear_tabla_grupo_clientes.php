@@ -15,7 +15,7 @@ class CrearTablaGrupoClientes extends Migration
     {
         Schema::disableForeignKeyConstraints();
         Schema::create('grupos_clientes', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unique();
             $table->string('nombre', 64);
             $table->float('ratio_descuento', 8, 3);
         });

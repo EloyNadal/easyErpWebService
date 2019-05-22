@@ -14,7 +14,7 @@ class CrearTablaCompraEstados extends Migration
     public function up()
     {
         Schema::create('compra_estados', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unique();
             $table->integer('compra_id')->unsigned();
             $table->enum('estado', ['creado', 'enviado', 'recibido', 'finalizado']);
             $table->timestamps();

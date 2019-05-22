@@ -14,7 +14,7 @@ class CrearTablaProductoProveedores extends Migration
     public function up()
     {
         Schema::create('producto_proveedores', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unique();
             $table->integer('proveedor_id')->unsigned();
             $table->integer('producto_id')->unsigned();
         });

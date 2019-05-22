@@ -16,7 +16,7 @@ class CrearTablaUsuarios extends Migration
         //Schema::dropIfExists('usuarios');
         //Schema::disableForeignKeyConstraints();
         Schema::create('usuarios', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unique();
             $table->integer('empleado_id')->unsigned();
             $table->string('user_name', 32);
             $table->integer('grupo_usuario_id')->unsigned();

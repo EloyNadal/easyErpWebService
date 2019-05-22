@@ -13,10 +13,10 @@ class CrearTablaVentasProductos extends Migration
      */
     public function up()
     {
-        Schema::disableForeignKeyConstraints();
+        
         Schema::dropIfExists('venta_lineas');
         Schema::create('venta_lineas', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unique();
             $table->integer('tienda_id')->unsigned();
             $table->integer('venta_id')->unsigned();
             $table->integer('producto_id')->unsigned();

@@ -207,13 +207,10 @@ class ProductoController extends Controller
         $reglas = 
         [
             'categoria_id' => 'required',
-            'ean13' => 'required',
             'referencia' => 'required',
             'nombre' => 'required',
-            'unidad_mesura' => 'required',
             'precio' => 'required',
             'tasa_id' => 'required',
-            'stock_minimo' => 'required',
             'activo' => 'required'
         ];
 

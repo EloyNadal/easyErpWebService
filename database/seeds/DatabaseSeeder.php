@@ -120,23 +120,53 @@ class DatabaseSeeder extends Seeder
         DB::table('ventas')->insert([
             ['tienda_id' => 1, 'cliente_id' => 1, 'usuario_id' => 3,
             'precio_sin_tasas' => 10.000,
-            'total_tasas' => 0.000, 'precio_total' => 10.000],
+            'total_tasas' => 0.000, 'precio_total' => 10.000,
+            'created_at' => date("Y-m-d H:i:s", time() - (365 * 24*60*60))],
 
             ['tienda_id' => 1, 'cliente_id' => 2, 'usuario_id' => 3,
             'precio_sin_tasas' => 15.000,
-            'total_tasas' => 0.000, 'precio_total' => 15.000],
+            'total_tasas' => 0.000, 'precio_total' => 15.000,
+            'created_at' => date("Y-m-d H:i:s", time() - (365 * 24*60*60))],
 
             ['tienda_id' => 1, 'cliente_id' => 2, 'usuario_id' => 3,
             'precio_sin_tasas' => 6.000,
-            'total_tasas' => 0.000, 'precio_total' => 6.000],
+            'total_tasas' => 0.000, 'precio_total' => 6.000,
+            'created_at' => date("Y-m-d H:i:s", time() - (365 * 24*60*60))],
 
             ['tienda_id' => 2, 'cliente_id' => 1, 'usuario_id' => 3,
              'precio_sin_tasas' => 34.000,
-            'total_tasas' => 0.000, 'precio_total' => 34.000],
+            'total_tasas' => 0.000, 'precio_total' => 34.000,
+            'created_at' => date("Y-m-d H:i:s", time() - (365 * 24*60*60))],
 
             ['tienda_id' => 2, 'cliente_id' => 3, 'usuario_id' => 3,
             'precio_sin_tasas' => 5.460,
-            'total_tasas' => 0.000, 'precio_total' => 5.460]
+            'total_tasas' => 0.000, 'precio_total' => 5.460,
+            'created_at' => date("Y-m-d H:i:s", time() - (365 * 24*60*60))],
+//
+            ['tienda_id' => 1, 'cliente_id' => 1, 'usuario_id' => 3,
+            'precio_sin_tasas' => 10.000,
+            'total_tasas' => 0.000, 'precio_total' => 10.000,
+            'created_at' => date("Y-m-d H:i:s", time() - (7 * 24*60*60))],
+
+            ['tienda_id' => 1, 'cliente_id' => 2, 'usuario_id' => 3,
+            'precio_sin_tasas' => 15.000,
+            'total_tasas' => 0.000, 'precio_total' => 15.000,
+            'created_at' => date("Y-m-d H:i:s" , time() - (4 * 24*60*60))],
+
+            ['tienda_id' => 1, 'cliente_id' => 2, 'usuario_id' => 3,
+            'precio_sin_tasas' => 6.000,
+            'total_tasas' => 0.000, 'precio_total' => 6.000,
+            'created_at' => date("Y-m-d H:i:s", time() - (4 * 24*60*60))],
+
+            ['tienda_id' => 2, 'cliente_id' => 1, 'usuario_id' => 3,
+             'precio_sin_tasas' => 34.000,
+            'total_tasas' => 0.000, 'precio_total' => 34.000,
+            'created_at' => date("Y-m-d H:i:s", time() - (2 * 24*60*60))],
+
+            ['tienda_id' => 2, 'cliente_id' => 3, 'usuario_id' => 3,
+            'precio_sin_tasas' => 5.460,
+            'total_tasas' => 0.000, 'precio_total' => 5.460,
+            'created_at' => date("Y-m-d H:i:s")],
         ]);
 
         DB::table('venta_lineas')->insert([
@@ -175,7 +205,44 @@ class DatabaseSeeder extends Seeder
             'precio' => 2.000, 'tasa_id' => 1, 'cantidad' => 1],
 
             ['tienda_id' => 2, 'venta_id' => 5, 'producto_id' => 1,
+            'precio' => 3.460, 'tasa_id' => 1, 'cantidad' => 1],
+
+            ['tienda_id' => 1, 'venta_id' => 6, 'producto_id' => 1,
+            'precio' => 8.000, 'tasa_id' => 1, 'cantidad' => 1],
+
+            ['tienda_id' => 1, 'venta_id' => 6, 'producto_id' => 2,
+            'precio' => 5.000, 'tasa_id' => 1, 'cantidad' => 3],
+
+            ['tienda_id' => 1, 'venta_id' => 6, 'producto_id' => 5,
+            'precio' => 2.000, 'tasa_id' => 1, 'cantidad' => 1],
+
+            ['tienda_id' => 1, 'venta_id' => 7, 'producto_id' => 3,
+            'precio' => 15.000, 'tasa_id' => 1, 'cantidad' => 1],
+
+            ['tienda_id' => 1, 'venta_id' => 8, 'producto_id' => 1,
+            'precio' => 5.000, 'tasa_id' => 1, 'cantidad' => 6],
+
+            ['tienda_id' => 1, 'venta_id' => 8, 'producto_id' => 4,
+            'precio' => 1.000, 'tasa_id' => 1, 'cantidad' => 1],
+
+            ['tienda_id' => 2, 'venta_id' => 9, 'producto_id' => 5,
+            'precio' => 6.000, 'tasa_id' => 1, 'cantidad' => 1],
+
+            ['tienda_id' => 2, 'venta_id' => 9, 'producto_id' => 3,
+            'precio' => 6.000, 'tasa_id' => 1, 'cantidad' => 1],
+
+            ['tienda_id' => 2, 'venta_id' => 9, 'producto_id' => 2,
+            'precio' => 10.000, 'tasa_id' => 1, 'cantidad' => 1],
+
+            ['tienda_id' => 2, 'venta_id' => 9, 'producto_id' => 1,
+            'precio' => 12.000, 'tasa_id' => 1, 'cantidad' => 1],
+
+            ['tienda_id' => 2, 'venta_id' => 10, 'producto_id' => 3,
+            'precio' => 2.000, 'tasa_id' => 1, 'cantidad' => 1],
+
+            ['tienda_id' => 2, 'venta_id' => 10, 'producto_id' => 1,
             'precio' => 3.460, 'tasa_id' => 1, 'cantidad' => 1]
+
         ]);
 
 

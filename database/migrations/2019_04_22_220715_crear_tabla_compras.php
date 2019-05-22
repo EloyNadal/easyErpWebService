@@ -15,7 +15,7 @@ class CrearTablaCompras extends Migration
     {
 
         Schema::create('compras', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unique();
             $table->integer('tienda_id')->unsigned();
             $table->integer('proveedor_id')->unsigned();
             $table->float('precio_sin_tasas', 8, 3);

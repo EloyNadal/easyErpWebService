@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Venta;
 use App\VentaLinea;
@@ -17,7 +18,7 @@ class VentaLineaController extends Controller
 
     public function read($id){
         
-        $ventaLinea = Venta::where('id', $id)
+        $ventaLinea = VentaLinea::where('id', $id)
             ->first();
 
         if($ventaLinea)
@@ -35,6 +36,45 @@ class VentaLineaController extends Controller
 
             return $this->crearRespuestaError('Venta no existe', 404);
         }
+    }
+
+    public function readByProduct(Request $request){
+
+        $producto_id = $request->header("producto_id");
+        $desde = $request->header("desde");
+        $hasta = $request->header("hasta");
+
+        if(!$producto_id) $producto_id ='';
+        if(!$desde) $desde = '1900-01-01 00:00:00';
+        if (!$hasta) $hasta = '2999-12-31 00:00.00';
+
+        $ventaLineas = VentaLinea::join('ventas', 'venta_lineas.venta_id', '=', 'ventas.id')
+            ->select('venta_lineas.tienda_id', 'venta_lineas.producto_id',DB::raw('avg(venta_lineas.precio) AS precio'), DB::raw('sum(venta_lineas.cantidad) AS cantidad'))
+            ->where('venta_lineas.producto_id', $producto_id)
+            ->where('ventas.created_at', '>', $desde)
+            ->where('ventas.created_at', '<', $hasta)
+            ->groupBy('venta_lineas.tienda_id', 'venta_lineas.producto_id')
+            ->get();
+
+        if (sizeof($ventaLineas) > 0){
+
+            foreach ($ventaLineas as $ventaLinea) {
+                
+                $ventaLinea->tienda = Tienda::where('id', $ventaLinea['tienda_id'])
+                    ->first();
+                $ventaLinea->venta = Venta::where('id', $ventaLinea['venta_id'])
+                    ->first();
+                $ventaLinea->producto = Producto::where('id', $ventaLinea['producto_id'])
+                  ->first();
+
+            }
+            return $this->crearRespuesta('Ventas encontradas', $ventaLineas, 200);
+
+        }else{
+            return $this->crearRespuestaError('No existen ventas', 404);
+        }
+
+
 
     }
 
