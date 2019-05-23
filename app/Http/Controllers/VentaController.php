@@ -38,7 +38,7 @@ class VentaController extends Controller
         ]);
 
 
-        foreach ($request->input('venta_lineas') as $linea) {
+        foreach ($request->input('venta_linea') as $linea) {
             
             $producto_id = $linea['producto_id'];
 
@@ -56,12 +56,14 @@ class VentaController extends Controller
                 ->first();
 
             if(!$stock){
-                $stock = StockController::create($tienda_id, $producto_id);
+                $stock = StockController::create([
+                    'tienda_id' => $tienda_id, 
+                    'producto_id' => $producto_id
+                    'cantidad' => 0
+                ]);
             }
             
-            //$stock->increment('stock', $venta_producto['cantidad']);
-            // $stock->stock += $venta_producto['cantidad'];
-            $stock->decrement('cantidad', $venta_producto['cantidad']);
+            $stock->decrement('cantidad', $venta_linea['cantidad']);
             $stock->save();
 
         }
