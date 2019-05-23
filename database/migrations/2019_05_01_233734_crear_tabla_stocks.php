@@ -12,12 +12,16 @@ class CrearTablaStocks extends Migration
      * @return void
      */
     public function up()
-    {
+    {   
+        Schema::dropIfExists('stocks');
         Schema::create('stocks', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->integer('tienda_id')->unsigned();
             $table->integer('producto_id')->unsigned();
-            $table->float('cantidad', 8, 3);
+            $table->integer('cantidad');
+
+            $table->unique(['tienda_id', 'producto_id']);
+
         });
     }
 

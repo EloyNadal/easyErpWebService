@@ -49,7 +49,7 @@ class VentaLineaController extends Controller
         if (!$hasta) $hasta = '2999-12-31 00:00.00';
 
         $ventaLineas = VentaLinea::join('ventas', 'venta_lineas.venta_id', '=', 'ventas.id')
-            ->select('venta_lineas.tienda_id', 'venta_lineas.producto_id',DB::raw('avg(venta_lineas.precio) AS precio'), DB::raw('sum(venta_lineas.cantidad) AS cantidad'))
+            ->select('venta_lineas.tienda_id', 'venta_lineas.producto_id',DB::raw('sum(venta_lineas.precio) AS precio'), DB::raw('sum(venta_lineas.cantidad) AS cantidad'))
             ->where('venta_lineas.producto_id', $producto_id)
             ->where('ventas.created_at', '>', $desde)
             ->where('ventas.created_at', '<', $hasta)
@@ -62,10 +62,6 @@ class VentaLineaController extends Controller
                 
                 $ventaLinea->tienda = Tienda::where('id', $ventaLinea['tienda_id'])
                     ->first();
-                $ventaLinea->venta = Venta::where('id', $ventaLinea['venta_id'])
-                    ->first();
-                $ventaLinea->producto = Producto::where('id', $ventaLinea['producto_id'])
-                  ->first();
 
             }
             return $this->crearRespuesta('Ventas encontradas', $ventaLineas, 200);

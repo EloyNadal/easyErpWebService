@@ -20,11 +20,12 @@ class CrearTablaVentas extends Migration
             $table->integer('tienda_id')->unsigned();
             $table->integer('cliente_id')->unsigned()->nullable();
             $table->integer('usuario_id')->unsigned();
-            $table->float('precio_sin_tasas', 8, 3);
-            $table->float('total_tasas', 8, 3);
-            $table->float('precio_total', 8, 3);            
+            $table->float('precio_sin_tasas', 8, 2);
+            $table->float('total_tasas', 8, 2);
+            $table->float('precio_total', 8, 2);
+            $table->boolean('efectivo');
+            $table->boolean('tarjeta');            
             $table->timestamps();
-
             $table->unique(['id', 'tienda_id']);
 
         });

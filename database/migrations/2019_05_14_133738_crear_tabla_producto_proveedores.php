@@ -17,8 +17,12 @@ class CrearTablaProductoProveedores extends Migration
             $table->increments('id')->unique();
             $table->integer('proveedor_id')->unsigned();
             $table->integer('producto_id')->unsigned();
+
+
+            $table->unique(['proveedor_id', 'producto_id']);
         });
     }
+
 
     /**
      * Reverse the migrations.

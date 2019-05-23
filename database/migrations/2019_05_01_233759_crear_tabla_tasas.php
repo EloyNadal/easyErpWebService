@@ -16,7 +16,7 @@ class CrearTablaTasas extends Migration
         Schema::create('tasas', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->string('nombre', 64);
-            $table->float('ratio_tasa', 8, 3);
+            $table->float('ratio_tasa', 8, 2);
         });
     }
 

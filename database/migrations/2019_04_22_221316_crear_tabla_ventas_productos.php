@@ -20,9 +20,9 @@ class CrearTablaVentasProductos extends Migration
             $table->integer('tienda_id')->unsigned();
             $table->integer('venta_id')->unsigned();
             $table->integer('producto_id')->unsigned();
-            $table->float('precio', 8, 3);
+            $table->float('precio', 8, 2);
             $table->integer('tasa_id')->unsigned();
-            $table->float('cantidad', 8, 3);
+            $table->integer('cantidad');
 
         });
     }

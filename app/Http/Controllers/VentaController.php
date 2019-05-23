@@ -93,6 +93,10 @@ class VentaController extends Controller
 
     public function readQuery(Request $request, $metodo){
 
+        if ($request->input('producto_id')){
+            return $this->crearRespuesta('Venta encontrado', $this::readByProduct($request), 200);
+        }
+
         $query = array();
         $condicion = ($metodo == 0) ? "and" : "or";
 
@@ -109,7 +113,6 @@ class VentaController extends Controller
         }   
 
         $ventas = Venta::where($query)->get();
-
 
         if (sizeof($ventas) > 0){
 
@@ -129,6 +132,31 @@ class VentaController extends Controller
         }
 
     }
+
+    public function readByProduct(Request $request){
+
+        $producto_id = $request->input('producto_id');
+
+        $ventas = Venta::join('venta_lineas', 'ventas.id', '=', 'venta_lineas.venta_id')
+            ->select('ventas.*')
+            ->where('venta_lineas.producto_id', $producto_id)
+            ->get();
+
+        //tengo las ventas con el prodcto;
+
+        foreach ($ventas as $venta) {
+            
+            $linea = VentaLinea::where('venta_id', $venta['id'])
+                ->where('producto_id', $producto_id)->get();
+            $venta->venta_linea = $linea;
+            $venta->tienda = Tienda::where('id', $venta['tienda_id'])->first();
+        }
+
+
+        return $ventas;
+
+    }
+
 
     public function validacion($request)
     {

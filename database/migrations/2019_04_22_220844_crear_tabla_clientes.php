@@ -13,7 +13,6 @@ class CrearTablaClientes extends Migration
      */
     public function up()
     {
-        Schema::disableForeignKeyConstraints();
         Schema::create('clientes', function (Blueprint $table) {
             
             $table->increments('id')->unique();
@@ -25,15 +24,16 @@ class CrearTablaClientes extends Migration
             $table->string('telefono', 15)->nullable();
             $table->string('codigo_postal', 10)->nullable();
             $table->string('pais', 32)->nullable();
-            $table->string('email', 64);
-            $table->string('dni', 10)->nullable();
-            $table->string('codigo', 13)->nullable();
+            $table->string('email', 64)->unique();
+            $table->string('dni', 9)->unique();
+            $table->string('codigo', 13)->unique();
             $table->timestamps();
 
-            $table->unique(['email', 'dni']);
 
+            /*
             $table->foreign('grupo_cliente_id')
                 ->references('id')->on('grupos_clientes');
+            */
 
         });
     }
