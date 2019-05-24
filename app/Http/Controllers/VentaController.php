@@ -58,7 +58,7 @@ class VentaController extends Controller
             if(!$stock){
                 $stock = StockController::create([
                     'tienda_id' => $tienda_id, 
-                    'producto_id' => $producto_id
+                    'producto_id' => $producto_id,
                     'cantidad' => 0
                 ]);
             }
