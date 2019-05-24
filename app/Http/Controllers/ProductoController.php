@@ -9,6 +9,7 @@ use App\Stock;
 use App\ProductoProveedor;
 use App\Proveedor;
 
+
 class ProductoController extends Controller
 {    
     public function __construct()
@@ -55,8 +56,9 @@ class ProductoController extends Controller
 
     public function read($id){
 
-        $producto = Producto::where('id', $id)->first();    
-
+        $producto = Producto::where('id', $id)->first();
+        //$producto['imagen'] = $_SERVER['HTTP_HOST'] . $producto['imagen'];
+        
         if(!$producto)
         {
             return $this->crearRespuestaError('Producto no existe', 404);
@@ -201,21 +203,80 @@ class ProductoController extends Controller
         return $this->crearRespuesta("Producto $id actualizado", $producto, 200);        
     }
 
-    public function validacion($request)
-    {   
+    public function saveImage(Request $request){
+                
+        $directorio_imagenes = (__DIR__ . '/../../../public/imagenes');
 
-        $reglas = 
-        [
-            'categoria_id' => 'required',
-            'referencia' => 'required',
-            'nombre' => 'required',
-            'precio' => 'required',
-            'tasa_id' => 'required',
-            'activo' => 'required'
-        ];
+        //creo el directorio si este no existe
+        if (!file_exists($directorio_imagenes)){
+            mkdir($directorio_imagenes);
+        }
 
-        $this->validate($request, $reglas);
+        //['file'] indica el nombre dado al enviarlo
+        $file = $_FILES['file'];
+        $nombre = $_FILES['file']['name'];
+        $path_archivo_temporal = $_FILES['file']['tmp_name'];
+        $path_archivo_temporal_nuevo;
+        $error = $_FILES['file']['error']; // >0 si error
+        $tamaño = $_FILES['file']['size'];
+
+        $nueva_ruta = realpath($directorio_imagenes) . '\\' . $nombre;
+
+        //guardo el archivo temporal de manera fisica para poder extraer su MIME
+        $resultado = move_uploaded_file($path_archivo_temporal, $nueva_ruta);
+
+
+        //si no hay errores y mime correcto guardo la imagen en mi directorio
+        if (!$resultado || $error > 0 ||
+            (exif_imagetype($nueva_ruta) != IMAGETYPE_JPEG 
+                &&  exif_imagetype($nueva_ruta) != IMAGETYPE_PNG))
+        {
+
+            //borra fichero
+            unlink($nueva_ruta);
+            return response()->json([
+                'success' => false,
+                'message' => 'error con formato imagen',
+                'data' => 'fallo'
+                ], 404);
+
+        }
+        else{   
+            //establezco en la db, segun el server donde estoy, la ruta de la imagen
+            $rutaImagen = "/imagenes/$nombre";
+            $rutaServer = $_SERVER['HTTP_HOST'] . $rutaImagen;
+            $protocol = "http://";
+
+            $id = $request->input('id');
+            $producto = Producto::where('id', $id)->first();
+
+            $producto->imagen = $protocol . $rutaServer;
+            $producto->save();
+
+            return response()->json([
+                'success' => true,
+                'message' => 'imagen!',
+                'data' => $producto['imagen']
+            //image_type_to_mime_type(exif_imagetype($path_archivo_temporal))
+            ], 202);
+
+        }
+
     }
 
+    public function validacion($request)
+        {   
+            $reglas = 
+            [
+                'categoria_id' => 'required',
+                'referencia' => 'required',
+                'nombre' => 'required',
+                'precio' => 'required',
+                'tasa_id' => 'required',
+                'activo' => 'required'
+            ];
+
+            $this->validate($request, $reglas);
+        }
 
 }
