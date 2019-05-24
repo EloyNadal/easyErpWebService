@@ -6,6 +6,7 @@ use Laravel\Lumen\Routing\Controller as BaseController;
 
 class Controller extends BaseController
 {   
+
     
 	public function crearRespuesta($mensaje, $datos, $codigo)
     {   
@@ -40,6 +41,10 @@ class Controller extends BaseController
 
     public function encrypt($data, $key) {
         return base64_encode(openssl_encrypt($data, "aes-128-ecb", $key, OPENSSL_RAW_DATA));
+    }
+
+    public function server(){
+        return "http://" . $_SERVER['HTTP_HOST'] . "/imagenes/";
     }
 
 

@@ -64,6 +64,7 @@ class ProductoController extends Controller
             return $this->crearRespuestaError('Producto no existe', 404);
         }
 
+        $producto->imagen = $this->server() . $producto['imagen'];
         $tasa = Tasa::where('id', $producto['tasa_id'])->first();
         $categoria = Categoria::where('id', $producto['categoria_id'])->first();
         $stocks = Stock::where('producto_id', $producto['id'])->get();
@@ -113,11 +114,15 @@ class ProductoController extends Controller
 
         foreach ($productos as $producto) {
 
+            $producto->imagen = $this->server() . $producto['imagen'];
+
             $tasa = Tasa::where('id', $producto['tasa_id'])->first();
             $categoria = Categoria::where('id', $producto['categoria_id'])->first();
             $stocks = Stock::where('producto_id', $producto['id'])->get();
 
             $relacion = ProductoProveedor::where('producto_id', $producto['id'])->first();
+
+
 
             if($relacion){
                 $proveedor = Proveedor::where('id', $relacion['proveedor_id'])->first();
@@ -158,7 +163,7 @@ class ProductoController extends Controller
                     $producto->proveedor = $proveedor;
                 }   
 
-
+                $producto->imagen = $this->server() . $producto['imagen'];
                 $producto->categoria = $categoria;
                 $producto->tasa = $tasa;
                 $producto->stocks = $stocks;
@@ -193,7 +198,9 @@ class ProductoController extends Controller
             }
         }
 
+
         $producto->save();
+        $producto->imagen = $this->server() . $producto['imagen'];
 
         if($relacion){
             $proveedor = Proveedor::where('id', $relacion['proveedor_id'])->first();
@@ -243,9 +250,6 @@ class ProductoController extends Controller
         }
         else{   
             //establezco en la db, segun el server donde estoy, la ruta de la imagen
-            $rutaImagen = "/imagenes/$nombre";
-            $rutaServer = $_SERVER['HTTP_HOST'] . $rutaImagen;
-            $protocol = "http://";
 
             $id = $request->input('id');
             $producto = Producto::where('id', $id)->first();
@@ -256,7 +260,7 @@ class ProductoController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'imagen!',
-                'data' => $producto['imagen']
+                'data' => $nombre
             //image_type_to_mime_type(exif_imagetype($path_archivo_temporal))
             ], 202);
 
