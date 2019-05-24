@@ -254,7 +254,7 @@ class ProductoController extends Controller
             $id = $request->input('id');
             $producto = Producto::where('id', $id)->first();
 
-            $producto->imagen = $protocol . $rutaServer;
+            $producto->imagen = $nombre;
             $producto->save();
 
             return response()->json([
