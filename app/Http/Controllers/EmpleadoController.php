@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Empleado;
 
-class Empleado extends Controller
+class EmpleadoController extends Controller
 {
 
     public function __construct()

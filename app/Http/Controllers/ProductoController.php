@@ -156,17 +156,20 @@ class ProductoController extends Controller
                 if($stocks){
                    $producto->stocks = $stocks;    
                 }
+                if($tasa){
+                    $producto->tasa = $tasa;    
+                }
+                if($categoria){
+                    $producto->categoria = $categoria;    
+                }
                 $relacion = ProductoProveedor::where('producto_id', $producto['id'])->first();
 
                 if($relacion){
                     $proveedor = Proveedor::where('id', $relacion['proveedor_id'])->first();
                     $producto->proveedor = $proveedor;
                 }   
-
+                
                 $producto->imagen = $this->server() . $producto['imagen'];
-                $producto->categoria = $categoria;
-                $producto->tasa = $tasa;
-                $producto->stocks = $stocks;
                 
             }
             return $this->crearRespuesta('Productos encontrados', $productos, 200);
@@ -176,8 +179,6 @@ class ProductoController extends Controller
     }
 
     public function update(Request $request, $id){
-
-        $this->validacionUpdate($request);
         
         $producto = Producto::where('id', $id)->first();
 
@@ -186,6 +187,7 @@ class ProductoController extends Controller
             return $this->crearRespuestaError("Producto $id no existe", 404);   
         }
 
+        $relacion = null;
         foreach ($request->input() as $key => $value) {
             if ($key != 'proveedor_id'){
                 $producto[$key] = $value;
