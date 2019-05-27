@@ -32,6 +32,9 @@ class VentaController extends Controller
         $venta = Venta::create([
             'tienda_id' => $tienda_id,
             'cliente_id' => $cliente_id,
+            'usuario_id' => $request->input('usuario_id'),
+            'tarjeta' => $request->input('tarjeta'),
+            'efectivo' => $request->input('efectivo'),
             'precio_sin_tasas' => $request->input('precio_sin_tasas'),
             'total_tasas' => $request->input('total_tasas'),
             'precio_total' => $request->input('precio_total')
@@ -56,7 +59,7 @@ class VentaController extends Controller
                 ->first();
 
             if(!$stock){
-                $stock = StockController::create([
+                $stock = Stock::create([
                     'tienda_id' => $tienda_id, 
                     'producto_id' => $producto_id,
                     'cantidad' => 0

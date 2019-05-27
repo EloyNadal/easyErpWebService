@@ -7,6 +7,8 @@ use App\CompraLinea;
 use App\Tienda;
 use App\Proveedor;
 use App\Stock;
+use App\CompraEstado;
+use App\Producto;
 
 class CompraController extends Controller
 {   
@@ -34,7 +36,9 @@ class CompraController extends Controller
             return $this->crearRespuestaError('Proveedor no existe', 404);
         }
 
+        $compra;
 
+        
         $compra = Compra::create([
             'tienda_id' => $tienda_id,
             'proveedor_id' => $proveedor_id,
@@ -49,7 +53,7 @@ class CompraController extends Controller
             $producto_id = $linea['producto_id'];
 
             $compra_producto = CompraLinea::create([
-                'tienda_id' => $tienda_id,
+                'tienda_id' => $compra['tienda_id'],
                 'compra_id' => $compra['id'],
                 'producto_id' => $producto_id,
                 'precio' => $linea['precio'],
@@ -57,19 +61,15 @@ class CompraController extends Controller
                 'cantidad' => $linea['cantidad']
             ]);
 
-            $stock = Stock::where('tienda_id', $tienda_id)
-                ->where('producto_id', $producto_id)
-                ->first();
-            
-            $stock->increment('cantidad', $compra_producto['cantidad']);
-            // $stock->stock += $compra_producto['cantidad'];
-            //$stock->decrement
-            $stock->save();
-
         }
+        $estado = CompraEstado::create([
+                'compra_id' => $compra['id'],
+                'estado' => 'creado'
+            ]);
 
         return $this->crearRespuesta('Compra creada', $compra, 200);
     }
+
 
     public function read($id){
         
@@ -82,7 +82,30 @@ class CompraController extends Controller
                 ->where('compra_id', $compra['id'])
                 ->get();
 
-                $compra->compra_linea = $lineas;
+            $compra->compra_linea = $lineas;
+
+            foreach ($lineas as $linea) {
+                    
+                    $producto = Producto::where('id', $linea['producto_id'])
+                        ->first();
+
+                    $linea->productoNombre = $producto['nombre'];
+                    $linea->productoEan13 = $producto['ean13'];
+
+            }
+
+
+            $estado = CompraEstado::select('estado')
+                ->where('compra_id', $compra['id'])->first();
+            if ($estado){
+                $compra->estado = $estado['estado'];
+            }
+
+            $proveedor = Proveedor::where('id', $compra['proveedor_id'])
+                    ->first();
+            if($proveedor){
+                $compra->proveedor = $proveedor;  
+            }
             
             return $this->crearRespuesta('Compra encontrado', $compra, 200);
         }
@@ -120,9 +143,34 @@ class CompraController extends Controller
                 ->where('compra_id', $compra['id'])
                 ->get();
 
+                foreach ($lineas as $linea) {
+                    
+                    $producto = Producto::where('id', $linea['producto_id'])
+                        ->first();
+
+                    $linea->productoNombre = $producto['nombre'];
+                    $linea->productoEan13 = $producto['ean13'];
+
+                }
+
                 $compra->compra_linea = $lineas;
 
+                $estado = CompraEstado::select('estado')
+                    ->where('compra_id', $compra['id'])->first();
+                if ($estado){
+                    $compra->estado = $estado['estado'];
+                }
+
+                $proveedor = Proveedor::where('id', $compra['proveedor_id'])
+                    ->first();
+                if($proveedor){
+                    $compra->proveedor = $proveedor;  
+                }
+
             }
+
+
+
             return $this->crearRespuesta('Compras encontradas', $compras, 200);
 
         }else{
@@ -132,54 +180,65 @@ class CompraController extends Controller
 
     public function update(Request $request, $id){
 
-        $this->validacion($request);
+        $compra = Compra::where('id', $id)->first();
 
-        $tienda_id = $request->input('tienda_id');
-        $proveedor_id = $request->input('proveedor_id');
-
-        if(!Tienda::where('id', $tienda_id)->first())
+        if ($compra)
         {
-            return $this->crearRespuestaError('Tienda no existe', 404);
-        }
+            $newEstado = $request->input('estado');
+            if ($newEstado)
+            {
+                $oldEstado = CompraEstado::where('compra_id', $id)
+                    ->first();
+                if ($oldEstado)
+                {
+                    if ($newEstado == 'finalizado' && $oldEstado['estado'] != $newEstado)
+                    {
+                        $compra_lineas = CompraLinea::where('compra_id', $id)
+                            ->get();
 
-        if(!Proveedor::where('id', $proveedor_id)->first())
-        {
-            return $this->crearRespuestaError('Proveedor no existe', 404);
-        }
 
-        $compra = Compra::where('id', $id)
-            ->first();
+                        foreach ($compra_lineas as $linea) 
+                        {
+                            $stock = Stock::where('tienda_id', $linea['tienda_id'])
+                                ->where('producto_id', $linea['producto_id'])
+                                ->first();
 
+                            if(!$stock){
+                               $stock = Stock::create([
+                                    'tienda_id' => $linea['tienda_id'], 
+                                    'producto_id' => $linea['producto_id'],
+                                    'cantidad' => 0
+                                ]);
+                            }
+            
+                            $stock->increment('cantidad', $linea['cantidad']);
+                            $stock->save();
+                        }
+                    }
 
-        if($compra)
-        {   
-            $lineas_actualizadas = $request->input('compra_linea');
+                    $oldEstado['estado'] = $newEstado;
+                    $oldEstado->save();
+                    $compra->estado = $oldEstado['estado'];
+                }
+                else{
 
-            if ($lineas_actualizadas){
+                    $newEstado = CompraEstado::create([
+                        'compra_id' => $compra['id'],
+                        'estado' => $request->input('estado')
+                    ]);
 
-                foreach ($lineas_actualizadas as $linea) {
-                    
-                    Compralinea::where('id', $linea['id'])
-                            ->update(['cantidad' => $linea['cantidad']]);
+                    $compra->estado = $oldEstado['estado'];   
 
                 }
-            }
 
-            $compra->update($request->all());
-            $compra->compra_linea = CompraLinea::where('tienda_id', $compra['tienda_id'])
-                ->where('compra_id', $compra['id'])
-                ->get();
-            
+            }
             return $this->crearRespuesta('Compra actualizada', $compra, 200);
+
         }
         else{
 
             return $this->crearRespuestaError('Compra no existe', 404);
         }
-
-
-
-
     }
 
 

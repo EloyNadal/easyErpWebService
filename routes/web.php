@@ -19,6 +19,7 @@ $router->get('/', function () use ($router) {
 $router->post('/registrar', 'UsuarioAdminController@registrar');
 $router->post('/login', 'UsuarioAdminController@login');
 $router->post('/upimage', 'ProductoController@saveImage');
+$router->post('/usuario/', 'UsuarioController@create');
 
 $router->group(['prefix' => 'categoria'], function () use ($router) 
 {

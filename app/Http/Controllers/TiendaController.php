@@ -80,15 +80,13 @@ class TiendaController extends Controller
 
     public function validacion($request)
     {   
-
         $reglas = 
         [
             'nombre' => 'required',
-            'email' => 'required',
+            'email' => 'required|unique:tiendas,email',
         ];
 
         $this->validate($request, $reglas);
     }
-
 
 }

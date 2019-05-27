@@ -43,12 +43,39 @@ class VentaLineaController extends Controller
         $producto_id = $request->header("producto_id");
         $desde = $request->header("desde");
         $hasta = $request->header("hasta");
+        $tienda_id = $request->header("tienda_id");
 
         if(!$producto_id) $producto_id ='';
         if(!$desde) $desde = '1900-01-01 00:00:00';
         if (!$hasta) $hasta = '2999-12-31 00:00.00';
 
-        $ventaLineas = VentaLinea::join('ventas', 'venta_lineas.venta_id', '=', 'ventas.id')
+        if(!$tienda_id)
+        {
+            $ventaLineas = $this->groupBySinTienda($producto_id, $desde, $hasta);
+        }else
+        {
+            $ventaLineas = $this->groupByConTienda($producto_id, $desde, $hasta, $tienda_id);
+        }
+        
+        if (sizeof($ventaLineas) > 0)
+        {
+            foreach ($ventaLineas as $ventaLinea) 
+            {
+                $ventaLinea->tienda = Tienda::where('id', $ventaLinea['tienda_id'])
+                    ->first();
+            }
+            return $this->crearRespuesta('Ventas encontradas', $ventaLineas, 200);
+
+        }
+        else
+        {
+            return $this->crearRespuestaError('No existen ventas', 404);
+        }
+
+    }
+
+    public function groupBySinTienda($producto_id, $desde, $hasta){
+        $resultado = VentaLinea::join('ventas', 'venta_lineas.venta_id', '=', 'ventas.id')
             ->select('venta_lineas.tienda_id', 'venta_lineas.producto_id',DB::raw('sum(venta_lineas.precio) AS precio'), DB::raw('sum(venta_lineas.cantidad) AS cantidad'))
             ->where('venta_lineas.producto_id', $producto_id)
             ->where('ventas.created_at', '>', $desde)
@@ -56,23 +83,23 @@ class VentaLineaController extends Controller
             ->groupBy('venta_lineas.tienda_id', 'venta_lineas.producto_id')
             ->get();
 
-        if (sizeof($ventaLineas) > 0){
-
-            foreach ($ventaLineas as $ventaLinea) {
-                
-                $ventaLinea->tienda = Tienda::where('id', $ventaLinea['tienda_id'])
-                    ->first();
-
-            }
-            return $this->crearRespuesta('Ventas encontradas', $ventaLineas, 200);
-
-        }else{
-            return $this->crearRespuestaError('No existen ventas', 404);
-        }
-
-
-
+        return $resultado;
     }
+
+    public function groupByConTienda($producto_id, $desde, $hasta, $tienda_id){
+        $resultado = VentaLinea::join('ventas', 'venta_lineas.venta_id', '=', 'ventas.id')
+            ->select('venta_lineas.tienda_id', 'venta_lineas.producto_id',DB::raw('sum(venta_lineas.precio) AS precio'), DB::raw('sum(venta_lineas.cantidad) AS cantidad'))
+            ->where('venta_lineas.producto_id', $producto_id)
+            ->where('venta_lineas.tienda_id', '=', $tienda_id)
+            ->where('ventas.created_at', '>', $desde)
+            ->where('ventas.created_at', '<', $hasta)
+            ->groupBy('venta_lineas.tienda_id', 'venta_lineas.producto_id')
+            ->get();
+
+        return $resultado;
+    }
+
+
 
     public function readQuery(Request $request, $metodo){
 

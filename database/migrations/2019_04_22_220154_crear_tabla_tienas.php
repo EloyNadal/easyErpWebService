@@ -22,7 +22,7 @@ class CrearTablaTienas extends Migration
             $table->string('direccion', 128)->nullable();
             $table->string('ciudad', 32)->nullable();
             $table->string('telefono', 15)->nullable();
-            $table->string('email', 64);
+            $table->string('email', 64)->unique();
             $table->string('codigo_postal', 10)->nullable();
             $table->string('pais', 32)->nullable();
             $table->timestamps();

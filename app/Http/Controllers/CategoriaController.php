@@ -108,7 +108,7 @@ class CategoriaController extends Controller
 
         $reglas = 
         [
-            'nombre' => 'required',
+            'nombre' => 'required|unique:categorias,nombre',
             'categoria_id' => 'required',
         ];
 

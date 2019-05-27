@@ -177,7 +177,7 @@ class ProductoController extends Controller
 
     public function update(Request $request, $id){
 
-        $this->validacion($request);
+        $this->validacionUpdate($request);
         
         $producto = Producto::where('id', $id)->first();
 
@@ -273,7 +273,8 @@ class ProductoController extends Controller
             $reglas = 
             [
                 'categoria_id' => 'required',
-                'referencia' => 'required',
+                'referencia' => 'required|unique:productos,referencia',
+                'ean13' =>  'required|unique:productos,ean13',
                 'nombre' => 'required',
                 'precio' => 'required',
                 'tasa_id' => 'required',
@@ -282,5 +283,21 @@ class ProductoController extends Controller
 
             $this->validate($request, $reglas);
         }
+
+    public function validacionUpdate($request)
+        {   
+            $reglas = 
+            [
+                'categoria_id' => 'required',
+                'referencia' => 'required|unique:productos,referencia',
+                'ean13' =>  'required|unique:productos,ean13',
+                'nombre' => 'required',
+                'precio' => 'required',
+                'tasa_id' => 'required',
+                'activo' => 'required'
+            ];
+
+            $this->validate($request, $reglas);
+    }
 
 }
