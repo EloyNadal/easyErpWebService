@@ -50,9 +50,8 @@ class Authenticate
         $apiToken = openssl_decrypt(base64_decode($request->header('Authorization')),"aes-128-ecb",getenv('KEY'),OPENSSL_RAW_DATA);
 
         $usuario = Usuario::where('api_token', $apiToken)->first();
-        $permiso = GrupoUsuario::where('id', $usuario['grupo_usuario_id'])->first();
 
-        if (!$usuario || $permiso['permiso'] != 'R' || $permiso['permiso'] != 'W')
+        if (!$usuario))
         {
             return response('Unauthorized.', 401);                
         }
