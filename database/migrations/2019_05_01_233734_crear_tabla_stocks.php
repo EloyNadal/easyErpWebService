@@ -22,6 +22,9 @@ class CrearTablaStocks extends Migration
 
             $table->unique(['tienda_id', 'producto_id']);
 
+            $table->foreign('tienda_id')->references('id')->on('tiendas')->onDelete('cascade');
+            $table->foreign('producto_id')->references('id')->on('productos')->onDelete('cascade');
+
         });
     }
 

@@ -13,11 +13,14 @@ class VentaController extends Controller
     
     public function __construct()
     {
-        $this->middleware('auth', ['only' => ['read', 'readAll']]);
-        $this->middleware('admin', ['only' => ['create', 'delete', 'update']]);
+        $this->middleware('auth', ['only' => ['read', 'readAll', 'create', 'readQuery', 'readByProduct']]);
     }
 
     public function create(Request $request){
+
+        $request = $this->desencrypt($request->all());
+
+        return $this->crearRespuesta("Producto", $request, 200);
 
         $this->validacion($request);
         

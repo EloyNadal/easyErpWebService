@@ -10,13 +10,14 @@ class EmpleadoController extends Controller
 
     public function __construct()
     {
-        //$this->middleware(['auth', 'secondMidel']);
-        //$this->middleware('admin', ['only' => ['registrar']]);
+        $this->middleware('auth', ['only' => ['read', 'readAll', 'readQuery']]);
+        $this->middleware('admin', ['only' => ['create', 'delete', 'update']]);
     }
     
     public function create(Request $request){
 
         $this->validacion($request);
+
         $empleado = Empleado::create($request->all());
         return $this->crearRespuesta('Empleado creado', $empleado, 201);
     }

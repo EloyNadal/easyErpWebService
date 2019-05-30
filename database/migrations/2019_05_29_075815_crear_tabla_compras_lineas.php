@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaComprasProductos extends Migration
+class CrearTablaComprasLineas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,6 +13,7 @@ class CrearTablaComprasProductos extends Migration
      */
     public function up()
     {
+        
         Schema::dropIfExists('compra_lineas');
         Schema::create('compra_lineas', function (Blueprint $table) {
             
@@ -23,6 +24,13 @@ class CrearTablaComprasProductos extends Migration
             $table->float('precio', 8, 2);
             $table->integer('tasa_id')->unsigned();
             $table->integer('cantidad');
+
+            $table->foreign('compra_id')->references('id')->on('compras')->onDelete('cascade');
+            $table->foreign('tienda_id')->references('id')->on('tiendas')->onDelete('cascade');
+            $table->foreign('producto_id')->references('id')->on('productos')->onDelete('cascade');
+            $table->foreign('tasa_id')->references('id')->on('tasas')->onDelete('cascade');
+
+        
         });
     }
 
@@ -33,7 +41,7 @@ class CrearTablaComprasProductos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('compras_productos');
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('compra_lineas');
     }
 }

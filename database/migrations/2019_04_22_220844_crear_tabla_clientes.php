@@ -12,7 +12,9 @@ class CrearTablaClientes extends Migration
      * @return void
      */
     public function up()
-    {
+    {   
+
+        Schema::dropIfExists('clientes');
         Schema::create('clientes', function (Blueprint $table) {
             
             $table->increments('id')->unique();
@@ -30,10 +32,8 @@ class CrearTablaClientes extends Migration
             $table->timestamps();
 
 
-            /*
             $table->foreign('grupo_cliente_id')
                 ->references('id')->on('grupos_clientes');
-            */
 
         });
     }
@@ -45,6 +45,7 @@ class CrearTablaClientes extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('clientes');
     }
 }

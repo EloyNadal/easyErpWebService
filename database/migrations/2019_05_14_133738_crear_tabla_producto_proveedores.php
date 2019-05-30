@@ -13,13 +13,17 @@ class CrearTablaProductoProveedores extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('producto_proveedores');
         Schema::create('producto_proveedores', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->integer('proveedor_id')->unsigned();
-            $table->integer('producto_id')->unsigned();
+            $table->integer('producto_id')->unsigned()->unique();
 
+            //$table->unique(['proveedor_id', 'producto_id']);
 
-            $table->unique(['proveedor_id', 'producto_id']);
+            $table->foreign('producto_id')->references('id')->on('productos')->onDelete('cascade');
+            $table->foreign('proveedor_id')->references('id')->on('proveedores')->onDelete('cascade');
+
         });
     }
 
@@ -31,6 +35,7 @@ class CrearTablaProductoProveedores extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('producto_proveedores');
     }
 }

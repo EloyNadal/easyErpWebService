@@ -9,8 +9,8 @@ class CompraEstadoController extends Controller
 {    
     public function __construct()
     {
-        $this->middleware('auth', ['only' => ['read', 'readAll']]);
-        $this->middleware('admin', ['only' => ['create', 'delete', 'update']]);
+        $this->middleware('auth', ['only' => ['read', 'readAll', 'create', 'update']]);
+        $this->middleware('admin', ['only' => ['delete']]);
     }
 
     public function create(Request $request){
@@ -108,8 +108,7 @@ class CompraEstadoController extends Controller
         {
             return $this->crearRespuestaError('Estados no encontrados', 404);
         }
-        return $this->crearRespuesta('Estados encontrados', $compra_estado, 200);     
-
+        return $this->crearRespuesta('Estados encontrados', $compra_estado, 200);
     }
 
 

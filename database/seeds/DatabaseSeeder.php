@@ -20,6 +20,7 @@ use App\Usuario;
 use App\CompraEstado;
 use App\ProductoProveedor;
 use App\GrupoUsuario;
+use App\Empleado;
 
 
 class DatabaseSeeder extends Seeder
@@ -49,11 +50,12 @@ class DatabaseSeeder extends Seeder
         CompraEstado::truncate();
         ProductoProveedor::truncate();
         GrupoUsuario::truncate();
+        Empleado::truncate();
         
-		
+		factory(Empleado::class, 10)->create();
 		factory(Cliente::class, 10)->create();
 		factory(GrupoCliente::class, 10)->create();
-		factory(Producto::class, 10)->create();
+		factory(Producto::class, 15)->create();
 		factory(Proveedor::class, 10)->create();
 		factory(Tienda::class, 10)->create();
 
@@ -76,16 +78,15 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        for ($i=0; $i < 20; $i++) { 
+        for ($i=0; $i < 10; $i++) { 
             
-            $proveedor = true;
+            $producto = true;
     
-            while($proveedor){
-                $proveedor_id = ($faker->numberBetween(1,5));
+            while($producto){
+                $proveedor_id = ($faker->numberBetween(1,10));
                 $producto_id = $faker->numberBetween(1,10);
-                $proveedor = App\ProductoProveedor::
-                    where('proveedor_id', $proveedor_id)
-                    ->where('producto_id', $producto_id)->first();
+                $producto = App\ProductoProveedor::
+                    where('producto_id', $producto_id)->first();
             }
             DB::table('producto_proveedores')->insert([
                 'proveedor_id' => $proveedor_id, 

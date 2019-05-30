@@ -15,15 +15,11 @@ class CrearTablaProductos extends Migration
     {
 
         Schema::dropIfExists('productos');
-        Schema::disableForeignKeyConstraints();
-
         Schema::create('productos', function (Blueprint $table) {
-
-
 
             $table->increments('id')->unique();
             $table->integer('categoria_id')->unsigned();
-            $table->string('ean13', 13);
+            $table->string('ean13', 13)->unique();
             $table->string('referencia', 32);
             $table->string('atributo', 16)->nullable();
             $table->string('atributo_valor', 16)->nullable();
@@ -37,7 +33,8 @@ class CrearTablaProductos extends Migration
             $table->string('imagen', 128)->nullable();
             $table->timestamps();
 
-            $table->unique(['ean13']);
+            $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');
+            $table->foreign('tasa_id')->references('id')->on('tasas')->onDelete('cascade');
 
         });
     }
@@ -49,6 +46,7 @@ class CrearTablaProductos extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('productos');
     }
 }

@@ -14,7 +14,8 @@ class CrearTablaTienas extends Migration
     public function up()
 
     {
-        Schema::disableForeignKeyConstraints();
+        
+        Schema::dropIfExists('tiendas');   
         Schema::create('tiendas', function (Blueprint $table) {
 
             $table->increments('id')->unique();
@@ -36,6 +37,7 @@ class CrearTablaTienas extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('tiendas');
     }
 }

@@ -10,8 +10,8 @@ class StockController extends Controller
 {    
     public function __construct()
     {
-        $this->middleware('auth', ['only' => ['readAllOneShop', 'readAllShops']]);
-        $this->middleware('admin', ['only' => ['createAll', 'delete', 'update']]);
+        $this->middleware('auth', ['only' => ['read', 'readAll', 'readQuery']]);
+        $this->middleware('admin', ['only' => ['create', 'delete', 'update']]);
     }
 
     public function create(Request $request){

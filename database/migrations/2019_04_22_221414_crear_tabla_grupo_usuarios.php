@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaTasas extends Migration
+class CrearTablaGrupoUsuarios extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CrearTablaTasas extends Migration
      */
     public function up()
     {
-        Schema::create('tasas', function (Blueprint $table) {
+        Schema::dropIfExists('grupo_usuarios');
+        Schema::create('grupo_usuarios', function (Blueprint $table) {
+
             $table->increments('id')->unique();
-            $table->string('nombre', 64);
-            $table->float('ratio_tasa', 8, 2);
+            $table->string('nombre', 64);            
+            $table->enum('permiso', ['R', 'W']);
+
         });
     }
 
@@ -27,6 +30,7 @@ class CrearTablaTasas extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tasas');
+        Schema::disableForeignKeyConstraints();
+        Schema::dropIfExists('grupo_usuarios');
     }
 }

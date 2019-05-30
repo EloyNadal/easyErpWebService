@@ -14,21 +14,28 @@ class ProductoController extends Controller
 {    
     public function __construct()
     {
-        $this->middleware('auth', ['only' => ['read', 'readAll']]);
-        $this->middleware('admin', ['only' => ['create', 'delete', 'update']]);
-    }
+        
+        $this->middleware('auth', ['only' => ['readQuery','readAll', 'read']]);
+        $this->middleware('admin', ['only' => ['create', 'delete', 'update', 'saveImage']]);
+        
+    }    
 
     public function create(Request $request){
 
         $this->validacion($request);
 
-        $producto = Producto::create($request->all());
+        $proveedor = $request->input('proveedor');
+        $data = $request->all();
 
-        if ($request->input('proveedor_id')){
+        unset($data['proveedor']);
+
+        $producto = Producto::create($data);
+
+        if ($proveedor){
 
             $relacion = ProductoProveedor::updateOrInsert(
                     ['producto_id' => $producto['id']],
-                    ['proveedor_id' => $request->input('proveedor_id')]
+                    ['proveedor_id' => $proveedor['id']]
             )->first();
 
             if($relacion){
@@ -57,14 +64,17 @@ class ProductoController extends Controller
     public function read($id){
 
         $producto = Producto::where('id', $id)->first();
-        //$producto['imagen'] = $_SERVER['HTTP_HOST'] . $producto['imagen'];
         
         if(!$producto)
         {
             return $this->crearRespuestaError('Producto no existe', 404);
         }
 
-        $producto->imagen = $this->server() . $producto['imagen'];
+        if (isset($producto['imagen']) && substr($producto['imagen'], 0, 4) != 'http'){
+            $producto->imagen = $this->server() . $producto['imagen'];
+        }
+        
+
         $tasa = Tasa::where('id', $producto['tasa_id'])->first();
         $categoria = Categoria::where('id', $producto['categoria_id'])->first();
         $stocks = Stock::where('producto_id', $producto['id'])->get();
@@ -100,8 +110,7 @@ class ProductoController extends Controller
                 }
                 else{
                     $queryvalue = [$key, 'LIKE', "%$value%", $condicion];       
-                }
-                
+                }                
                 array_push($query, $queryvalue);
         }   
 
@@ -114,15 +123,15 @@ class ProductoController extends Controller
 
         foreach ($productos as $producto) {
 
-            $producto->imagen = $this->server() . $producto['imagen'];
+            if (isset($producto['imagen']) && substr($producto['imagen'], 0, 4) != 'http'){
+                $producto->imagen = $this->server() . $producto['imagen'];
+            }
 
             $tasa = Tasa::where('id', $producto['tasa_id'])->first();
             $categoria = Categoria::where('id', $producto['categoria_id'])->first();
             $stocks = Stock::where('producto_id', $producto['id'])->get();
 
             $relacion = ProductoProveedor::where('producto_id', $producto['id'])->first();
-
-
 
             if($relacion){
                 $proveedor = Proveedor::where('id', $relacion['proveedor_id'])->first();
@@ -169,7 +178,9 @@ class ProductoController extends Controller
                     $producto->proveedor = $proveedor;
                 }   
                 
-                $producto->imagen = $this->server() . $producto['imagen'];
+                if (isset($producto['imagen']) && substr($producto['imagen'], 0, 4) != 'http'){
+                   $producto->imagen = $this->server() . $producto['imagen'];
+                }
                 
             }
             return $this->crearRespuesta('Productos encontrados', $productos, 200);
@@ -189,13 +200,12 @@ class ProductoController extends Controller
 
         $relacion = null;
         foreach ($request->input() as $key => $value) {
-            if ($key != 'proveedor_id'){
+            if ($key != 'proveedor'){
                 $producto[$key] = $value;
             }else{
-                
                 $relacion = ProductoProveedor::updateOrInsert(
                     ['producto_id' => $producto['id']],
-                    [$key => $value]
+                    ['proveedor_id' => $value['id']]
                 )->first();
             }
         }

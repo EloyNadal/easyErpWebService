@@ -12,12 +12,15 @@ class CrearTablaCompraEstados extends Migration
      * @return void
      */
     public function up()
-    {
+    {   
+        Schema::dropIfExists('compra_estados');
         Schema::create('compra_estados', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->integer('compra_id')->unsigned();
             $table->enum('estado', ['creado', 'enviado', 'recibido', 'finalizado']);
             $table->timestamps();
+
+            $table->foreign('compra_id')->references('id')->on('compras')->onDelete('cascade');
         });
     }
 
@@ -28,6 +31,7 @@ class CrearTablaCompraEstados extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('compra_estados');
     }
 }

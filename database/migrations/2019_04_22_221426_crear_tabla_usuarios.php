@@ -13,8 +13,8 @@ class CrearTablaUsuarios extends Migration
      */
     public function up()
     {
-        //Schema::dropIfExists('usuarios');
-        //Schema::disableForeignKeyConstraints();
+        Schema::dropIfExists('usuarios');
+        
         Schema::create('usuarios', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->integer('empleado_id')->unsigned();
@@ -24,6 +24,8 @@ class CrearTablaUsuarios extends Migration
             $table->string('api_token');
             $table->timestamps();
 
+            $table->foreign('empleado_id')->references('id')->on('empleados')->onDelete('cascade');
+            $table->foreign('grupo_usuario_id')->references('id')->on('grupo_usuarios')->onDelete('cascade');
         });
     }
             
@@ -34,6 +36,7 @@ class CrearTablaUsuarios extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('usuarios');
     }
 }

@@ -14,6 +14,7 @@ class CrearTablaCompras extends Migration
     public function up()
     {
 
+        Schema::dropIfExists('compras');
         Schema::create('compras', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->integer('tienda_id')->unsigned();
@@ -22,6 +23,9 @@ class CrearTablaCompras extends Migration
             $table->float('total_tasas', 8, 2);
             $table->float('precio_total', 8, 2);
             $table->timestamps();
+
+            $table->foreign('tienda_id')->references('id')->on('tiendas')->onDelete('cascade');
+            $table->foreign('proveedor_id')->references('id')->on('proveedores')->onDelete('cascade');
 
         });
     }
@@ -33,6 +37,7 @@ class CrearTablaCompras extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('compras');
     }
 }

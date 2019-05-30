@@ -9,7 +9,7 @@ class GrupoClienteController extends Controller
 {    
     public function __construct()
     {
-        $this->middleware('auth', ['only' => ['read', 'readAll']]);
+        $this->middleware('auth', ['only' => ['read', 'readAll', 'readQuery']]);
         $this->middleware('admin', ['only' => ['create', 'delete', 'update']]);
     }
 

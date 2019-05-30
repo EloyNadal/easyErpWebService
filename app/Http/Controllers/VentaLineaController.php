@@ -13,7 +13,7 @@ class VentaLineaController extends Controller
     
     public function __construct()
     {
-        $this->middleware('auth', ['only' => ['read', 'readQuery']]);
+        $this->middleware('auth', ['only' => ['read', 'readQuery', 'groupByConTienda', 'readByProduct']]);
     }
 
     public function read($id){

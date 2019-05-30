@@ -15,8 +15,8 @@ class CompraController extends Controller
     
     public function __construct()
     {
-        $this->middleware('auth', ['only' => ['read', 'readAll']]);
-        $this->middleware('admin', ['only' => ['create', 'delete', 'update']]);
+        $this->middleware('auth', ['only' => ['read', 'readAll', 'readQuery', 'create']]);
+        $this->middleware('admin', ['only' => ['update']]);
     }
 
     public function create(Request $request){

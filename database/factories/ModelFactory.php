@@ -66,6 +66,22 @@ $factory->define(App\Proveedor::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Empleado::class, function (Faker\Generator $faker) {
+    $faker = Faker\Factory::create('es_ES');
+    return [
+        'nombre' => $faker->firstName(null),
+        'apellidos' => $faker->lastName,
+        'direccion' => $faker->streetName,
+        'ciudad' => $faker->city,
+        'telefono' => $faker->phoneNumber,
+        'codigo_postal' => $faker->postcode,
+        'pais' => $faker->country,
+        'email' => $faker->email,
+        'dni' => $faker->regexify('[0-9]{8}[A-Z]'),
+        'tienda_id' => $faker->numberBetween(1,3)
+    ];
+});
+
 $factory->define(App\Tienda::class, function (Faker\Generator $faker) {
     $faker = Faker\Factory::create('es_ES');
     return [
@@ -93,7 +109,7 @@ $factory->define(App\Cliente::class, function (Faker\Generator $faker) {
         'codigo_postal' => $faker->postcode,
         'pais' => $faker->country,
         'email' => $faker->email,
-        'dni' => $faker->regexify('[0-9]{8}+[A-Z]{1}'),
+        'dni' => $faker->regexify('[0-9]{8}[A-Z]'),
         'codigo' => $faker->ean13,
     ];
 });

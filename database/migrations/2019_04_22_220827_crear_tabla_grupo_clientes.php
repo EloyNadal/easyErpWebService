@@ -13,12 +13,16 @@ class CrearTablaGrupoClientes extends Migration
      */
     public function up()
     {
-        Schema::disableForeignKeyConstraints();
+        
+        Schema::dropIfExists('grupos_clientes');   
         Schema::create('grupos_clientes', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->string('nombre', 64);
             $table->float('ratio_descuento', 8, 3);
+
+
         });
+
     }
 
     /**
@@ -28,6 +32,7 @@ class CrearTablaGrupoClientes extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('grupos_clientes');
     }
 }

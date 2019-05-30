@@ -13,8 +13,9 @@ class CompraLineaController extends Controller
     
     public function __construct()
     {
-        $this->middleware('auth', ['only' => ['read', 'readAll']]);
-        $this->middleware('admin', ['only' => ['create', 'delete', 'update']]);
+        $this->middleware('auth', ['only' => ['read', 'readQuery']]);
+        $this->middleware('admin', ['only' => ['update']]);
+
     }
 
     public function read($id){

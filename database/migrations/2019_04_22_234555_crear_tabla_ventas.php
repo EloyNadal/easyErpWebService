@@ -28,6 +28,10 @@ class CrearTablaVentas extends Migration
             $table->timestamps();
             $table->unique(['id', 'tienda_id']);
 
+            $table->foreign('tienda_id')->references('id')->on('tiendas')->onDelete('cascade');
+            $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade');
+            $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade');
+
         });
 
 
@@ -40,7 +44,8 @@ class CrearTablaVentas extends Migration
      * @return void
      */
     public function down()
-    {
+    {   
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('ventas');
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use App\Usuario;
+use App\GrupoUsuario;
 
 class adminAuthenticate
 {
@@ -24,12 +25,12 @@ class adminAuthenticate
         }
         else
         {
-
-            $apiToken = $request->header('Authorization');
+            $apiToken = openssl_decrypt(base64_decode($request->header('Authorization')),"aes-128-ecb",getenv('KEY'),OPENSSL_RAW_DATA);
 
             $usuario = Usuario::where('api_token', $apiToken)->first();
+            $permiso = GrupoUsuario::where('id', $usuario['grupo_usuario_id'])->first();
 
-            if (!$usuario || $usuario['grupo_usuario_id'] != 1)
+            if (!$usuario || $permiso['permiso'] != 'W')
             {
                 return response('Unauthorized.', 401);                
             }

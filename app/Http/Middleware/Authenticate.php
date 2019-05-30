@@ -2,6 +2,8 @@
 
 namespace App\Http\Middleware;
 
+use App\Usuario;
+use App\GrupoUsuario;
 use Closure;
 use Illuminate\Contracts\Auth\Factory as Auth;
 
@@ -34,11 +36,43 @@ class Authenticate
      * @return mixed
      */
     public function handle($request, Closure $next, $guard = null)
-    {
+    {   
+
+        $apiToken = openssl_decrypt(base64_decode($request->header('Authorization')),"aes-128-ecb",getenv('KEY'),OPENSSL_RAW_DATA);
+
+        $usuario = Usuario::where('api_token', $apiToken)->first();
+        $permiso = GrupoUsuario::where('id', $usuario['grupo_usuario_id'])->first();
+
+        if (!$usuario || $permiso['permiso'] != 'R' || $permiso['permiso'] != 'W')
+        {
+            return response('Unauthorized.', 401);                
+        }
+        else
+        {
+            return $next($request);
+        }
+
+
+        /**
+        *metodo original
+        
         if ($this->auth->guard($guard)->guest()) {
             return response('Unauthorized.', 401);
         }
-
+        **/
         return $next($request);
     }
+
+    public function crearRespuesta($mensaje, $datos, $codigo)
+    {   
+
+        return response()->json([
+            'succes' => true,
+            'message' => $mensaje,
+            'data' => $datos
+            //'data' => $this->encrypt($datos, getenv('KEY'))
+        ], $codigo);
+    }
+
+
 }
