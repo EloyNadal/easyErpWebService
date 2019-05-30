@@ -23,6 +23,7 @@ class ClienteController extends Controller
         }
 
         $datos = Cliente::create($request->all());
+        $datos->codigo = str_random(13);
         
         return $this->crearRespuesta('Cliente creado', $datos, 200);
     }
