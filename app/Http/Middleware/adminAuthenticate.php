@@ -24,7 +24,16 @@ class adminAuthenticate
 
         }
         else
-        {
+        {   
+
+            /*
+            *Metodo para pruebas en postman
+            */
+            //$apiToken = $request->header('Authorization');
+            
+            /*
+            *Metodo para eclipse
+            */
             $apiToken = openssl_decrypt(base64_decode($request->header('Authorization')),"aes-128-ecb",getenv('KEY'),OPENSSL_RAW_DATA);
 
             $usuario = Usuario::where('api_token', $apiToken)->first();

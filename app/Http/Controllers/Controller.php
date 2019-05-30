@@ -15,6 +15,7 @@ class Controller extends BaseController
     	return response()->json([
             'succes' => true,
             'message' => $mensaje,
+            //postman->
             //'data' => $datos
             'data' => $this->encrypt($datos, getenv('KEY'))
         ], $codigo);
@@ -39,7 +40,7 @@ class Controller extends BaseController
         $result = json_decode($result, true);
 
         //voy por aqui! este ya funciona
-        //$a = $$result['proveedor'];
+        //$a = $result['proveedor'];
 
         return $result;
     }

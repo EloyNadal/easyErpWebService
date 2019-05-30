@@ -23,7 +23,9 @@ class ClienteController extends Controller
         }
 
         $datos = Cliente::create($request->all());
-        $datos->codigo = str_random(13);
+        $codigo = "0000000000000";
+        $datos->codigo = substr($codigo, 0, -strlen($datos['id'])) . $datos['id'];
+        $datos->save();
         
         return $this->crearRespuesta('Cliente creado', $datos, 200);
     }
@@ -148,6 +150,14 @@ class ClienteController extends Controller
         }else{
             return $this->crearRespuestaError('Cliente ' . $id . 'no existe', 404);
         }
+    }
+
+    public function generarCodigo($longitud){
+        $cod = "";
+        for ($i=0; $i < $longitud; $i++) { 
+            $cod .= rand(0,9);
+        }
+        return $cod;
     }
 
     public function validacion($request, $metodo)
