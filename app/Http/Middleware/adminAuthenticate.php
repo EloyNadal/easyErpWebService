@@ -6,7 +6,7 @@ use Closure;
 use App\Usuario;
 use App\GrupoUsuario;
 
-class adminAuthenticate
+class adminAuthenticate extends DesencryptKey
 {
     /**
      * Handle an incoming request.
@@ -18,7 +18,7 @@ class adminAuthenticate
     public function handle($request, Closure $next)
     {   
 
-        if (!$request->header('Authorization')) 
+        if (!$request->header('Authorization'))
         {
             return response('Unauthorized.', 401);   
 
@@ -26,20 +26,17 @@ class adminAuthenticate
         else
         {   
 
-            /*
-            *Metodo para pruebas en postman
-            */
-            //$apiToken = $request->header('Authorization');
-            
-            /*
-            *Metodo para eclipse
-            */
-            $apiToken = openssl_decrypt(base64_decode($request->header('Authorization')),"aes-128-ecb",getenv('KEY'),OPENSSL_RAW_DATA);
+            /**
+             *@param boolean a False, en caso de enviar contraseña sin encriptar
+             */
+            $apiToken = $this->desencrypt($request->header('Authorization'), True);
+            if (!$apiToken) return response('Unauthorized.', 401);
 
             $usuario = Usuario::where('api_token', $apiToken)->first();
-            $permiso = GrupoUsuario::where('id', $usuario['grupo_usuario_id'])->first();
+            $permiso = GrupoUsuario::where('id', $usuario['grupo_usuario_id'])
+                ->where('permiso', 'W')->first();
 
-            if (!$usuario || $permiso['permiso'] != 'W')
+            if (!$usuario || !$permiso)
             {
                 return response('Unauthorized.', 401);                
             }

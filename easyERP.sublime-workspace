@@ -4,6 +4,214 @@
 		"selected_items":
 		[
 			[
+				"re",
+				"response"
+			],
+			[
+				"for",
+				"for\tfor …"
+			],
+			[
+				"rea",
+				"read"
+			],
+			[
+				"G",
+				"GrupoUsuario〔class〕"
+			],
+			[
+				"Prod",
+				"ProductoController"
+			],
+			[
+				"prod",
+				"producto"
+			],
+			[
+				"pro",
+				"proveedor"
+			],
+			[
+				"rq",
+				"req1\trequire_once …"
+			],
+			[
+				"cate",
+				"$categoria〔variable〕"
+			],
+			[
+				"compra",
+				"$compra〔variable〕"
+			],
+			[
+				"ol",
+				"$oldEstado〔variable〕"
+			],
+			[
+				"Com",
+				"CompraLinea〔namespace〕"
+			],
+			[
+				"com",
+				"compra_linea"
+			],
+			[
+				"comp",
+				"compra"
+			],
+			[
+				"co",
+				"compra"
+			],
+			[
+				"wh",
+				"where"
+			],
+			[
+				"group",
+				"groupBySinTienda"
+			],
+			[
+				"tienad",
+				"tiendas"
+			],
+			[
+				"ima",
+				"imagen"
+			],
+			[
+				"pr",
+				"productos"
+			],
+			[
+				"res",
+				"resultado"
+			],
+			[
+				"exi",
+				"exif_imagetype〔function〕"
+			],
+			[
+				"real",
+				"realpath〔function〕"
+			],
+			[
+				"Producto",
+				"ProductoProveedor"
+			],
+			[
+				"P",
+				"Producto"
+			],
+			[
+				"venta",
+				"venta_linea"
+			],
+			[
+				"ven",
+				"venta_lineas"
+			],
+			[
+				"venta_",
+				"venta_lineas"
+			],
+			[
+				"ventas",
+				"$ventas〔variable〕"
+			],
+			[
+				"unset",
+				"unset〔function〕"
+			],
+			[
+				"un",
+				"unique"
+			],
+			[
+				"p",
+				"producto_id"
+			],
+			[
+				"h",
+				"header"
+			],
+			[
+				"proveed",
+				"proveedor_id"
+			],
+			[
+				"sto",
+				"stock_minimo"
+			],
+			[
+				"atr",
+				"atributo_valor"
+			],
+			[
+				"ca",
+				"categoria_id"
+			],
+			[
+				"Pro",
+				"ProductoProveedorController"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"ve",
+				"venta_id"
+			],
+			[
+				"s",
+				"stock"
+			],
+			[
+				"producto",
+				"producto_id"
+			],
+			[
+				"ta",
+				"$tasa〔variable〕"
+			],
+			[
+				"cli",
+				"$clientes〔variable〕"
+			],
+			[
+				"Gr",
+				"GrupoCliente"
+			],
+			[
+				"gr",
+				"grupo_cliente"
+			],
+			[
+				"grup",
+				"grupo_cliente"
+			],
+			[
+				"prodcto",
+				"$producto_id〔variable〕"
+			],
+			[
+				"Es",
+				"Estados"
+			],
+			[
+				"Compra",
+				"CompraEstado〔namespace〕"
+			],
+			[
+				"Gru",
+				"GrupoUsuario"
+			],
+			[
+				"usuario",
+				"usuario_id"
+			],
+			[
 				"tasa",
 				"tasa_id"
 			],
@@ -12,24 +220,12 @@
 				"total_tasas"
 			],
 			[
-				"compra",
-				"compra_linea"
-			],
-			[
-				"com",
-				"compra_lineas"
-			],
-			[
 				"Co",
 				"Compra"
 			],
 			[
 				"req",
 				"$request〔variable〕"
-			],
-			[
-				"co",
-				"compra_linea"
 			],
 			[
 				"li",
@@ -44,24 +240,12 @@
 				"$lineas_nuevas〔variable〕"
 			],
 			[
-				"ven",
-				"venta_linea"
-			],
-			[
-				"P",
-				"Proveedor"
-			],
-			[
 				"get",
 				"getenv〔function〕"
 			],
 			[
 				"da",
 				"datos"
-			],
-			[
-				"res",
-				"result"
 			],
 			[
 				"requ",
@@ -104,10 +288,6 @@
 				"queryvalue"
 			],
 			[
-				"pro",
-				"producto"
-			],
-			[
 				"valo",
 				"valores"
 			],
@@ -128,36 +308,16 @@
 				"create"
 			],
 			[
-				"comp",
-				"$compra〔variable〕"
-			],
-			[
 				"st",
 				"$stock〔variable〕"
-			],
-			[
-				"ca",
-				"cantidad"
 			],
 			[
 				"lin",
 				"$linea〔variable〕"
 			],
 			[
-				"ta",
-				"tasa_id"
-			],
-			[
 				"uni",
 				"unidad_mesura"
-			],
-			[
-				"atr",
-				"atributo"
-			],
-			[
-				"p",
-				"$producto_id〔variable〕"
 			],
 			[
 				"stock",
@@ -174,10 +334,6 @@
 			[
 				"ra",
 				"ratio_descuento"
-			],
-			[
-				"G",
-				"GrupoCliente"
 			],
 			[
 				"cl",
@@ -200,24 +356,12 @@
 				"$precio_total〔variable〕"
 			],
 			[
-				"for",
-				"foreach\tforeach …"
-			],
-			[
 				"ret",
 				"return〔keyword〕"
 			],
 			[
-				"pr",
-				"$proveedor_id〔variable〕"
-			],
-			[
 				"gru",
 				"grupo_cliente_id"
-			],
-			[
-				"cate",
-				"$categoria〔variable〕"
 			],
 			[
 				"categoria",
@@ -232,10 +376,6 @@
 				"usuarios"
 			],
 			[
-				"va",
-				"validacion"
-			],
-			[
 				"us",
 				"$usuario〔variable〕"
 			],
@@ -246,14 +386,6 @@
 			[
 				"ape",
 				"$apellidos〔variable〕"
-			],
-			[
-				"Pro",
-				"Proveedor"
-			],
-			[
-				"Com",
-				"CompraProducto"
 			],
 			[
 				"atribu",
@@ -270,14 +402,6 @@
 			[
 				"compa",
 				"compania_id"
-			],
-			[
-				"re",
-				"referencia"
-			],
-			[
-				"un",
-				"unsigned"
 			],
 			[
 				"ap",
@@ -344,79 +468,49 @@
 	"buffers":
 	[
 		{
+			"file": "database/seeds/DatabaseSeeder.php",
+			"settings":
+			{
+				"buffer_size": 12467,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "database/factories/ModelFactory.php",
 			"settings":
 			{
-				"buffer_size": 4872,
+				"buffer_size": 4006,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "<?php\n\nuse Illuminate\\Database\\Seeder;\nuse Illuminate\\Support\\Facades\\DB;\nuse Illuminate\\Database\\Eloquent\\Model;\n\nuse App\\Categoria;\nuse App\\Cliente;\nuse App\\Compra;\nuse App\\CompraLinea;\nuse App\\GrupoCliente;\nuse App\\Producto;\nuse App\\Proveedor;\nuse App\\Tienda;\nuse App\\Venta;\nuse App\\VentaLinea;\nuse App\\Stock;\nuse App\\Tasa;\nuse App\\Usuario;\n\n\nclass DatabaseSeeder extends Seeder\n{\n    /**\n     * Run the database seeds.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        // $this->call('UsersTableSeeder');\n        DB::statement('SET FOREIGN_KEY_CHECKS = 0');\n\t\tCategoria::truncate();\n\t\tCliente::truncate();\n\t\tCompra::truncate();\n\t\tCompraLinea::truncate();\n\t\tGrupoCliente::truncate();\n\t\tProducto::truncate();\n\t\tProveedor::truncate();\n\t\tTienda::truncate();\n\t\tVenta::truncate();\n\t\tVentaLinea::truncate();\n\t\tStock::truncate();\n\t\tTasa::truncate();\n\t\tUsuario::truncate();\n\t\t\n\t\tfactory(Cliente::class, 10)->create();\n\t\tfactory(CompraLinea::class, 10)->create();\n\t\tfactory(GrupoCliente::class, 10)->create();\n\t\tfactory(Producto::class, 10)->create();\n\t\tfactory(Proveedor::class, 10)->create();\n\t\tfactory(Tienda::class, 10)->create();\n\t\tfactory(Venta::class, 10)->create();\n\t\tfactory(VentaLinea::class, 10)->create();\n\t\tfactory(Stock::class, 10)->create();\n\n\n        DB::table('compras')->([\n            ['tienda_id' => 1, 'proveedor_id' => 1, 'precio_sin_tasas' => 10.000,\n            'total_tasas' => 1.000, 'precio_total' => 11.000],\n\n            ['tienda_id' => 1, 'proveedor_id' => 2, 'precio_sin_tasas' => 15.000,\n            'total_tasas' => 2.000, 'precio_total' => 17.000],\n\n            ['tienda_id' => 1, 'proveedor_id' => 2, 'precio_sin_tasas' => 6.000,\n            'total_tasas' => 1.000, 'precio_total' => 7.000],\n\n            ['tienda_id' => 2, 'proveedor_id' => 1, 'precio_sin_tasas' => 34.000,\n            'total_tasas' => 8.000, 'precio_total' => 42.000],\n\n            ['tienda_id' => 2, 'proveedor_id' => 3, 'precio_sin_tasas' => 5.000,\n            'total_tasas' => 0.460, 'precio_total' => 5.460],\n\n            ['tienda_id' => 2, 'proveedor_id' => 1, 'precio_sin_tasas' => 1.000,\n            'total_tasas' => 0.123, 'precio_total' => 1.123],\n        ]);\n\n        DB::table('compra_lineas')->([\n\n            ['tienda_id' => 1, 'compra_id' => 1, 'producto_id' => 1,\n            'precio' => 1.000, 'tasa_id' => 1, 'cantidad' => 1],\n\n            ['tienda_id' => 1, 'compra_id' => 1, 'producto_id' => 2,\n            'precio' => 5.000, 'tasa_id' => 1, 'cantidad' => 3],\n\n\n        ]);\n\n\n\n        $factory->define(App\\CompraLinea::class, function ($faker) {\n    $faker = Faker\\Factory::create('es_ES');\n    return [\n        'tienda_id' => $faker->numberBetween(1,5),\n        'compra_id' => $faker->numberBetween(1,10),\n        'producto_id' => $faker->numberBetween(1,10),\n        'precio' => $faker->randomFloat(3, 0.000, 100.999),\n        'tasa_id' => $faker->numberBetween(1,5),\n        'cantidad' => $faker->randomFloat(3, 0.000, 10.999),\n    ];\n});\n\n\n        DB::table('categorias')->insert([\n        \t['nombre' => 'raiz' , 'categoria_id' => 0],\n        \t['nombre' => 'Productos' , 'categoria_id' => 1],\n        \t['nombre' => 'Alimentación' , 'categoria_id' => 1],\n        \t['nombre' => 'Calzado' , 'categoria_id' => 2],\n        \t['nombre' => 'Ropa' , 'categoria_id' => 2],\n        \t['nombre' => 'Bebida' , 'categoria_id' => 3],\n        \t['nombre' => 'Comida' , 'categoria_id' => 3]\n        ]);\n\n        DB::table('tasas')->insert([\n        \t['nombre' => 'Sin iva' , 'ratio_tasa' => 0],\n        \t['nombre' => 'Iva 4%' , 'ratio_tasa' => 0.04],\n        \t['nombre' => 'Iva 8%' , 'ratio_tasa' => 0.08],\n        \t['nombre' => 'Iva 10%' , 'ratio_tasa' => 0.1],\n        \t['nombre' => 'Iva 21%' , 'ratio_tasa' => 0.21]\n        ]);\n\n        DB::table('grupo_usuarios')->insert([\n            ['nombre' => 'Administrador' , 'permiso' => 'W'],\n            ['nombre' => 'Empleado' , 'permiso' => 'R']\n        ]);\n\n\n        DB::table('usuarios')->insert([\n            ['empleado_id' => 2, 'user_name' => 'carlos',\n            'password' => 'carlos', 'grupo_usuario_id' => 2],\n\n            ['empleado_id' => 3, 'user_name' => 'eloy',\n            'password' => 'eloy','grupo_usuario_id' => 2],\n\n            ['empleado_id' => 1, 'user_name' => 'admin',\n            'password' => 'admin', 'grupo_usuario_id' => 1]\n        ]);\n\n\n\n    }\n}\n",
-			"file": "database/seeds/DatabaseSeeder.php",
-			"file_size": 3562,
-			"file_write_time": 132023159899668505,
+			"contents": "<?php\n\nrequire_once __DIR__.'/../vendor/autoload.php';\n\ntry {\n    (new Dotenv\\Dotenv(__DIR__.'/../'))->load();\n} catch (Dotenv\\Exception\\InvalidPathException $e) {\n    //\n}\n\n/*\n|--------------------------------------------------------------------------\n| Create The Application\n|--------------------------------------------------------------------------\n|\n| Here we will load the environment and create the application instance\n| that serves as the central piece of this framework. We'll use this\n| application as an \"IoC\" container and router for this framework.\n|\n*/\n\n$app = new Laravel\\Lumen\\Application(\n    realpath(__DIR__.'/../')\n);\n\n $app->withFacades();\n $app->withEloquent();\n\n/*\n|--------------------------------------------------------------------------\n| Register Container Bindings\n|--------------------------------------------------------------------------\n|\n| Now we will register a few bindings in the service container. We will\n| register the exception handler and the console kernel. You may add\n| your own bindings here if you like or you can make another file.\n|\n*/\n\n$app->singleton(\n    Illuminate\\Contracts\\Debug\\ExceptionHandler::class,\n    App\\Exceptions\\Handler::class\n);\n\n$app->singleton(\n    Illuminate\\Contracts\\Console\\Kernel::class,\n    App\\Console\\Kernel::class\n);\n\n/*\n|--------------------------------------------------------------------------\n| Register Middleware\n|--------------------------------------------------------------------------\n|\n| Next, we will register the middleware with the application. These can\n| be global middleware that run before and after each request into a\n| route or middleware that'll be assigned to some specific routes.\n|\n*/\n\n //$app->middleware([\n //]);\n\n $app->routeMiddleware([\n     'auth' => App\\Http\\Middleware\\Authenticate::class,\n     'admin' => App\\Http\\Middleware\\adminAuthenticate::class,\n ]);\n\n/*\n|--------------------------------------------------------------------------\n| Register Service Providers\n|--------------------------------------------------------------------------\n|\n| Here we will register all of the application's service providers which\n| are used to bind services into the container. Service providers are\n| totally optional, so you are not required to uncomment this line.\n|\n*/\n\n $app->register(App\\Providers\\AppServiceProvider::class);\n $app->register(App\\Providers\\AuthServiceProvider::class);\n// $app->register(App\\Providers\\EventServiceProvider::class);\n\n/*\n|--------------------------------------------------------------------------\n| Load The Application Routes\n|--------------------------------------------------------------------------\n|\n| Next we will include the routes file so that they can all be added to\n| the application. This will provide all of the URLs the application\n| can respond to, as well as the controllers that may handle them.\n|\n*/\n\n$app->router->group([\n    'namespace' => 'App\\Http\\Controllers',\n], function ($router) {\n    require __DIR__.'/../routes/web.php';\n});\n\nreturn $app;",
+			"file": "bootstrap/app.php",
+			"file_size": 3006,
+			"file_write_time": 132036982333448361,
 			"settings":
 			{
-				"buffer_size": 4354,
+				"buffer_size": 3002,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "<?php\n\nuse Illuminate\\Database\\Seeder;\n\nclass add_usuarios extends Seeder\n{\n    /**\n     * Run the database seeds.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        \n\n    }\n}\n",
-			"file": "database/seeds/add_usuarios.php",
-			"file_size": 864,
-			"file_write_time": 132018991525338145,
+			"file": "app/Http/Controllers/EmpleadoController.php",
 			"settings":
 			{
-				"buffer_size": 200,
+				"buffer_size": 3498,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/Providers/AppServiceProvider.php",
+			"file": "app/Http/Controllers/GrupoClienteController.php",
 			"settings":
 			{
-				"buffer_size": 266,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Usuario.php",
-			"settings":
-			{
-				"buffer_size": 858,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Controllers/UsuarioAdminController.php",
-			"settings":
-			{
-				"buffer_size": 3053,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Controllers/Controller.php",
-			"settings":
-			{
-				"buffer_size": 1031,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Controllers/VentaController.php",
-			"settings":
-			{
-				"buffer_size": 4222,
+				"buffer_size": 3477,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -431,11 +525,22 @@
 			}
 		},
 		{
-			"file": "app/Http/Controllers/CompraController.php",
+			"contents": "<?php\n\n/*\n|--------------------------------------------------------------------------\n| Rutas de la aplicacion\n|--------------------------------------------------------------------------\n|\n| Here is where you can register all of the routes for an application.\n| It is a breeze. Simply tell Lumen the URIs it should respond to\n| and give it the Closure to call when that URI is requested.\n|\n*/\n\n$router->get('/', function () use ($router) {\n    return $router->app->version();\n});\n\n\n$router->post('/registrar', 'UsuarioAdminController@registrar');\n$router->post('/login', 'UsuarioAdminController@login');\n$router->post('/upimage', 'ProductoController@saveImage');\n$router->post('/usuario/', 'UsuarioController@create');\n\n$router->group(['prefix' => 'categoria'], function () use ($router) \n{\n\t$router->get('/', ['uses' => 'CategoriaController@readAll']);\n\t$router->get('/{id}', ['uses' => 'CategoriaController@read']);\n\t$router->post('/', ['uses' => 'CategoriaController@create']);\n\t$router->delete('/{id}', ['uses' => 'CategoriaController@delete']);\n\t$router->put('/{id}', ['uses' => 'CategoriaController@update']);\n});\n\n$router->group(['prefix' => 'cliente'], function () use ($router) \n{\n\t$router->get('/', ['uses' => 'ClienteController@readAll']);\n\t$router->get('/{id}', ['uses' => 'ClienteController@read']);\n\t$router->post('/{metodo}', ['uses' => 'ClienteController@readQuery']);\n\t$router->post('/', ['uses' => 'ClienteController@create']);\n\t$router->delete('/{id}', ['uses' => 'ClienteController@delete']);\n\t$router->put('/{id}', ['uses' => 'ClienteController@update']);\n});\n\n$router->group(['prefix' => 'compra'], function () use ($router) \n{\n\t$router->get('/{id}', ['uses' => 'CompraController@read']);\n\t$router->post('/{metodo}', ['uses' => 'CompraController@readQuery']);\n\t$router->post('/', ['uses' => 'CompraController@create']);\n\t$router->put('/{id}', ['uses' => 'CompraController@update']);\n});\n\n$router->group(['prefix' => 'compralinea'], function () use ($router) \n{\n\t$router->get('/{id}', ['uses' => 'CompraLineaController@read']);\n\t$router->put('/{compra_id}', ['uses' => 'CompraLineaController@update']);\n});\n\n$router->group(['prefix' => 'grupocliente'], function () use ($router) \n{\n\t$router->get('/', ['uses' => 'GrupoClienteController@readAll']);\n\t$router->get('/{id}', ['uses' => 'GrupoClienteController@read']);\n\t$router->post('/', ['uses' => 'GrupoClienteController@create']);\n\t$router->delete('/{id}', ['uses' => 'GrupoClienteController@delete']);\n\t$router->put('/{id}', ['uses' => 'GrupoClienteController@update']);\n});\n\n$router->group(['prefix' => 'proveedor'], function () use ($router) \n{\n\t$router->get('/', ['uses' => 'ProveedorController@readAll']);\n\t$router->get('/{id}', ['uses' => 'ProveedorController@read']);\n\t$router->post('/{metodo}', ['uses' => 'ProductoController@readQuery']);\n\t$router->post('/', ['uses' => 'ProveedorController@create']);\n\t$router->delete('/{id}', ['uses' => 'ProveedorController@delete']);\n\t$router->put('/{id}', ['uses' => 'ProveedorController@update']);\n});\n\n$router->group(['prefix' => 'tienda'], function () use ($router) \n{\n\t$router->get('/', ['uses' => 'TiendaController@readAll']);\n\t$router->get('/{id}', ['uses' => 'TiendaController@read']);\n\t$router->post('/', ['uses' => 'TiendaController@create']);\n\t$router->delete('/{id}', ['uses' => 'TiendaController@delete']);\n\t$router->put('/{id}', ['uses' => 'TiendaController@update']);\n});\n\n\n$router->group(['prefix' => 'stock'], function () use ($router) \n{\n\t$router->get('/{id}', ['uses' => 'StockController@read']);\n\t$router->get('/', ['uses' => 'StockController@readAll']);\n\t$router->post('/{metodo}', ['uses' => 'StockController@readQuery']);\n\t$router->post('/', ['uses' => 'StockController@create']);\n\t$router->post('/[/init/]', ['uses' => 'StockController@createAll']);\n\t$router->put('/{id}', ['uses' => 'StockController@update']);\n});\n\n$router->group(['prefix' => 'tasa'], function () use ($router) \n{\n\t$router->get('/', ['uses' => 'TasaController@readAll']);\n\t$router->get('/{id}', ['uses' => 'TasaController@read']);\n\t$router->post('/', ['uses' => 'TasaController@create']);\n\t$router->delete('/{id}', ['uses' => 'TasaController@delete']);\n\t$router->put('/{id}', ['uses' => 'TasaController@update']);\n});\n\n$router->group(['prefix' => 'producto'], function () use ($router) \n{\n\t$router->get('/', ['uses' => 'ProductoController@readAll']);\n\t$router->get('/{id}', ['uses' => 'ProductoController@read']);\n\t$router->post('/{metodo}', ['uses' => 'ProductoController@readQuery']);\n\t$router->post('/', ['uses' => 'ProductoController@create']);\n\t$router->delete('/{id}', ['uses' => 'ProductoController@delete']);\n\t$router->put('/{id}', ['uses' => 'ProductoController@update']);\n});\n\n$router->group(['prefix' => 'grupousuario'], function () use ($router) \n{\n\t$router->get('/', ['uses' => 'GrupoUsuarioController@readAll']);\n\t$router->get('/{id}', ['uses' => 'GrupoUsuarioController@read']);\n\t$router->post('/', ['uses' => 'GrupoUsuarioController@create']);\n\t$router->delete('/{id}', ['uses' => 'GrupoUsuarioController@delete']);\n\t$router->put('/{id}', ['uses' => 'GrupoUsuarioController@update']);\n});\n\n$router->group(['prefix' => 'empleado'], function () use ($router) \n{\n\t$router->get('/', ['uses' => 'EmpleadoController@readAll']);\n\t$router->get('/{id}', ['uses' => 'EmpleadoController@read']);\n\t$router->post('/{metodo}', ['uses' => 'EmpleadoController@readQuery']);\n\t$router->post('/', ['uses' => 'EmpleadoController@create']);\n\t$router->delete('/{id}', ['uses' => 'EmpleadoController@delete']);\n\t$router->put('/{id}', ['uses' => 'EmpleadoController@update']);\n});\n\n$router->group(['prefix' => 'venta'], function () use ($router) \n{\t\n\t$router->get('/{id}', ['uses' => 'VentaController@readAll']);\n\t$router->post('/{metodo}', ['uses' => 'VentaController@readQuery']);\n\t$router->post('/', ['uses' => 'VentaController@create']);\n});\n\n$router->group(['prefix' => 'ventalinea'], function () use ($router) \n{\n\t$router->get('/{id}', ['uses' => 'ventaLineaController@read']);\n\t$router->get('/', ['uses' => 'ventaLineaController@readByProduct']);\n\t$router->post('/{metodo}', ['uses' => 'ventaLineaController@readQuery']);\n});\n\n$router->group(['prefix' => 'productoproveedor'], function () use ($router) \n{\n\t$router->get('/', ['uses' => 'ProductoProveedorController@readAll']);\n\t$router->get('/{id}', ['uses' => 'ProductoProveedorController@read']);\n\t$router->post('/', ['uses' => 'ProductoProveedorController@create']);\n\t$router->delete('/{id}', ['uses' => 'ProductoProveedorController@delete']);\n\t$router->put('/{id}', ['uses' => 'ProductoProveedorController@update']);\n});\n\n\n//Generar key\n$router->get('/key', function () {\n    return str_random(32);\n});",
+			"file": "routes/web.php",
+			"file_size": 6661,
+			"file_write_time": 132037910589048966,
 			"settings":
 			{
-				"buffer_size": 5506,
+				"buffer_size": 6665,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/index.php",
+			"settings":
+			{
+				"buffer_size": 897,
 				"line_ending": "Unix"
 			}
 		},
@@ -449,245 +554,19 @@
 			}
 		},
 		{
-			"contents": "RewriteEngine on\nRewriteCond %{HTTPS} != on\nRewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]\n",
-			"file": ".htacces",
-			"file_size": 104,
-			"file_write_time": 132019149178342303,
+			"file": "app/Http/Controllers/ProductoController.php",
 			"settings":
 			{
-				"buffer_size": 104,
+				"buffer_size": 9788,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/Http/Middleware/HttpsProtocol.php",
+			"file": "app/Http/Controllers/ProductoProveedorController.php",
 			"settings":
 			{
-				"buffer_size": 514,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "bootstrap/app.php",
-			"settings":
-			{
-				"buffer_size": 3051,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Categoria.php",
-			"settings":
-			{
-				"buffer_size": 542,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Cliente.php",
-			"settings":
-			{
-				"buffer_size": 629,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/CompraLinea.php",
-			"settings":
-			{
-				"buffer_size": 670,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Compra.php",
-			"settings":
-			{
-				"buffer_size": 730,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "database/migrations/2019_05_08_171513_caprichos_de_carlos.php",
-			"settings":
-			{
-				"buffer_size": 422,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "database/migrations/2019_04_22_221316_crear_tabla_ventas_productos.php",
-			"settings":
-			{
-				"buffer_size": 973,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "database/migrations/2019_04_22_220729_crear_tabla_compras_productos.php",
-			"settings":
-			{
-				"buffer_size": 993,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "database/migrations/2019_04_22_220715_crear_tabla_compras.php",
-			"settings":
-			{
-				"buffer_size": 854,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "database/migrations/2019_04_22_221255_crear_tabla_ventas.php",
-			"settings":
-			{
-				"buffer_size": 964,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "database/migrations/2019_05_14_133523_crear_tabla_empleados.php",
-			"settings":
-			{
-				"buffer_size": 1088,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "database/migrations/2019_05_09_165133_empleados_usuarios.php",
-			"settings":
-			{
-				"buffer_size": 413,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "database/migrations/2019_05_14_133612_crear_tabla_compra_estados.php",
-			"settings":
-			{
-				"buffer_size": 750,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "database/migrations/2019_05_14_133738_crear_tabla_producto_proveedores.php",
-			"settings":
-			{
-				"buffer_size": 708,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "database/migrations/2019_05_14_134614_crear_tabla_grupo_usuarios.php",
-			"settings":
-			{
-				"buffer_size": 730,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "database/migrations/2019_04_22_221426_crear_tabla_usuarios.php",
-			"settings":
-			{
-				"buffer_size": 944,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Empleado.php",
-			"settings":
-			{
-				"buffer_size": 629,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/GrupoUsuario.php",
-			"settings":
-			{
-				"buffer_size": 538,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Controllers/EmpleadoController.php",
-			"settings":
-			{
-				"buffer_size": 3445,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/GrupoCliente.php",
-			"settings":
-			{
-				"buffer_size": 550,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Controllers/CategoriaController.php",
-			"settings":
-			{
-				"buffer_size": 2855,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Controllers/AuthController.php",
-			"settings":
-			{
-				"buffer_size": 1818,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Middleware/adminAuthenticate.php",
-			"settings":
-			{
-				"buffer_size": 865,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Providers/AuthServiceProvider.php",
-			"settings":
-			{
-				"buffer_size": 1402,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Controllers/ClienteController.php",
-			"settings":
-			{
-				"buffer_size": 4677,
+				"buffer_size": 3658,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -696,16 +575,8 @@
 			"file": "app/Http/Controllers/ProveedorController.php",
 			"settings":
 			{
-				"buffer_size": 3244,
+				"buffer_size": 3279,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "vendor/illuminate/support/helpers.php",
-			"settings":
-			{
-				"buffer_size": 27144,
 				"line_ending": "Unix"
 			}
 		},
@@ -713,7 +584,156 @@
 			"file": "app/Http/Controllers/StockController.php",
 			"settings":
 			{
-				"buffer_size": 3137,
+				"buffer_size": 4401,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/TasaController.php",
+			"settings":
+			{
+				"buffer_size": 1995,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/TiendaController.php",
+			"settings":
+			{
+				"buffer_size": 2348,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/UsuarioAdminController.php",
+			"settings":
+			{
+				"buffer_size": 2905,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/UsuarioController.php",
+			"settings":
+			{
+				"buffer_size": 2107,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/VentaController.php",
+			"settings":
+			{
+				"buffer_size": 5137,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/VentaLineaController.php",
+			"settings":
+			{
+				"buffer_size": 5114,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Laravel\\Lumen\\Routing\\Controller as BaseController;\nuse Illuminate\\Http\\Request;\n\nclass Controller extends BaseController\n{   \n\n    \n\tpublic function crearRespuesta($mensaje, $datos, $codigo)\n    {   \n    \treturn response()->json([\n            'succes' => true,\n            'message' => $mensaje,\n            /**\n             *postman\n             */\n            //'data' => $datos\n            'data' => $this->encrypt($datos, getenv('KEY'))\n        ], $codigo);\n    }\n\n    public function crearRespuestaError($mensaje, $codigo)\n    {\n    \treturn response()->json([\n            'succes' => false,\n            'message' => $mensaje,\n            'data' => ''\n        ], $codigo);\n    }\n\n\n    public function desencrypt(Request $request){\n\n        $data = $request->input()[0];\n        $result = openssl_decrypt(base64_decode($data), \"aes-128-ecb\", getenv('KEY'), OPENSSL_RAW_DATA);\n\n        $result = $this->converToUtf8_recursiva($result);\n        $result = json_decode($result, true);\n\n        //voy por aqui! este ya funciona\n        //$a = $result['proveedor'];\n\n        return $result;\n    }\n\n    public function encrypt($data, $key) {\n        return base64_encode(openssl_encrypt($data, \"aes-128-ecb\", $key, OPENSSL_RAW_DATA));\n    }\n\n    public function server(){\n        return \"http://\" . $_SERVER['HTTP_HOST'] . \"/imagenes/\";\n    }\n\n    public static function converToUtf8_recursiva($dat)\n   {\n      if (is_string($dat)) {\n         return utf8_encode($dat);\n      } elseif (is_array($dat)) {\n         $ret = [];\n         foreach ($dat as $i => $d) $ret[ $i ] = self::convert_from_latin1_to_utf8_recursively($d);\n\n         return $ret;\n      } elseif (is_object($dat)) {\n         foreach ($dat as $i => $d) $dat->$i = self::convert_from_latin1_to_utf8_recursively($d);\n\n         return $dat;\n      } else {\n         return $dat;\n      }\n   }\n\n\n}\n",
+			"file": "app/Http/Controllers/Controller.php",
+			"file_size": 1899,
+			"file_write_time": 132039051327727283,
+			"settings":
+			{
+				"buffer_size": 1897,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n\nnamespace App\\Http\\Middleware;\n\nuse Closure;\n\nclass ExampleMiddleware\n{\n    /**\n     * Handle an incoming request.\n     *\n     * @param  \\Illuminate\\Http\\Request  $request\n     * @param  \\Closure  $next\n     * @return mixed\n     */\n    public function handle($request, Closure $next)\n    {   \n\n        //$request->header('Authorization') = \n\n        return $next($request);\n    }\n\n}\n",
+			"file": "app/Http/Middleware/ExampleMiddleware.php",
+			"file_size": 390,
+			"file_write_time": 132035984505985003,
+			"settings":
+			{
+				"buffer_size": 390,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Middleware/adminAuthenticate.php",
+			"settings":
+			{
+				"buffer_size": 1221,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Middleware/DesencryptKey.php",
+			"settings":
+			{
+				"buffer_size": 751,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "vendor/illuminate/encryption/Encrypter.php",
+			"settings":
+			{
+				"buffer_size": 6880,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Middleware/Authenticate.php",
+			"settings":
+			{
+				"buffer_size": 1529,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/CategoriaController.php",
+			"settings":
+			{
+				"buffer_size": 3147,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/ClienteController.php",
+			"settings":
+			{
+				"buffer_size": 5723,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/CompraController.php",
+			"settings":
+			{
+				"buffer_size": 7631,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/CompraEstadoController.php",
+			"settings":
+			{
+				"buffer_size": 3330,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -722,69 +742,7 @@
 			"file": "app/Http/Controllers/CompraLineaController.php",
 			"settings":
 			{
-				"buffer_size": 2882,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "routes/web.php",
-			"settings":
-			{
-				"buffer_size": 5718,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Controllers/ProductoController.php",
-			"settings":
-			{
-				"buffer_size": 3560,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Producto.php",
-			"settings":
-			{
-				"buffer_size": 876,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "database/migrations/2019_05_01_233734_crear_tabla_stocks.php",
-			"settings":
-			{
-				"buffer_size": 710,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Stock.php",
-			"settings":
-			{
-				"buffer_size": 545,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Venta.php",
-			"settings":
-			{
-				"buffer_size": 596,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/VentaLinea.php",
-			"settings":
-			{
-				"buffer_size": 588,
+				"buffer_size": 2865,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -807,6 +765,14 @@
 			],
 			[
 				"git s",
+				"Git: Status"
+			],
+			[
+				"git pu",
+				"Git: Push Current Branch"
+			],
+			[
+				"git ",
 				"Git: Status"
 			],
 			[
@@ -863,81 +829,119 @@
 		"/C/xampp/htdocs/easyERP",
 		"/C/xampp/htdocs/easyERP/app",
 		"/C/xampp/htdocs/easyERP/app/Http",
-		"/C/xampp/htdocs/easyERP/app/Http/Controllers",
+		"/C/xampp/htdocs/easyERP/app/Http/Middleware",
 		"/C/xampp/htdocs/easyERP/bootstrap",
 		"/C/xampp/htdocs/easyERP/database",
-		"/C/xampp/htdocs/easyERP/database/factories",
-		"/C/xampp/htdocs/easyERP/database/seeds",
+		"/C/xampp/htdocs/easyERP/public",
 		"/C/xampp/htdocs/easyERP/routes"
 	],
 	"file_history":
 	[
-		"/C/xampp/htdocs/easyERP/app/Http/Controllers/Key.php",
-		"/C/xampp/htdocs/easyERP/.gitignore",
-		"/C/xampp/htdocs/easyERP/app/Http/Controllers/GrupoUsuarioController.php",
+		"/C/xampp/htdocs/easyERP/vendor/illuminate/contracts/Auth/Factory.php",
+		"/C/xampp/htdocs/easyERP/vendor/illuminate/auth/AuthManager.php",
+		"/C/xampp/htdocs/easyERP/vendor/illuminate/support/Facades/Auth.php",
+		"/C/xampp/htdocs/easyERP/vendor/symfony/http-kernel/Tests/ClientTest.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/ExampleController.php",
 		"/C/xampp/htdocs/easyERP/app/Http/Controllers/VentaController.php",
-		"/C/xampp/htdocs/easyERP/app/Http/Controllers/CompraController.php",
-		"/C/xampp/htdocs/easyERP/app/Http/Controllers/ProveedorController.php",
-		"/C/xampp/htdocs/easyERP/vendor/illuminate/database/Eloquent/FactoryBuilder.php",
-		"/C/xampp/htdocs/easyERP/database/factories/ModelFactory.php",
-		"/C/xampp/htdocs/easyERP/app/Http/Controllers/UserController.php",
-		"/C/xampp/htdocs/easyERP/app/Http/Controllers/UsuarioAdminController.php",
-		"/C/xampp/htdocs/easyERP/app/Http/Controllers/CategoriaController.php",
-		"/C/xampp/htdocs/easyERP/app/Http/Controllers/GrupoClienteController.php",
-		"/C/xampp/htdocs/easyERP/app/Http/Controllers/TiendaController.php",
-		"/C/xampp/htdocs/easyERP/app/Http/Controllers/ProductoController.php",
-		"/C/xampp/htdocs/easyERP/app/Http/Controllers/TasaController.php",
-		"/C/xampp/htdocs/easyERP/app/Http/Controllers/StockController.php",
-		"/C/xampp/htdocs/easyERP/app/Http/Middleware/adminAuthenticate.php",
-		"/C/xampp/htdocs/easyERP/database/migrations/2019_05_01_233734_crear_tabla_stocks.php",
-		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220629_crear_tabla_categorias.php",
-		"/C/xampp/htdocs/easyERP/app/Categoria.php",
-		"/C/xampp/htdocs/easyERP/database/migrations/2019_05_01_233759_crear_tabla_tasas.php",
-		"/C/xampp/htdocs/easyERP/app/Stock.php",
-		"/C/xampp/htdocs/easyERP/app/Tasa.php",
-		"/C/xampp/htdocs/easyERP/database/seeds/DatabaseSeeder.php",
-		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_221426_crear_tabla_usuarios.php",
-		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220729_crear_tabla_compras_productos.php",
-		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_221316_crear_tabla_ventas_productos.php",
-		"/C/xampp/htdocs/easyERP/app/Tienda.php",
-		"/C/xampp/htdocs/easyERP/app/Proveedor.php",
-		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220804_crear_tabla_proveedores.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220729_crear_tabla_compra_lineas.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_05_29_080046_crear_tabla_venta_lineas.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_05_29_075815_crear_tabla_compras_lineas.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_235016_crear_tabla_ventas_lineas.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220029_crear_tabla_categorias.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_21_082934_create_users_table.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220059_crear_tabla_tasas.php",
 		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220154_crear_tabla_tienas.php",
-		"/C/xampp/htdocs/easyERP/app/Http/Controllers/ClienteController.php",
-		"/C/xampp/htdocs/easyERP/app/Http/Controllers/CompraLineaController.php",
-		"/C/xampp/htdocs/easyERP/routes/web.php",
-		"/C/xampp/htdocs/easyERP/app/CompraLinea.php",
-		"/C/xampp/htdocs/easyERP/app/VentaLinea.php",
-		"/C/xampp/htdocs/easyERP/app/Compra.php",
-		"/C/xampp/htdocs/easyERP/database/seeds/AdminUser.php",
-		"/C/xampp/htdocs/easyERP/app/Providers/AuthServiceProvider.php",
-		"/C/xampp/htdocs/easyERP/app/Http/Controllers/AuthController.php",
-		"/C/xampp/htdocs/easyERP/app/Http/Controllers/Controller.php",
-		"/C/xampp/htdocs/easyERP/bootstrap/app.php",
-		"/C/xampp/htdocs/easyERP/vendor/fzaninotto/faker/src/Faker/Factory.php",
-		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_221255_crear_tabla_ventas.php",
-		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220715_crear_tabla_compras.php",
 		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220229_crear_tabla_productos.php",
-		"/C/xampp/htdocs/easyERP/app/Cliente.php",
-		"/C/xampp/htdocs/easyERP/app/CompraProducto.php",
-		"/C/xampp/htdocs/easyERP/app/GrupoCliente.php",
-		"/C/xampp/htdocs/easyERP/app/Producto.php",
-		"/C/xampp/htdocs/easyERP/app/Usuario.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220715_crear_tabla_compras.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220827_crear_tabla_grupo_clientes.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220844_crear_tabla_clientes.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_221426_crear_tabla_usuarios.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_221414_crear_tabla_grupo_usuarios.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_221323_crear_tabla_empleados.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_05_14_133612_crear_tabla_compra_estados.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_234555_crear_tabla_ventas.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_05_14_133738_crear_tabla_producto_proveedores.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220604_crear_tabla_proveedores.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_21_082934_foreign.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220629_crear_tabla_categorias.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_05_14_133523_crear_tabla_empleados.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220729_crear_tabla_compras_productos.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_05_01_233734_crear_tabla_stocks.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_221316_crear_tabla_ventas_productos.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_05_14_134614_crear_tabla_grupo_usuarios.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_221255_crear_tabla_ventas.php",
+		"/C/xampp/htdocs/easyERP/database/factories/ModelFactory.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_05_01_233759_crear_tabla_tasas.php",
+		"/C/xampp/htdocs/easyERP/database/seeds/DatabaseSeeder.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/VentaLineaController.php",
+		"/C/xampp/htdocs/easyERP/routes/web.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/Controller.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/CompraEstadoController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/UsuarioAdminController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/UsuarioController.php",
 		"/C/xampp/htdocs/easyERP/app/Venta.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/TiendaController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/CategoriaController.php",
+		"/C/xampp/htdocs/easyERP/app/Usuario.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/ProductoController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/EmpleadoController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/CompraController.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220804_crear_tabla_proveedores.php",
+		"/C/Users/bydos/Desktop/response.json",
+		"/C/xampp/htdocs/easyERP/.gitignore",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/ejemploCompra.json",
+		"/C/Users/bydos/Desktop/ejemploCompra.json",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/StockController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/ProveedorController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/TasaController.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220526_crear_tabla_atributos.php",
+		"/C/xampp/htdocs/easyERP/app/Tienda.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/.gitkeep",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/ClienteController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/GrupoClienteController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/ProductoProveedorController.php",
+		"/C/xampp/htdocs/easyERP/app/CompraEstado.php",
+		"/C/xampp/htdocs/easyERP/app/Categoria.php",
+		"/C/xampp/htdocs/easyERP/app/ProductoProveedor.php",
+		"/C/xampp/htdocs/easyERP/app/GrupoUsuario.php",
+		"/C/xampp/htdocs/easyERP/app/Empleado.php",
+		"/C/xampp/htdocs/easyERP/database/seeds/add_usuarios.php",
+		"/C/xampp/htdocs/easyERP/app/Providers/AppServiceProvider.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/GrupoUsuarioController.php",
+		"/C/xampp/htdocs/easyERP/.env",
+		"/C/xampp/htdocs/easyERP/.htacces",
+		"/C/xampp/htdocs/easyERP/app/Http/Middleware/HttpsProtocol.php",
+		"/C/xampp/htdocs/easyERP/bootstrap/app.php",
+		"/C/xampp/htdocs/easyERP/app/Cliente.php",
+		"/C/xampp/htdocs/easyERP/app/CompraLinea.php",
+		"/C/xampp/htdocs/easyERP/app/Compra.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_05_08_171513_caprichos_de_carlos.php",
+		"/C/xampp/htdocs/easyERP/database/migrations/2019_05_09_165133_empleados_usuarios.php",
+		"/C/xampp/htdocs/easyERP/app/GrupoCliente.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/AuthController.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Middleware/adminAuthenticate.php",
+		"/C/xampp/htdocs/easyERP/app/Providers/AuthServiceProvider.php",
+		"/C/xampp/htdocs/easyERP/vendor/illuminate/support/helpers.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/CompraLineaController.php",
+		"/C/xampp/htdocs/easyERP/app/Producto.php",
+		"/C/xampp/htdocs/easyERP/app/Stock.php",
+		"/C/xampp/htdocs/easyERP/app/VentaLinea.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/Key.php",
+		"/C/xampp/htdocs/easyERP/vendor/illuminate/database/Eloquent/FactoryBuilder.php",
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers/UserController.php",
+		"/C/xampp/htdocs/easyERP/app/Tasa.php",
+		"/C/xampp/htdocs/easyERP/app/Proveedor.php",
+		"/C/xampp/htdocs/easyERP/database/seeds/AdminUser.php",
+		"/C/xampp/htdocs/easyERP/vendor/fzaninotto/faker/src/Faker/Factory.php",
+		"/C/xampp/htdocs/easyERP/app/CompraProducto.php",
 		"/C/xampp/htdocs/easyERP/app/VentaProducto.php",
 		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220652_crear_tabla_fabricantes.php",
-		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220844_crear_tabla_clientes.php",
 		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220901_crear_tabla_direcciones.php",
 		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220934_crear_tabla_divisas.php",
-		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220827_crear_tabla_grupo_clientes.php",
 		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220546_crear_tabla_atributos_valores.php",
 		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220122_crear_tabla_companias.php",
-		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220526_crear_tabla_atributos.php",
 		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220509_crear_tabla_atributos_valores_productos.php",
 		"/C/xampp/htdocs/easyERP/app/User.php",
-		"/C/xampp/htdocs/easyERP/.env",
-		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_21_082934_create_users_table.php",
-		"/C/xampp/htdocs/easyERP/app/Http/Controllers/ExampleController.php",
 		"/C/xampp/htdocs/LumenAPI-master/.env",
 		"/C/xampp/htdocs/LumenAPI-master/.env.example",
 		"/C/xampp/htdocs/LumenAPI-master/tests/TestCase.php",
@@ -961,7 +965,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 102.0,
 		"where_history":
 		[
 		]
@@ -971,6 +975,10 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"stock",
+			"proveedor",
+			"Proveedor",
+			"ProductoProveedor",
 			"proveedor",
 			"Proveedor",
 			"()\n",
@@ -997,6 +1005,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"stocks",
+			"producto_proveedor",
+			"ProductoProveedor",
 			"empleado",
 			"Empleado",
 			"GrupoUsuario",
@@ -1022,24 +1033,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 6,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "database/factories/ModelFactory.php",
+					"file": "database/seeds/DatabaseSeeder.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4872,
+						"buffer_size": 12467,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								888,
-								432
+								3189,
+								3189
 							]
 						],
 						"settings":
@@ -1050,27 +1061,89 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 139.333333333,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "database/factories/ModelFactory.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4006,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								880,
+								880
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "bootstrap/app.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3002,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3002,
+								3002
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1302.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "database/seeds/DatabaseSeeder.php",
+					"buffer": 3,
+					"file": "app/Http/Controllers/EmpleadoController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4354,
+						"buffer_size": 3498,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2501,
-								2501
+								601,
+								601
 							]
 						],
 						"settings":
@@ -1081,84 +1154,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1008.0,
+						"translation.y": 90.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "database/seeds/add_usuarios.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 200,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								190,
-								190
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 190.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/Providers/AppServiceProvider.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 266,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								257,
-								257
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 45,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "app/Usuario.php",
+					"file": "app/Http/Controllers/GrupoClienteController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 858,
+						"buffer_size": 3477,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								607,
-								683
+								362,
+								362
 							]
 						],
 						"settings":
@@ -1169,107 +1185,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 20.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 42,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/Http/Controllers/UsuarioAdminController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3053,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								744,
-								735
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 240.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 30,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/Http/Controllers/Controller.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1031,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								883,
-								883
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 330.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 25,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "app/Http/Controllers/VentaController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4222,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2375,
-								2375
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2123.33333333,
-						"zoom_level": 1.0
-					},
-					"stack_index": 32,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
+					"buffer": 5,
 					"file": "app/Http/Controllers/GrupoUsuarioController.php",
 					"semi_transient": false,
 					"settings":
@@ -1281,8 +1204,8 @@
 						"selection":
 						[
 							[
-								481,
-								481
+								90,
+								90
 							]
 						],
 						"settings":
@@ -1293,45 +1216,72 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 165.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 27,
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
-					"file": "app/Http/Controllers/CompraController.php",
+					"buffer": 6,
+					"file": "routes/web.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5506,
+						"buffer_size": 6665,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4102,
-								4102
+								480,
+								480
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2538.0,
+						"translation.y": 160.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 7,
+					"file": "public/index.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 897,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 76.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
 					"file": ".env",
 					"semi_transient": false,
 					"settings":
@@ -1355,59 +1305,91 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 39,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
-					"file": ".htacces",
+					"buffer": 9,
+					"file": "app/Http/Controllers/ProductoController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 104,
+						"buffer_size": 9788,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								104,
-								104
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 40,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "app/Http/Middleware/HttpsProtocol.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 514,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								514,
-								514
+								751,
+								751
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"open_with_edit": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 348.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "app/Http/Controllers/ProductoProveedorController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3658,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								319,
+								319
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 62.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "app/Http/Controllers/ProveedorController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3279,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
@@ -1416,24 +1398,179 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 43,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
-					"file": "bootstrap/app.php",
+					"buffer": 12,
+					"file": "app/Http/Controllers/StockController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3051,
+						"buffer_size": 4401,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1714,
-								1714
+								372,
+								372
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "app/Http/Controllers/TasaController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1995,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								369,
+								369
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 24,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "app/Http/Controllers/TiendaController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2348,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								464,
+								464
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "app/Http/Controllers/UsuarioAdminController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2905,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1959,
+								1959
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 876.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "app/Http/Controllers/UsuarioController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2107,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								859,
+								859
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 297.333333333,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "app/Http/Controllers/VentaController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5137,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								356,
+								356
 							]
 						],
 						"settings":
@@ -1451,170 +1588,51 @@
 					"type": "text"
 				},
 				{
-					"buffer": 14,
-					"file": "app/Categoria.php",
+					"buffer": 18,
+					"file": "app/Http/Controllers/VentaLineaController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 542,
+						"buffer_size": 5114,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								445,
-								445
+								497,
+								497
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 47,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "app/Cliente.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 629,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								526,
-								526
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 220.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 46,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "app/CompraLinea.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 670,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								602,
-								602
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 80.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 19,
-					"type": "text"
-				},
-				{
-					"buffer": 17,
-					"file": "app/Compra.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 730,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								495,
-								495
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 79.3333333333,
 						"zoom_level": 1.0
 					},
 					"stack_index": 28,
 					"type": "text"
 				},
 				{
-					"buffer": 18,
-					"file": "database/migrations/2019_05_08_171513_caprichos_de_carlos.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 422,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								280,
-								280
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 35.3333333333,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
 					"buffer": 19,
-					"file": "database/migrations/2019_04_22_221316_crear_tabla_ventas_productos.php",
+					"file": "app/Http/Controllers/Controller.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 973,
+						"buffer_size": 1897,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								877,
-								877
+								513,
+								513
 							]
 						],
 						"settings":
@@ -1625,151 +1643,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 187.333333333,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 20,
-					"file": "database/migrations/2019_04_22_220729_crear_tabla_compras_productos.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 993,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								760,
-								760
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 76.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 21,
-					"file": "database/migrations/2019_04_22_220715_crear_tabla_compras.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 854,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								382,
-								357
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 174.0,
+						"translation.y": 134.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 22,
-					"file": "database/migrations/2019_04_22_221255_crear_tabla_ventas.php",
+					"buffer": 20,
+					"file": "app/Http/Middleware/ExampleMiddleware.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 964,
+						"buffer_size": 390,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								807,
-								807
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 135.333333333,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 23,
-					"file": "database/migrations/2019_05_14_133523_crear_tabla_empleados.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1088,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								929,
-								929
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 269.333333333,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 24,
-					"file": "database/migrations/2019_05_09_165133_empleados_usuarios.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 413,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								285,
-								285
+								311,
+								311
 							]
 						],
 						"settings":
@@ -1781,88 +1675,119 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 27,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "app/Http/Middleware/adminAuthenticate.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1221,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1001,
+								1001
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 304.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 25,
-					"file": "database/migrations/2019_05_14_133612_crear_tabla_compra_estados.php",
+					"buffer": 22,
+					"file": "app/Http/Middleware/DesencryptKey.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 750,
+						"buffer_size": 751,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								594,
-								594
+								598,
+								598
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
+							"open_with_edit": true,
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 102.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
-					"buffer": 26,
-					"file": "database/migrations/2019_05_14_133738_crear_tabla_producto_proveedores.php",
+					"buffer": 23,
+					"file": "vendor/illuminate/encryption/Encrypter.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 708,
+						"buffer_size": 6880,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								537,
-								537
+								4262,
+								4262
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2256.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
-					"buffer": 27,
-					"file": "database/migrations/2019_05_14_134614_crear_tabla_grupo_usuarios.php",
+					"buffer": 24,
+					"file": "app/Http/Middleware/Authenticate.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 730,
+						"buffer_size": 1529,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								510,
-								546
+								1170,
+								1170
 							]
 						],
 						"settings":
@@ -1873,424 +1798,151 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 187.333333333,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 28,
-					"file": "database/migrations/2019_04_22_221426_crear_tabla_usuarios.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 944,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								520,
-								533
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 149.333333333,
+						"translation.y": 519.333333333,
 						"zoom_level": 1.0
 					},
 					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 29,
-					"file": "app/Empleado.php",
+					"buffer": 25,
+					"file": "app/Http/Controllers/CategoriaController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 629,
+						"buffer_size": 3147,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								621,
-								502
+								646,
+								646
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"open_with_edit": true,
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 150.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 35,
-					"type": "text"
-				},
-				{
-					"buffer": 30,
-					"file": "app/GrupoUsuario.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 538,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								359,
-								359
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"open_with_edit": true,
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 37,
-					"type": "text"
-				},
-				{
-					"buffer": 31,
-					"file": "app/Http/Controllers/EmpleadoController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3445,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3022,
-								2457
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"open_with_edit": true,
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1431.33333333,
+						"translation.y": 193.333333333,
 						"zoom_level": 1.0
 					},
-					"stack_index": 24,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 32,
-					"file": "app/GrupoCliente.php",
+					"buffer": 26,
+					"file": "app/Http/Controllers/ClienteController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 550,
+						"buffer_size": 5723,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								451,
-								451
+								829,
+								829
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 115.333333333,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 27,
+					"file": "app/Http/Controllers/CompraController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7631,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								438,
+								438
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 28,
+					"file": "app/Http/Controllers/CompraEstadoController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3330,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								355,
+								355
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 30.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 26,
 					"type": "text"
 				},
 				{
-					"buffer": 33,
-					"file": "app/Http/Controllers/CategoriaController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2855,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2176,
-								2176
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1229.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 18,
-					"type": "text"
-				},
-				{
-					"buffer": 34,
-					"file": "app/Http/Controllers/AuthController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1818,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 41,
-					"type": "text"
-				},
-				{
-					"buffer": 35,
-					"file": "app/Http/Middleware/adminAuthenticate.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 865,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								564,
-								564
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 194.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 36,
-					"file": "app/Providers/AuthServiceProvider.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1402,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1081,
-								1082
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 424.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 44,
-					"type": "text"
-				},
-				{
-					"buffer": 37,
-					"file": "app/Http/Controllers/ClienteController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4677,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2360,
-								2360
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 152.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 21,
-					"type": "text"
-				},
-				{
-					"buffer": 38,
-					"file": "app/Http/Controllers/ProveedorController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3244,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								689,
-								710
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 248.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 31,
-					"type": "text"
-				},
-				{
-					"buffer": 39,
-					"file": "vendor/illuminate/support/helpers.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 27144,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7,
-								34
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 38,
-					"type": "text"
-				},
-				{
-					"buffer": 40,
-					"file": "app/Http/Controllers/StockController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3137,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3082,
-								3082
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1614.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 23,
-					"type": "text"
-				},
-				{
-					"buffer": 41,
+					"buffer": 29,
 					"file": "app/Http/Controllers/CompraLineaController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2882,
+						"buffer_size": 2865,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2012,
-								2012
+								2043,
+								2043
 							]
 						],
 						"settings":
@@ -2301,219 +1953,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1146.0,
+						"translation.y": 822.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
-					"type": "text"
-				},
-				{
-					"buffer": 42,
-					"file": "routes/web.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5718,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1832,
-								1832
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 233.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 43,
-					"file": "app/Http/Controllers/ProductoController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3560,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1730,
-								1730
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1423.33333333,
-						"zoom_level": 1.0
-					},
-					"stack_index": 22,
-					"type": "text"
-				},
-				{
-					"buffer": 44,
-					"file": "app/Producto.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 876,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								121,
-								129
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 36,
-					"type": "text"
-				},
-				{
-					"buffer": 45,
-					"file": "database/migrations/2019_05_01_233734_crear_tabla_stocks.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 710,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								553,
-								553
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 54.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 46,
-					"file": "app/Stock.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 545,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								537,
-								537
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 56.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 48,
-					"type": "text"
-				},
-				{
-					"buffer": 47,
-					"file": "app/Venta.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 596,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								540,
-								574
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 65.3333333333,
-						"zoom_level": 1.0
-					},
-					"stack_index": 34,
-					"type": "text"
-				},
-				{
-					"buffer": 48,
-					"file": "app/VentaLinea.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 588,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								585,
-								585
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 33,
+					"stack_index": 11,
 					"type": "text"
 				}
 			]
@@ -2608,7 +2051,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 397.0,
+	"side_bar_width": 318.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

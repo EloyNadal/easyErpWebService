@@ -11,11 +11,12 @@ class Controller extends BaseController
     
 	public function crearRespuesta($mensaje, $datos, $codigo)
     {   
-
     	return response()->json([
             'succes' => true,
             'message' => $mensaje,
-            //postman->
+            /**
+             *postman
+             */
             //'data' => $datos
             'data' => $this->encrypt($datos, getenv('KEY'))
         ], $codigo);

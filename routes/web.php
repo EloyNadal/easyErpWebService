@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| Application Routes
+| Rutas de la aplicacion
 |--------------------------------------------------------------------------
 |
 | Here is where you can register all of the routes for an application.
@@ -114,11 +114,11 @@ $router->group(['prefix' => 'producto'], function () use ($router)
 
 $router->group(['prefix' => 'grupousuario'], function () use ($router) 
 {
-	$router->get('/', ['uses' => 'GrupoUsuario@readAll']);
-	$router->get('/{id}', ['uses' => 'GrupoUsuario@read']);
-	$router->post('/', ['uses' => 'GrupoUsuario@create']);
-	$router->delete('/{id}', ['uses' => 'GrupoUsuario@delete']);
-	$router->put('/{id}', ['uses' => 'GrupoUsuario@update']);
+	$router->get('/', ['uses' => 'GrupoUsuarioController@readAll']);
+	$router->get('/{id}', ['uses' => 'GrupoUsuarioController@read']);
+	$router->post('/', ['uses' => 'GrupoUsuarioController@create']);
+	$router->delete('/{id}', ['uses' => 'GrupoUsuarioController@delete']);
+	$router->put('/{id}', ['uses' => 'GrupoUsuarioController@update']);
 });
 
 $router->group(['prefix' => 'empleado'], function () use ($router) 
@@ -133,7 +133,7 @@ $router->group(['prefix' => 'empleado'], function () use ($router)
 
 $router->group(['prefix' => 'venta'], function () use ($router) 
 {	
-	$router->get('/{id}', ['uses' => 'VentaController@readAll']);
+	$router->get('/{id}', ['uses' => 'VentaController@read']);
 	$router->post('/{metodo}', ['uses' => 'VentaController@readQuery']);
 	$router->post('/', ['uses' => 'VentaController@create']);
 });

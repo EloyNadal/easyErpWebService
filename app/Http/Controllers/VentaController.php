@@ -7,6 +7,7 @@ use App\VentaLinea;
 use App\Tienda;
 use App\Cliente;
 use App\Stock;
+use App\Producto;
 
 class VentaController extends Controller
 {   
@@ -88,7 +89,14 @@ class VentaController extends Controller
                 ->where('venta_id', $venta['id'])
                 ->get();
 
-                $venta->venta_linea = $lineas;
+
+            foreach ($lineas as $linea) {
+                $producto = Producto::select('nombre')
+                        ->where('id', $linea['producto_id'])->first();
+                $linea['productoNombre'] = $producto['nombre'];
+            }
+
+            $venta->venta_linea = $lineas;
             
             return $this->crearRespuesta('Venta encontrado', $venta, 200);
         }

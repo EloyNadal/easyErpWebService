@@ -57,10 +57,53 @@ class DatabaseSeeder extends Seeder
 		factory(GrupoCliente::class, 10)->create();
 		factory(Producto::class, 15)->create();
 		factory(Proveedor::class, 10)->create();
-		factory(Tienda::class, 10)->create();
-
 
         $faker = Faker\Factory::create('es_ES');
+
+        DB::table('tiendas')->insert([
+                ['nombre' => 'Sant Boi de Llobregat',
+                'direccion' => $faker->streetName,
+                'ciudad' => $faker->city,
+                'telefono' => $faker->phoneNumber,
+                'email' => $faker->email,
+                'codigo_postal' => $faker->postcode,
+                'pais' => $faker->country
+                ],
+                ['nombre' => 'Cornella',
+                'direccion' => $faker->streetName,
+                'ciudad' => $faker->city,
+                'telefono' => $faker->phoneNumber,
+                'email' => $faker->email,
+                'codigo_postal' => $faker->postcode,
+                'pais' => $faker->country
+                ],
+                ['nombre' => 'Castelldefels',
+                'direccion' => $faker->streetName,
+                'ciudad' => $faker->city,
+                'telefono' => $faker->phoneNumber,
+                'email' => $faker->email,
+                'codigo_postal' => $faker->postcode,
+                'pais' => $faker->country
+                ],
+                ['nombre' => 'Viladecans',
+                'direccion' => $faker->streetName,
+                'ciudad' => $faker->city,
+                'telefono' => $faker->phoneNumber,
+                'email' => $faker->email,
+                'codigo_postal' => $faker->postcode,
+                'pais' => $faker->country
+                ],
+                ['nombre' => 'Sant Vicenç dels Horts',
+                'direccion' => $faker->streetName,
+                'ciudad' => $faker->city,
+                'telefono' => $faker->phoneNumber,
+                'email' => $faker->email,
+                'codigo_postal' => $faker->postcode,
+                'pais' => $faker->country
+                ],
+        ]);
+
+
         for ($i=0; $i < 30; $i++) { 
             
             $stock = true;

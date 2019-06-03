@@ -7,7 +7,7 @@ use App\GrupoUsuario;
 use Closure;
 use Illuminate\Contracts\Auth\Factory as Auth;
 
-class Authenticate
+class Authenticate extends DesencryptKey
 {
     /**
      * The authentication guard factory instance.
@@ -39,19 +39,16 @@ class Authenticate
     {   
 
 
-        /*
-        *Metodo para pruebas en postman
-        */
-        //$apiToken = $request->header('Authorization');
-            
-        /*
-        *Metodo para eclipse
-        */
-        $apiToken = openssl_decrypt(base64_decode($request->header('Authorization')),"aes-128-ecb",getenv('KEY'),OPENSSL_RAW_DATA);
+        /**
+         *@param boolean a False, en caso de enviar contraseña sin encriptar
+         */
+        $apiToken = $this->desencrypt($request->header('Authorization'),True);
+
+        if (!$apiToken) return response('Unauthorized.', 401);
 
         $usuario = Usuario::where('api_token', $apiToken)->first();
 
-        if (!$usuario))
+        if (!$usuario)
         {
             return response('Unauthorized.', 401);                
         }
@@ -70,17 +67,4 @@ class Authenticate
         **/
         return $next($request);
     }
-
-    public function crearRespuesta($mensaje, $datos, $codigo)
-    {   
-
-        return response()->json([
-            'succes' => true,
-            'message' => $mensaje,
-            'data' => $datos
-            //'data' => $this->encrypt($datos, getenv('KEY'))
-        ], $codigo);
-    }
-
-
 }
