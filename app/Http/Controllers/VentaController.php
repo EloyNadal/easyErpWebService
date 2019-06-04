@@ -134,6 +134,14 @@ class VentaController extends Controller
                 ->where('venta_id', $venta['id'])
                 ->get();
 
+
+                foreach ($lineas as $linea) {
+                    $producto = Producto::select('nombre')
+                        ->where('id', $linea['producto_id'])->first();
+                    $linea['productoNombre'] = $producto['nombre'];
+                }
+
+
                 $venta->venta_linea = $lineas;
 
             }
