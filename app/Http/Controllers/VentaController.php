@@ -19,10 +19,6 @@ class VentaController extends Controller
 
     public function create(Request $request){
 
-        $request = $this->desencrypt($request->all());
-
-        return $this->crearRespuesta("Producto", $request, 200);
-
         $this->validacion($request);
         
         $tienda_id = $request->input('tienda_id');

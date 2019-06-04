@@ -59,15 +59,7 @@ class UsuarioAdminController extends Controller
 
         //usuario admin por defecto valida de forma distinta a los usuarios creados a posteriori
 
-        if ($usuario['user_name'] == 'admin' || $usuario['user_name'] == 'carlos' || $usuario['user_name'] == 'eloy'){
-
-            $validacion = Usuario::where('user_name', $user_name)->where('password', $password)->first();
-
-        }else{
-            //usuario = 1234
-            $validacion = Hash::check($password, $usuario->password);
-        }
-
+        $validacion = Hash::check($password, $usuario->password);
 
         if ($validacion){
 
