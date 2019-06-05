@@ -55,11 +55,27 @@ class DatabaseSeeder extends Seeder
         
 		factory(Empleado::class, 10)->create();
 		factory(Cliente::class, 10)->create();
-		
+
         $faker = Faker\Factory::create('es_ES');
+
         $tiendas = array('Sant Boi de Llobregat', 'Cornella', 'Castelldefels', 'Viladecans','Sant Vicenç dels Horts');
         $proveedores = array('Cobega SA', 'Nestle SA', 'Grup Aliment Barcelona SL', 'Taste of America SL', 'Komkal Mayorista SA', 'Primar Ibérica SA', 'Friman SL', 'Coseral SA');
         $productos = array('Cocacola', 'Agua Font Vella', 'Tomate frito', 'Natillas de vainilla', 'Pizza de jamon y queso', 'Conos de maiz', 'Chocolate con leche', 'Mayonesa Hellmann', 'Lenteja cocida', 'Aceite de girasol');
+
+        DB::table('clientes')->insert([    
+            'grupo_cliente_id' => $faker->numberBetween(1,3),
+            'nombre' => 'Carlos',
+            'apellidos' => 'Fernández',
+            'direccion' => 'Carrer de Joan Pfaff 26 30',
+            'ciudad' => 'Sant Boi de Llobregat',
+            'telefono' => '666777888',
+            'codigo_postal' => '08830',
+            'pais' => 'España',
+            'email' => 'mail@gmail.es',
+            'dni' => '444777999Z',
+            'codigo' => '2090156580219',
+        ]);
+
 
         foreach ($tiendas as $nombre) {
             
@@ -99,7 +115,7 @@ class DatabaseSeeder extends Seeder
 
         foreach ($productos as $pNombre) {
             
-            DB::table('productos')->insert([
+            $producto_id = DB::table('productos')->insertGetId([
                 'categoria_id' => $faker->numberBetween(1,6),
                 'ean13' => $faker->ean13,
                 'referencia' => substr($pNombre, 0, 3) . $faker->numberBetween(100,999),
@@ -112,26 +128,20 @@ class DatabaseSeeder extends Seeder
                 'fabricante' => $faker->word,
                 'imagen' => $pNombre.'.jpg'
             ]);
+
+            for ($i=1; $i < 6; $i++) { 
+
+                DB::table('stocks')->insert([
+                'tienda_id' => $i, 
+                'producto_id' => $producto_id,
+                'cantidad' => $faker->numberBetween(1,100)
+                ]);
+            
+            }
+
         }
         factory(Producto::class, 3)->create();
 
-
-        for ($i=0; $i < 30; $i++) { 
-            
-            $stock = true;
-    
-            while($stock){
-                $tienda_id = ($faker->numberBetween(1,5));
-                $producto_id = $faker->numberBetween(1,10);
-                $stock = App\Stock::where('tienda_id', $tienda_id)
-                    ->where('producto_id', $producto_id)->first();
-            }
-            DB::table('stocks')->insert([
-                'tienda_id' => $tienda_id, 
-                'producto_id' => $producto_id,
-                'cantidad' => $faker->numberBetween(1,100)
-            ]);
-        }
 
         for ($i=0; $i < 10; $i++) { 
             

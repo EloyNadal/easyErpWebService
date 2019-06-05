@@ -4,12 +4,40 @@
 		"selected_items":
 		[
 			[
-				"re",
-				"response"
+				"producto",
+				"productoNombre"
+			],
+			[
+				"tienda",
+				"tienda"
 			],
 			[
 				"for",
-				"for\tfor …"
+				"for"
+			],
+			[
+				"Pro",
+				"Producto"
+			],
+			[
+				"p",
+				"$pNombre〔variable〕"
+			],
+			[
+				"product",
+				"productoNombre"
+			],
+			[
+				"cl",
+				"$cliente〔variable〕"
+			],
+			[
+				"cliente",
+				"cliente_id"
+			],
+			[
+				"re",
+				"response"
 			],
 			[
 				"rea",
@@ -128,10 +156,6 @@
 				"unique"
 			],
 			[
-				"p",
-				"producto_id"
-			],
-			[
 				"h",
 				"header"
 			],
@@ -152,10 +176,6 @@
 				"categoria_id"
 			],
 			[
-				"Pro",
-				"ProductoProveedorController"
-			],
-			[
 				"va",
 				"value"
 			],
@@ -166,10 +186,6 @@
 			[
 				"s",
 				"stock"
-			],
-			[
-				"producto",
-				"producto_id"
 			],
 			[
 				"ta",
@@ -336,20 +352,12 @@
 				"ratio_descuento"
 			],
 			[
-				"cl",
-				"clientes"
-			],
-			[
 				"g",
 				"grupo_cliente"
 			],
 			[
 				"precio",
 				"precio_total"
-			],
-			[
-				"tienda",
-				"tienda_id"
 			],
 			[
 				"pre",
@@ -471,7 +479,7 @@
 			"file": "database/seeds/DatabaseSeeder.php",
 			"settings":
 			{
-				"buffer_size": 12467,
+				"buffer_size": 12159,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -493,7 +501,6 @@
 			"settings":
 			{
 				"buffer_size": 3002,
-				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -525,22 +532,22 @@
 			}
 		},
 		{
-			"contents": "<?php\n\n/*\n|--------------------------------------------------------------------------\n| Rutas de la aplicacion\n|--------------------------------------------------------------------------\n|\n| Here is where you can register all of the routes for an application.\n| It is a breeze. Simply tell Lumen the URIs it should respond to\n| and give it the Closure to call when that URI is requested.\n|\n*/\n\n$router->get('/', function () use ($router) {\n    return $router->app->version();\n});\n\n\n$router->post('/registrar', 'UsuarioAdminController@registrar');\n$router->post('/login', 'UsuarioAdminController@login');\n$router->post('/upimage', 'ProductoController@saveImage');\n$router->post('/usuario/', 'UsuarioController@create');\n\n$router->group(['prefix' => 'categoria'], function () use ($router) \n{\n\t$router->get('/', ['uses' => 'CategoriaController@readAll']);\n\t$router->get('/{id}', ['uses' => 'CategoriaController@read']);\n\t$router->post('/', ['uses' => 'CategoriaController@create']);\n\t$router->delete('/{id}', ['uses' => 'CategoriaController@delete']);\n\t$router->put('/{id}', ['uses' => 'CategoriaController@update']);\n});\n\n$router->group(['prefix' => 'cliente'], function () use ($router) \n{\n\t$router->get('/', ['uses' => 'ClienteController@readAll']);\n\t$router->get('/{id}', ['uses' => 'ClienteController@read']);\n\t$router->post('/{metodo}', ['uses' => 'ClienteController@readQuery']);\n\t$router->post('/', ['uses' => 'ClienteController@create']);\n\t$router->delete('/{id}', ['uses' => 'ClienteController@delete']);\n\t$router->put('/{id}', ['uses' => 'ClienteController@update']);\n});\n\n$router->group(['prefix' => 'compra'], function () use ($router) \n{\n\t$router->get('/{id}', ['uses' => 'CompraController@read']);\n\t$router->post('/{metodo}', ['uses' => 'CompraController@readQuery']);\n\t$router->post('/', ['uses' => 'CompraController@create']);\n\t$router->put('/{id}', ['uses' => 'CompraController@update']);\n});\n\n$router->group(['prefix' => 'compralinea'], function () use ($router) \n{\n\t$router->get('/{id}', ['uses' => 'CompraLineaController@read']);\n\t$router->put('/{compra_id}', ['uses' => 'CompraLineaController@update']);\n});\n\n$router->group(['prefix' => 'grupocliente'], function () use ($router) \n{\n\t$router->get('/', ['uses' => 'GrupoClienteController@readAll']);\n\t$router->get('/{id}', ['uses' => 'GrupoClienteController@read']);\n\t$router->post('/', ['uses' => 'GrupoClienteController@create']);\n\t$router->delete('/{id}', ['uses' => 'GrupoClienteController@delete']);\n\t$router->put('/{id}', ['uses' => 'GrupoClienteController@update']);\n});\n\n$router->group(['prefix' => 'proveedor'], function () use ($router) \n{\n\t$router->get('/', ['uses' => 'ProveedorController@readAll']);\n\t$router->get('/{id}', ['uses' => 'ProveedorController@read']);\n\t$router->post('/{metodo}', ['uses' => 'ProductoController@readQuery']);\n\t$router->post('/', ['uses' => 'ProveedorController@create']);\n\t$router->delete('/{id}', ['uses' => 'ProveedorController@delete']);\n\t$router->put('/{id}', ['uses' => 'ProveedorController@update']);\n});\n\n$router->group(['prefix' => 'tienda'], function () use ($router) \n{\n\t$router->get('/', ['uses' => 'TiendaController@readAll']);\n\t$router->get('/{id}', ['uses' => 'TiendaController@read']);\n\t$router->post('/', ['uses' => 'TiendaController@create']);\n\t$router->delete('/{id}', ['uses' => 'TiendaController@delete']);\n\t$router->put('/{id}', ['uses' => 'TiendaController@update']);\n});\n\n\n$router->group(['prefix' => 'stock'], function () use ($router) \n{\n\t$router->get('/{id}', ['uses' => 'StockController@read']);\n\t$router->get('/', ['uses' => 'StockController@readAll']);\n\t$router->post('/{metodo}', ['uses' => 'StockController@readQuery']);\n\t$router->post('/', ['uses' => 'StockController@create']);\n\t$router->post('/[/init/]', ['uses' => 'StockController@createAll']);\n\t$router->put('/{id}', ['uses' => 'StockController@update']);\n});\n\n$router->group(['prefix' => 'tasa'], function () use ($router) \n{\n\t$router->get('/', ['uses' => 'TasaController@readAll']);\n\t$router->get('/{id}', ['uses' => 'TasaController@read']);\n\t$router->post('/', ['uses' => 'TasaController@create']);\n\t$router->delete('/{id}', ['uses' => 'TasaController@delete']);\n\t$router->put('/{id}', ['uses' => 'TasaController@update']);\n});\n\n$router->group(['prefix' => 'producto'], function () use ($router) \n{\n\t$router->get('/', ['uses' => 'ProductoController@readAll']);\n\t$router->get('/{id}', ['uses' => 'ProductoController@read']);\n\t$router->post('/{metodo}', ['uses' => 'ProductoController@readQuery']);\n\t$router->post('/', ['uses' => 'ProductoController@create']);\n\t$router->delete('/{id}', ['uses' => 'ProductoController@delete']);\n\t$router->put('/{id}', ['uses' => 'ProductoController@update']);\n});\n\n$router->group(['prefix' => 'grupousuario'], function () use ($router) \n{\n\t$router->get('/', ['uses' => 'GrupoUsuarioController@readAll']);\n\t$router->get('/{id}', ['uses' => 'GrupoUsuarioController@read']);\n\t$router->post('/', ['uses' => 'GrupoUsuarioController@create']);\n\t$router->delete('/{id}', ['uses' => 'GrupoUsuarioController@delete']);\n\t$router->put('/{id}', ['uses' => 'GrupoUsuarioController@update']);\n});\n\n$router->group(['prefix' => 'empleado'], function () use ($router) \n{\n\t$router->get('/', ['uses' => 'EmpleadoController@readAll']);\n\t$router->get('/{id}', ['uses' => 'EmpleadoController@read']);\n\t$router->post('/{metodo}', ['uses' => 'EmpleadoController@readQuery']);\n\t$router->post('/', ['uses' => 'EmpleadoController@create']);\n\t$router->delete('/{id}', ['uses' => 'EmpleadoController@delete']);\n\t$router->put('/{id}', ['uses' => 'EmpleadoController@update']);\n});\n\n$router->group(['prefix' => 'venta'], function () use ($router) \n{\t\n\t$router->get('/{id}', ['uses' => 'VentaController@readAll']);\n\t$router->post('/{metodo}', ['uses' => 'VentaController@readQuery']);\n\t$router->post('/', ['uses' => 'VentaController@create']);\n});\n\n$router->group(['prefix' => 'ventalinea'], function () use ($router) \n{\n\t$router->get('/{id}', ['uses' => 'ventaLineaController@read']);\n\t$router->get('/', ['uses' => 'ventaLineaController@readByProduct']);\n\t$router->post('/{metodo}', ['uses' => 'ventaLineaController@readQuery']);\n});\n\n$router->group(['prefix' => 'productoproveedor'], function () use ($router) \n{\n\t$router->get('/', ['uses' => 'ProductoProveedorController@readAll']);\n\t$router->get('/{id}', ['uses' => 'ProductoProveedorController@read']);\n\t$router->post('/', ['uses' => 'ProductoProveedorController@create']);\n\t$router->delete('/{id}', ['uses' => 'ProductoProveedorController@delete']);\n\t$router->put('/{id}', ['uses' => 'ProductoProveedorController@update']);\n});\n\n\n//Generar key\n$router->get('/key', function () {\n    return str_random(32);\n});",
 			"file": "routes/web.php",
-			"file_size": 6661,
-			"file_write_time": 132037910589048966,
 			"settings":
 			{
-				"buffer_size": 6665,
+				"buffer_size": 6662,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "public/index.php",
+			"contents": "<?php\n\nnamespace App;\n\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass Tienda extends Model\n{\n    protected $table = 'tiendas';\n   \n    protected $fillable = [\n        'nombre', 'direccion', 'ciudad', 'telefono', 'email', 'codigo_postal', 'pais'\n    ];\n\n}\n",
+			"file": "app/Tienda.php",
+			"file_size": 599,
+			"file_write_time": 132025864292556753,
 			"settings":
 			{
-				"buffer_size": 897,
+				"buffer_size": 255,
 				"line_ending": "Unix"
 			}
 		},
@@ -608,10 +615,13 @@
 			}
 		},
 		{
+			"contents": "<?php\n\nnamespace App\\Http\\Controllers;\nuse Illuminate\\Http\\Request;\nuse Illuminate\\Support\\Facades\\Hash;\nuse App\\Usuario;\n\nclass UsuarioAdminController extends Controller\n{\n\n    public function __construct()\n    {\n        $this->middleware('admin', ['only' => ['registrar']]);\n    }\n    \n    public function registrar(Request $request){\n\n        $this->validacion($request);\n\n        $password = Hash::make($request->input('password'));\n        $api_token = $request->input('api_token');\n        $empleado_id = $request->input('empleado_id');\n        $user_name = $request->input('user_name');\n        $grupo_usuario_id = $request->input('grupo_usuario_id');\n\n        $registrar = Usuario::create([\n            'password' => $password,\n            'api_token' => $apiToken,\n            'empleado_id' => $empleado_id,\n            'user_name' => $user_name,\n            'grupo_usuario_id' => $grupo_usuario_id\n        ]);\n\n        if($registrar){\n            return response() ->json([\n                'success' => true,\n                'message' => 'Registrado correctamente',\n                'data' => $registrar\n\n\n            ], 201);\n        }else{\n            return response() ->json([\n                'success' => false,\n                'message' => 'Fallo al registrar',\n                'data' => ''\n            ], 400);\n        }\n\n    }\n\n    public function login(Request $request){\n\n        $user_name = $request->input('user_name');\n        $password = $request->input('password');\n\n        $usuario = Usuario::where('user_name', $user_name)->first();\n        $validacion = false;\n        \n        $validacion = Hash::check($password, $usuario->password);\n        if ($validacion){\n\n            $apiToken = base64_encode(str_random(40));\n            $usuario->update([\n                'api_token' => $apiToken\n            ]);\n\n            return response()->json([\n                'success' => true,\n                'message' => 'Login Succes!',\n                'data' => $usuario\n            ], 200);\n        } else {\n            return response()->json([\n                'success' => false,\n                'message' => 'Login Fail!',\n                'data' => ''\n            ], 404);\n        }\n    }\n\n    \n    public function validacion($request)\n    {   \n\n        $reglas = \n        [\n            'password' => 'required',\n            'empleado_id' => 'required',\n            'user_name' => 'required',\n            'grupo_usuario_id' => 'required'\n        ];\n\n        $this->validate($request, $reglas);\n    }\n\n\n}\n",
 			"file": "app/Http/Controllers/UsuarioAdminController.php",
+			"file_size": 2619,
+			"file_write_time": 132041210256017575,
 			"settings":
 			{
-				"buffer_size": 2905,
+				"buffer_size": 2527,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -629,25 +639,39 @@
 			"file": "app/Http/Controllers/VentaController.php",
 			"settings":
 			{
-				"buffer_size": 5137,
+				"buffer_size": 5542,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/bydos/Desktop/venta.json",
+			"settings":
+			{
+				"buffer_size": 889,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "\n\n\n",
+			"settings":
+			{
+				"buffer_size": 3,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "app/Http/Controllers/VentaLineaController.php",
 			"settings":
 			{
-				"buffer_size": 5114,
+				"buffer_size": 5077,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Laravel\\Lumen\\Routing\\Controller as BaseController;\nuse Illuminate\\Http\\Request;\n\nclass Controller extends BaseController\n{   \n\n    \n\tpublic function crearRespuesta($mensaje, $datos, $codigo)\n    {   \n    \treturn response()->json([\n            'succes' => true,\n            'message' => $mensaje,\n            /**\n             *postman\n             */\n            //'data' => $datos\n            'data' => $this->encrypt($datos, getenv('KEY'))\n        ], $codigo);\n    }\n\n    public function crearRespuestaError($mensaje, $codigo)\n    {\n    \treturn response()->json([\n            'succes' => false,\n            'message' => $mensaje,\n            'data' => ''\n        ], $codigo);\n    }\n\n\n    public function desencrypt(Request $request){\n\n        $data = $request->input()[0];\n        $result = openssl_decrypt(base64_decode($data), \"aes-128-ecb\", getenv('KEY'), OPENSSL_RAW_DATA);\n\n        $result = $this->converToUtf8_recursiva($result);\n        $result = json_decode($result, true);\n\n        //voy por aqui! este ya funciona\n        //$a = $result['proveedor'];\n\n        return $result;\n    }\n\n    public function encrypt($data, $key) {\n        return base64_encode(openssl_encrypt($data, \"aes-128-ecb\", $key, OPENSSL_RAW_DATA));\n    }\n\n    public function server(){\n        return \"http://\" . $_SERVER['HTTP_HOST'] . \"/imagenes/\";\n    }\n\n    public static function converToUtf8_recursiva($dat)\n   {\n      if (is_string($dat)) {\n         return utf8_encode($dat);\n      } elseif (is_array($dat)) {\n         $ret = [];\n         foreach ($dat as $i => $d) $ret[ $i ] = self::convert_from_latin1_to_utf8_recursively($d);\n\n         return $ret;\n      } elseif (is_object($dat)) {\n         foreach ($dat as $i => $d) $dat->$i = self::convert_from_latin1_to_utf8_recursively($d);\n\n         return $dat;\n      } else {\n         return $dat;\n      }\n   }\n\n\n}\n",
 			"file": "app/Http/Controllers/Controller.php",
-			"file_size": 1899,
-			"file_write_time": 132039051327727283,
 			"settings":
 			{
 				"buffer_size": 1897,
@@ -663,7 +687,6 @@
 			"settings":
 			{
 				"buffer_size": 390,
-				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -829,14 +852,12 @@
 		"/C/xampp/htdocs/easyERP",
 		"/C/xampp/htdocs/easyERP/app",
 		"/C/xampp/htdocs/easyERP/app/Http",
-		"/C/xampp/htdocs/easyERP/app/Http/Middleware",
-		"/C/xampp/htdocs/easyERP/bootstrap",
-		"/C/xampp/htdocs/easyERP/database",
-		"/C/xampp/htdocs/easyERP/public",
-		"/C/xampp/htdocs/easyERP/routes"
+		"/C/xampp/htdocs/easyERP/app/Http/Controllers"
 	],
 	"file_history":
 	[
+		"/C/xampp/htdocs/easyERP/.gitignore",
+		"/C/Users/bydos/Desktop/venta.json",
 		"/C/xampp/htdocs/easyERP/vendor/illuminate/contracts/Auth/Factory.php",
 		"/C/xampp/htdocs/easyERP/vendor/illuminate/auth/AuthManager.php",
 		"/C/xampp/htdocs/easyERP/vendor/illuminate/support/Facades/Auth.php",
@@ -888,7 +909,6 @@
 		"/C/xampp/htdocs/easyERP/app/Http/Controllers/CompraController.php",
 		"/C/xampp/htdocs/easyERP/database/migrations/2019_04_22_220804_crear_tabla_proveedores.php",
 		"/C/Users/bydos/Desktop/response.json",
-		"/C/xampp/htdocs/easyERP/.gitignore",
 		"/C/xampp/htdocs/easyERP/app/Http/Controllers/ejemploCompra.json",
 		"/C/Users/bydos/Desktop/ejemploCompra.json",
 		"/C/xampp/htdocs/easyERP/app/Http/Controllers/StockController.php",
@@ -975,6 +995,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"',]]);\n",
 			"stock",
 			"proveedor",
 			"Proveedor",
@@ -1033,7 +1054,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 14,
 			"sheets":
 			[
 				{
@@ -1042,15 +1063,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12467,
+						"buffer_size": 12159,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3189,
-								3189
+								11464,
+								11464
 							]
 						],
 						"settings":
@@ -1061,10 +1082,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3264.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -1080,8 +1101,8 @@
 						"selection":
 						[
 							[
-								880,
-								880
+								1872,
+								1872
 							]
 						],
 						"settings":
@@ -1092,10 +1113,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1180.0,
+						"translation.y": 545.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
@@ -1126,7 +1147,7 @@
 						"translation.y": 1302.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
@@ -1154,10 +1175,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 90.0,
+						"translation.y": 18.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -1188,7 +1209,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 25,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
@@ -1219,7 +1240,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 28,
 					"type": "text"
 				},
 				{
@@ -1228,15 +1249,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6665,
+						"buffer_size": 6662,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								480,
-								480
+								5114,
+								5114
 							]
 						],
 						"settings":
@@ -1246,38 +1267,41 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 160.0,
+						"translation.y": 1208.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
 					"buffer": 7,
-					"file": "public/index.php",
-					"semi_transient": true,
+					"file": "app/Tienda.php",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 897,
+						"buffer_size": 255,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								255,
+								255
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 76.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -1305,7 +1329,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 22,
+					"stack_index": 29,
 					"type": "text"
 				},
 				{
@@ -1333,10 +1357,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 348.0,
+						"translation.y": 444.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -1367,7 +1391,7 @@
 						"translation.y": 62.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
@@ -1398,7 +1422,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 25,
 					"type": "text"
 				},
 				{
@@ -1429,7 +1453,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 26,
 					"type": "text"
 				},
 				{
@@ -1460,7 +1484,7 @@
 						"translation.y": 90.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 24,
+					"stack_index": 30,
 					"type": "text"
 				},
 				{
@@ -1476,8 +1500,8 @@
 						"selection":
 						[
 							[
-								464,
-								464
+								1068,
+								1068
 							]
 						],
 						"settings":
@@ -1488,10 +1512,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 562.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 23,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -1500,15 +1524,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2905,
+						"buffer_size": 2527,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1959,
-								1959
+								2211,
+								2211
 							]
 						],
 						"settings":
@@ -1519,10 +1543,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 876.0,
+						"translation.y": 913.333333333,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -1550,10 +1574,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 297.333333333,
+						"translation.y": 201.333333333,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -1562,15 +1586,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5137,
+						"buffer_size": 5542,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								356,
-								356
+								4256,
+								4256
 							]
 						],
 						"settings":
@@ -1581,27 +1605,86 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2209.33333333,
 						"zoom_level": 1.0
 					},
-					"stack_index": 29,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
 					"buffer": 18,
-					"file": "app/Http/Controllers/VentaLineaController.php",
+					"file": "/C/Users/bydos/Desktop/venta.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5114,
+						"buffer_size": 889,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								497,
-								497
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"default_dir": "C:\\Users\\bydos\\Desktop",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "app/Http/Controllers/VentaLineaController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5077,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								335,
+								335
 							]
 						],
 						"settings":
@@ -1615,11 +1698,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 28,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 19,
+					"buffer": 21,
 					"file": "app/Http/Controllers/Controller.php",
 					"semi_transient": false,
 					"settings":
@@ -1631,8 +1714,8 @@
 						"selection":
 						[
 							[
-								513,
-								513
+								378,
+								378
 							]
 						],
 						"settings":
@@ -1643,14 +1726,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 134.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 20,
+					"buffer": 22,
 					"file": "app/Http/Middleware/ExampleMiddleware.php",
 					"semi_transient": false,
 					"settings":
@@ -1677,11 +1760,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 27,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 21,
+					"buffer": 23,
 					"file": "app/Http/Middleware/adminAuthenticate.php",
 					"semi_transient": false,
 					"settings":
@@ -1693,8 +1776,8 @@
 						"selection":
 						[
 							[
-								1001,
-								1001
+								707,
+								707
 							]
 						],
 						"settings":
@@ -1705,14 +1788,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 304.0,
+						"translation.y": 142.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 22,
+					"buffer": 24,
 					"file": "app/Http/Middleware/DesencryptKey.php",
 					"semi_transient": false,
 					"settings":
@@ -1724,8 +1807,8 @@
 						"selection":
 						[
 							[
-								598,
-								598
+								418,
+								418
 							]
 						],
 						"settings":
@@ -1737,14 +1820,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 102.0,
+						"translation.y": 206.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 23,
+					"buffer": 25,
 					"file": "vendor/illuminate/encryption/Encrypter.php",
 					"semi_transient": false,
 					"settings":
@@ -1770,11 +1853,11 @@
 						"translation.y": 2256.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 27,
 					"type": "text"
 				},
 				{
-					"buffer": 24,
+					"buffer": 26,
 					"file": "app/Http/Middleware/Authenticate.php",
 					"semi_transient": false,
 					"settings":
@@ -1786,8 +1869,8 @@
 						"selection":
 						[
 							[
-								1170,
-								1170
+								784,
+								784
 							]
 						],
 						"settings":
@@ -1798,14 +1881,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 519.333333333,
+						"translation.y": 350.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 25,
+					"buffer": 27,
 					"file": "app/Http/Controllers/CategoriaController.php",
 					"semi_transient": false,
 					"settings":
@@ -1829,14 +1912,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 193.333333333,
+						"translation.y": 592.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 26,
+					"buffer": 28,
 					"file": "app/Http/Controllers/ClienteController.php",
 					"semi_transient": false,
 					"settings":
@@ -1863,11 +1946,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
-					"buffer": 27,
+					"buffer": 29,
 					"file": "app/Http/Controllers/CompraController.php",
 					"semi_transient": false,
 					"settings":
@@ -1894,11 +1977,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
-					"buffer": 28,
+					"buffer": 30,
 					"file": "app/Http/Controllers/CompraEstadoController.php",
 					"semi_transient": false,
 					"settings":
@@ -1925,11 +2008,11 @@
 						"translation.y": 30.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 26,
+					"stack_index": 31,
 					"type": "text"
 				},
 				{
-					"buffer": 29,
+					"buffer": 31,
 					"file": "app/Http/Controllers/CompraLineaController.php",
 					"semi_transient": false,
 					"settings":
@@ -1956,7 +2039,7 @@
 						"translation.y": 822.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 22,
 					"type": "text"
 				}
 			]
@@ -2051,7 +2134,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 318.0,
+	"side_bar_width": 348.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
